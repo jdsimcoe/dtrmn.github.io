@@ -22,3 +22,18 @@
 [submodule "extensions/xssfilter"]
 	path = extensions/xssfilter
 	url = git://github.com/symphonycms/xssfilter.git
+[submodule "extensions/subsectionmanager"]
+	path = extensions/subsectionmanager
+	url = git://github.com/hananils/subsectionmanager.git
+[submodule "extensions/globalresourceloader"]
+	path = extensions/globalresourceloader
+	url = git://github.com/symphonists/globalresourceloader.git
+[submodule "extensions/html5_doctype"]
+	path = extensions/html5_doctype
+	url = git://github.com/domain7/html5_doctype.git
+[submodule "extensions/datetime"]
+	path = extensions/datetime
+	url = git://github.com/hananils/datetime.git
+[submodule "workspace/bootstrap"]
+	path = workspace/bootstrap
+	url = git://github.com/twitter/bootstrap.git
