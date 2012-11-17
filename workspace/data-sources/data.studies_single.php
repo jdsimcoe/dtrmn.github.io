@@ -14,6 +14,7 @@
 		public $dsParamSORT = 'system:id';
 		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
+		public $dsParamCACHE = '3600';
 		
 
 		public $dsParamFILTERS = array(
@@ -45,7 +46,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-17T01:27:36+00:00'
+				'release-date' => '2012-11-17T22:23:02+00:00'
 			);
 		}
 
