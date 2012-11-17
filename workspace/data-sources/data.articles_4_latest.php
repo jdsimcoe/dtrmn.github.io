@@ -14,6 +14,9 @@
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
 		
 
+		public $dsParamFILTERS = array(
+				'21' => 'no',
+		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
@@ -36,7 +39,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-10T00:47:25+00:00'
+				'release-date' => '2012-11-10T16:20:31+00:00'
 			);
 		}
 

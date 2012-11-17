@@ -1,0 +1,638 @@
+// CSS Reset
+@import "../bootstrap/less/reset.less";
+
+// Core variables and mixins
+@import "../bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../bootstrap/less/mixins.less";
+
+// Grid system and page structure
+@import "../bootstrap/less/scaffolding.less";
+@import "../bootstrap/less/grid.less";
+@import "../bootstrap/less/layouts.less";
+
+// Base CSS
+@import "../bootstrap/less/type.less";
+@import "../bootstrap/less/code.less";
+@import "../bootstrap/less/forms.less";
+@import "../bootstrap/less/tables.less";
+
+// Components: common
+@import "../bootstrap/less/glyphicons.less";
+@import "../bootstrap/less/dropdowns.less";
+@import "../bootstrap/less/wells.less";
+@import "../bootstrap/less/component-animations.less";
+@import "../bootstrap/less/close.less";
+
+// Components: Buttons & Alerts
+@import "../bootstrap/less/buttons.less";
+@import "../bootstrap/less/button-groups.less";
+@import "../bootstrap/less/alerts.less";
+
+// Components: Nav
+@import "../bootstrap/less/navs.less";
+@import "../bootstrap/less/navbar.less";
+@import "../bootstrap/less/breadcrumbs.less";
+@import "../bootstrap/less/pagination.less";
+@import "../bootstrap/less/pager.less";
+
+// Components: Popovers
+@import "../bootstrap/less/modals.less";
+@import "../bootstrap/less/tooltip.less";
+@import "../bootstrap/less/popovers.less";
+
+// Components: Misc
+@import "../bootstrap/less/thumbnails.less";
+@import "../bootstrap/less/media.less";
+@import "../bootstrap/less/labels-badges.less";
+@import "../bootstrap/less/progress-bars.less";
+@import "../bootstrap/less/accordion.less";
+@import "../bootstrap/less/carousel.less";
+@import "../bootstrap/less/hero-unit.less";
+
+// Utility classes
+@import "../bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
+
+// Responsive
+// -------------------------------------------------------------
+
+// Responsive utility classes
+@import "../bootstrap/less/responsive-utilities.less";
+
+
+// Media queries
+// ------------------
+
+// Large desktops
+@import "../bootstrap/less/responsive-1200px-min.less";
+
+// Tablets to regular desktops
+@import "../bootstrap/less/responsive-768px-979px.less";
+
+// Phones to portrait tablets and narrow desktops
+@import "../bootstrap/less/responsive-767px-max.less";
+
+
+// Responsive navbar
+// From 979px and below, show a button to toggle navbar contents
+@import "../bootstrap/less/responsive-navbar.less";
+
+// Bootstrap Docs
+@import "docs.less";
+
+// Custom Mixins
+
+@import "easing.less";
+@import "mask-image.less";
+
+// RefTagger
+// =========
+
+@import "reftagger.less";
+
+// Logo
+
+@import "logo.less";
+
+
+// Color Variables
+// ===============
+
+@color-white: #fff;
+@color-black: #333;
+@color-gray-light: #e9e9e9;
+@color-body: @color-white;
+@color-accent: #dd3838;
+@color-mast: @color-accent;
+
+// Dimension Variables
+// ===================
+
+@base: 10px;
+
+// Font Variables
+// ==============
+
+@helvetica: "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+// Bootstrap Overrides
+// ===================
+
+// Border Radius
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+@linkColor: @color-accent;
+@baseBorderRadius: 0px;
+@borderRadiusLarge: @baseBorderRadius;
+@borderRadiusSmall: @baseBorderRadius;
+@btnPrimaryBackgroundHighlight: darken(@btnPrimaryBackground, 5%);
+
+.navbar {
+
+  .btn-navbar {
+    background: darken(@color-accent, 10%);
+    .border-radius(0);
+    position: relative;
+    top: -3px;
+
+    &:hover {
+      background: darken(@color-accent, 15%);
+    }
+  }
+
+}
+
+
+.logo {
+  font-family: Determine;
+  text-transform: lowercase;
+  font-weight: normal;
+  position: relative;
+  top: 0;
+  margin-right: -3px;
+}
+
+// Glyphicon Tweaks
+
+.icon-large {
+  font-size: 64px;
+}
+
+.icon-huge {
+  font-size: 96px;
+}
+
+.icon-white {
+  color: #fff !important;
+}
+
+.icon-black {
+  color: #000 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+// General Tweaks
+
+hr.soften {
+  margin: 40px 0;
+}
+
+// HTML Elements
+// =============
+
+a {
+  -webkit-transition: color 150ms ease-in-out, background 150ms ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Styles
+// ======
+
+.accent {
+  background: @color-accent;
+}
+
+.stripe {
+  left: 0;
+  width: 100%;
+  padding: 30px 0 50px 0;
+
+  &.first {
+    background: lighten(@color-gray-light, 5%);
+    border-top: 1px solid @color-gray-light;
+    // border-bottom: 1px solid @color-gray-light;
+  }
+
+  &.second {
+    background: @color-gray-light;
+    border-top: 1px solid darken(@color-gray-light, 5%);
+  }
+
+  &.third {
+    background: darken(@color-gray-light, 5%);
+    border-top: 1px solid darken(@color-gray-light, 10%);
+  }
+
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+body > .navbar .brand {
+  color: darken(@color-accent, 30%);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.navbar {
+  background: darken(@color-accent, 2%);
+  border: none;
+  border-bottom: 1px solid lighten(@color-accent, 2%);
+  .box-shadow(inset 0 -2px 12px rgba(0,0,0,0.1));
+
+ .title {
+    font-weight: bold;
+    position: relative;
+    top: 18px;
+    font-size: 32px;
+    color: darken(@color-accent, 30%);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+
+    &:hover {
+      text-decoration: none;
+      color: darken(@color-accent, 35%);
+    }
+
+    i {
+      background: darken(@color-accent, 30%);
+      .border-radius(100%);
+      font-size: 14px;
+      position: relative;
+      top: -5px;
+      padding: 7px 9px;
+      color: #fff;
+    }
+  }
+
+  .nav {
+
+    li {
+      text-transform: uppercase;
+      font-size: 18px;
+
+      &.active {
+
+        a {
+          background: darken(@color-accent, 20%);
+
+          &:hover {
+            background: darken(@color-accent, 30%);
+          }
+        }
+      }
+
+      a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #fff;
+
+        &[data-toggle="dropdown"] {
+          height: 20px;
+        }
+
+        &:hover {
+          background: darken(@color-accent, 20%);
+        }
+      }
+
+      .dropdown-menu {
+
+        li {
+          a {
+            color: @color-accent;
+
+            &:hover {
+              background: @color-accent;
+              color: @color-white;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.jumbotron {
+  padding: 80px 0 0 0;
+  background: darken(@color-accent, 2%);
+  .box-shadow(none);
+  border-bottom: 2px solid darken(@color-accent, 4%);
+
+  &.masthead {
+   border-bottom: 2px solid darken(@color-accent, 4%);
+    p {
+      margin-bottom: 0;
+      padding: 0 30px;
+
+      &.vision {
+        font-size: 32px;
+        text-align: center;
+
+        a {
+          color: #fff;
+          border-bottom: 3px dotted darken(@color-accent, 10%);
+        }
+      }
+
+      &.link-bar {
+        margin: 60px 0 40px 0;
+
+        a {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .carousel {
+      padding: 10px 0 20px 0;
+      // border-top: 4px solid darken(@color-accent, 10%);
+      // border-bottom: 4px solid darken(@color-accent, 10%);
+
+      .item {
+
+        cite {
+          text-transform: uppercase;
+          text-align: left;
+          font-weight: bold;
+          padding: 0 30px;
+          margin: 40px 0 0 0;
+          font-size: 16px;
+          color: darken(@color-accent, 20%);
+          text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+        }
+
+      }
+    }
+
+  }
+}
+
+.page-headers {
+  padding-bottom: 60px;
+
+  h1 {
+    text-align: left;
+    font-size: 64px;
+    letter-spacing: 0;
+    text-shadow: 0 1px 2px darken(@color-accent, 15%);
+  }
+}
+
+.marketing {
+  margin: 40px 0;
+
+  .marketing-byline {
+    padding: 20px 100px;
+    line-height: 1.5;
+  }
+}
+
+@month-height: 16px;
+@day-height: 32px;
+@calendar-height: @month-height + @day-height;
+@calendar-width: @calendar-height;
+@calendar-padding: 15px;
+
+.date {
+  width: @calendar-width;
+  text-align: center;
+  position: relative;
+  height: @calendar-height;
+  float: right;
+  top: 10px;
+  right: 10px;
+
+  .month {
+    background: @color-accent;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: @month-height;
+    height: @month-height;
+  }
+
+  .day {
+    background: #fff;
+    font-size: 26px;
+    color: #333;
+    line-height: @day-height;
+    height: @day-height;
+  }
+}
+
+.blog-entry {
+  position: relative;
+
+  h4 {
+    color: #777;
+  }
+
+  p {
+    color: #999;
+  }
+
+  blockquote {
+    background: #fff;
+    color: #a0a0a0;
+    border-left: 4px solid #a0a0a0;
+    padding: 10px;
+    margin-top: 15px;
+    .box-shadow(0 0 6px rgba(0,0,0,0.05));
+
+    .block {
+      padding-bottom: 10px;
+    }
+
+    &:hover {
+      border-left: 4px solid @color-accent;
+    }
+  }
+
+  &:hover {
+
+    h4, p {
+      color: @color-accent;
+    }
+  }
+}
+
+// DOCTRINE
+// ========
+
+.doctrine {
+  margin-bottom: 40px;
+
+  a {
+    position: relative;
+    display: block;
+    background: @color-white;
+    color: darken(@color-accent, 10%);
+    .box-shadow(0 0 5px lighten(@color-black, 65%));
+    min-height: 256px;
+
+    h3 {
+      color: darken(@color-white, 40%);
+      margin-top: 0;
+      padding-left: 15px;
+      text-align: left;
+      background: darken(@color-white, 2%);
+      border-bottom: 1px solid darken(@color-white, 5%);
+      text-shadow: 0 1px 0 rgba(255,255,255,1.0);
+
+      .label {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+      }
+    }
+  }
+
+  .summary {
+    text-align: left;
+    color: lighten(@color-black, 20%);
+    padding: 15px;
+  }
+
+  .right {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  &:hover {
+    * {
+      color: @color-accent;
+    }
+    h3 {
+      .label {
+        color: #fff;
+      }
+    }
+    .pull-right {
+      color: darken(@color-accent, 5%);
+    }
+
+  }
+}
+
+.wrapper-doctrine,
+.wrapper-blog,
+.wrapper-quotes  {
+  padding: 0 0 100px 0;
+
+  .entry {
+
+    .title-label {
+      margin-top: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #444;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 72px;
+      text-align: center;
+      margin: 20px 0 80px 0;
+      color: #bbb;
+
+      span {
+        padding-bottom: 15px;
+        border-bottom: 4px solid lighten(@color-gray-light, 3%);
+      }
+    }
+
+    .summary {
+      color: #777;
+      text-align: center;
+      margin: 0 auto 40px auto;
+      width: 75%;
+      font-size: 24px;
+      font-weight: 100px;
+      line-height: 1.6;
+    }
+
+    .content {
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 28px;
+        margin: 20px 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin: 30px 0;
+        font-weight: 300;
+      }
+
+      blockquote {
+        color: #999;
+      }
+
+      ul {
+
+        li {
+          font-size: 16px;
+          margin: 15px 0;
+          font-weight: 300;
+        }
+      }
+    }
+
+  }
+}
+
+.wrapper-blog {
+  margin-top: 60px;
+
+  .entry {
+
+    h1  {
+      font-size: 48px;
+    }
+
+    img {
+      margin: 20px 0;
+    }
+
+  }
+}
+
+.wrapper-quotes {
+  margin-top: 60px;
+
+  .container {
+    position: relative;
+    .span6 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// FOOTER
+// ======
+
+.footer {
+  margin-top: 0;
+  background: #333;
+  color: darken(@color-white, 30%);
+
+  p {
+    color: darken(@color-white, 30%);
+  }
+}
+
