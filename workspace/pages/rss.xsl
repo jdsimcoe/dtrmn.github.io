@@ -16,7 +16,7 @@
       <generator>Symphony (build <xsl:value-of select="$symphony-version"/>)</generator>
       <atom:link href="{$root}/rss/" rel="self" type="application/rss+xml" />
 
-      <xsl:for-each select="//data/articles-all/entry or //data/doctrines-all/entry or //data/quotes-all/entry">
+      <xsl:for-each select="/data/articles-all/entry">
         <item>
           <title><xsl:value-of select="title"/></title>
           <link>
@@ -40,16 +40,7 @@
             <xsl:value-of select="title/@handle" />
           </guid>
           <description>
-            <xsl:choose>
-              <xsl:when test="/data/quotes-all/entry">
-                <xsl:value-of select="quote" />
-                <xsl:value-of select="commentary" />
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="content" />
-              </xsl:otherwise>
-            </xsl:choose>
-
+            <xsl:value-of select="content" />
           </description>
         </item>
       </xsl:for-each>
