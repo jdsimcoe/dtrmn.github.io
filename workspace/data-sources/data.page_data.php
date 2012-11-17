@@ -10,8 +10,8 @@
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'page';
-		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
+		public $dsParamSORT = 'system:id';
+		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
 		
 
 		public $dsParamFILTERS = array(
@@ -22,7 +22,10 @@
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
 				'description: formatted',
-				'page'
+				'page',
+				'image: image',
+				'image: url',
+				'image: caption'
 		);
 		
 
@@ -39,7 +42,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-16T17:22:30+00:00'
+				'release-date' => '2012-11-17T16:56:05+00:00'
 			);
 		}
 

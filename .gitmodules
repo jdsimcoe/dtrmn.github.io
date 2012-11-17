@@ -40,3 +40,6 @@
 [submodule "extensions/pagesfield"]
 	path = extensions/pagesfield
 	url = git://github.com/symphonists/pagesfield.git
+[submodule "extensions/uniondatasource"]
+	path = extensions/uniondatasource
+	url = git://github.com/brendo/uniondatasource.git

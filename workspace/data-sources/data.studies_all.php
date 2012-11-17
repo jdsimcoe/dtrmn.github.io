@@ -5,17 +5,18 @@
 	Class datasourcestudies_all extends SectionDatasource{
 
 		public $dsParamROOTELEMENT = 'studies-all';
-		public $dsParamORDER = 'desc';
+		public $dsParamORDER = 'asc';
 		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'system:id';
+		public $dsParamSORT = 'date';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
 		public $dsParamFILTERS = array(
 				'25' => 'no',
+				'35' => 'no',
 		);
 		
 
@@ -23,7 +24,8 @@
 				'title',
 				'date',
 				'doctrine: title',
-				'recap: formatted'
+				'recap: formatted',
+				'upcoming'
 		);
 		
 
@@ -40,7 +42,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-17T01:25:12+00:00'
+				'release-date' => '2012-11-17T17:42:23+00:00'
 			);
 		}
 

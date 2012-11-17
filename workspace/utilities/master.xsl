@@ -47,9 +47,31 @@
           <div class="container">
             <div class="row">
               <div class="span4">
-                <h1>
-                  <xsl:value-of select="//data/page-data/entry/title" />
-                </h1>
+                <a>
+                  <xsl:attribute name="href">
+                    <xsl:choose>
+                      <xsl:when test="$root-page = 'error'">
+                        <xsl:value-of select="$root" />
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <xsl:value-of select="$root" />
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="$root-page" />
+                      </xsl:otherwise>
+                    </xsl:choose>
+                  </xsl:attribute>
+                  <h1>
+                    <xsl:choose>
+                      <xsl:when test="$root-page = 'foundations'">
+                        <span class="logo">b&#160;&#160;</span>
+                        <xsl:value-of select="//data/page-data/entry/title" />
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <xsl:value-of select="//data/page-data/entry/title" />
+                      </xsl:otherwise>
+                    </xsl:choose>
+                  </h1>
+                </a>
               </div>
               <div class="span8">
                 <p>
@@ -166,34 +188,51 @@
 </xsl:template>
 
 <xsl:template match="navigation/page">
-  <li>
-    <xsl:attribute name="class">
-      <xsl:choose>
-        <xsl:when test="@handle = $current-page">
-          <xsl:text>active</xsl:text>
-          <xsl:if test="@handle = 'home'">
-            <xsl:text> hidden-desktop</xsl:text>
-          </xsl:if>
-        </xsl:when>
-        <xsl:when test="@handle = 'home'">
-          <xsl:text>hidden-desktop</xsl:text>
-        </xsl:when>
-        <xsl:otherwise></xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
-
-    <a>
-      <xsl:choose>
-        <xsl:when test="types/type = 'index'">
-          <xsl:attribute name="href"><xsl:value-of select="$root"/>/</xsl:attribute>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:attribute name="href"><xsl:value-of select="$root"/>/<xsl:value-of select="@handle"/></xsl:attribute>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:value-of select="name"/>
-    </a>
-  </li>
+  <xsl:if test="not(types/type = 'hidden' or types/type = 'XML')">
+    <li>
+      <xsl:attribute name="class">
+        <xsl:choose>
+          <xsl:when test="@handle = $current-page">
+            <xsl:text>active</xsl:text>
+            <xsl:if test="@handle = 'home'">
+              <xsl:text> hidden-desktop</xsl:text>
+            </xsl:if>
+          </xsl:when>
+          <xsl:when test="@handle = 'home'">
+            <xsl:text>hidden-desktop</xsl:text>
+          </xsl:when>
+          <xsl:otherwise></xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+      <a>
+        <xsl:choose>
+          <xsl:when test="types/type = 'index'">
+            <xsl:attribute name="href"><xsl:value-of select="$root"/>/</xsl:attribute>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="href"><xsl:value-of select="$root"/>/<xsl:value-of select="@handle"/></xsl:attribute>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:choose>
+          <xsl:when test="@handle = 'foundations'">
+            <xsl:value-of select="name"/>
+            <xsl:text>&#160;&#160;</xsl:text>
+            <xsl:if test="/data/studies-upcoming/entry != ''">
+              <span class="label label-inverse">
+                <xsl:call-template name="format-date">
+                  <xsl:with-param name="date" select="/data/studies-upcoming/entry/date/date/start/@iso" />
+                  <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+                </xsl:call-template>
+              </span>
+            </xsl:if>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="name"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </a>
+    </li>
+  </xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>

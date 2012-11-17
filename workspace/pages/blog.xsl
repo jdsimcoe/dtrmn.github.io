@@ -24,6 +24,7 @@
             </div>
             <div class="span3">
               <h4>Latest Quotes</h4>
+              <hr />
               <xsl:apply-templates select="/data/quotes-4-latest/entry"/>
             </div>
           </div>
@@ -76,6 +77,7 @@
         <xsl:value-of select="title" />
       </a>
     </h1>
+    <hr class="soften" />
     <xsl:if test="image != ''">
       <img class="img-polaroid" src="{$root}/workspace{image/item/image/@path}/{image/item/image/filename}">
         <xsl:attribute name="alt">
@@ -89,12 +91,17 @@
     </div>
   </div>
   <hr class="soften" />
-  <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">&#8592; Back</a>
+  <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
+            <xsl:text>&#8592; Back to </xsl:text>
+            <strong>
+              <xsl:value-of select="$page-title" />
+            </strong>
+          </a>
 </xsl:template>
 
 
 <xsl:template match="/data/quotes-4-latest/entry">
-  <div>
+  <div class="quote">
     <a href="{$root}/quotes/{title/@handle}" class="blog-entry">
       <blockquote>
         <div class="block">

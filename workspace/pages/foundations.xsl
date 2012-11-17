@@ -20,7 +20,30 @@
         <xsl:when test="$title = ''">
           <div class="row">
             <div class="span12">
-              <xsl:apply-templates select="/data/studies-all/entry"/>
+              <xsl:if test="//data/page-data/entry/title != ''">
+                <img class="img-polaroid" src="{$root}/workspace{//data/page-data/entry/image/item/image/@path}/{//data/page-data/entry/image/item/image/filename}">
+                  <xsl:attribute name="alt">
+                    <xsl:value-of select="//data/page-data/entry/image/item/imag/caption" />
+                  </xsl:attribute>
+                </img>
+              </xsl:if>
+              <div class="marketing">
+                <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
+              </div>
+              <hr class="soften" />
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Study Title</th>
+                    <th>Doctrine</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:apply-templates select="/data/studies-all/entry"/>
+                </tbody>
+              </table>
             </div>
           </div>
         </xsl:when>
@@ -30,13 +53,18 @@
               <xsl:apply-templates select="/data/studies-single/entry"/>
             </div>
             <div class="span3">
-              <h4>Recent Doctrines</h4>
-              <hr class="soften" />
-              <xsl:apply-templates select="/data/doctrines-3-latest/entry"/>
+              <h4>Related Doctrine</h4>
+              <hr />
+              <xsl:apply-templates select="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]"/>
             </div>
           </div>
           <hr class="soften" />
-          <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">&#8592; Back</a>
+          <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
+            <xsl:text>&#8592; Back to </xsl:text>
+            <strong>
+              <xsl:value-of select="$page-title" />
+            </strong>
+          </a>
         </xsl:otherwise>
       </xsl:choose>
     </div>
@@ -46,19 +74,48 @@
 </xsl:template>
 
 <xsl:template match="/data/studies-all/entry">
-  <h2>
-    <xsl:value-of select="title" />
-  </h2>
+
+  <tr>
+    <td><xsl:value-of select="position()" /></td>
+    <td>
+      <a href="{$root}/{$root-page}/{title/@handle}">
+        <xsl:value-of select="title" />
+      </a>
+    </td>
+    <td><xsl:value-of select="doctrine" /></td>
+    <td>
+      <xsl:call-template name="format-date">
+        <xsl:with-param name="date" select="date/date/start/@iso" />
+        <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+      </xsl:call-template>
+    </td>
+  </tr>
+
 </xsl:template>
 
 
 <xsl:template match="/data/studies-single/entry">
-
+  <div class="entry">
+    <xsl:if test="//data/page-data/entry/title != ''">
+      <img class="img-polaroid" src="{$root}/workspace{//data/page-data/entry/image/item/image/@path}/{//data/page-data/entry/image/item/image/filename}">
+        <xsl:attribute name="alt">
+          <xsl:value-of select="//data/page-data/entry/image/item/imag/caption" />
+        </xsl:attribute>
+      </img>
+    </xsl:if>
+    <br /><br />
+    <h1>
+      <xsl:value-of select="title" />
+    </h1>
+    <div class="content">
+      <xsl:value-of select="recap" disable-output-escaping="yes" />
+    </div>
+  </div>
 </xsl:template>
 
 
-<xsl:template match="/data/doctrines-3-latest/entry">
-  <div class="span4 doctrine">
+<xsl:template match="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]">
+  <div class="doctrine">
     <a href="{$root}/doctrine/{title/@handle}">
       <h3>
         <xsl:value-of select="title" />

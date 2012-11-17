@@ -288,9 +288,15 @@ body > .navbar .brand {
       }
 
       a {
+        height: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
         color: #fff;
+
+        .label {
+          position: relative;
+          top: -2px;
+        }
 
         &[data-toggle="dropdown"] {
           height: 20px;
@@ -322,13 +328,13 @@ body > .navbar .brand {
 }
 
 .jumbotron {
-  padding: 80px 0 0 0;
-  background: darken(@color-accent, 2%);
-  .box-shadow(none);
-  border-bottom: 2px solid darken(@color-accent, 4%);
 
   &.masthead {
-   border-bottom: 2px solid darken(@color-accent, 4%);
+    padding: 80px 0 0 0;
+    background: darken(@color-accent, 2%);
+    .box-shadow(none);
+    border-bottom: 2px solid darken(@color-accent, 4%);
+
     p {
       margin-bottom: 0;
       padding: 0 30px;
@@ -378,12 +384,21 @@ body > .navbar .brand {
 
 .page-headers {
   padding-bottom: 60px;
+  a {
+    h1 {
+      color: #fff;
+      text-align: left;
+      font-size: 58px;
+      letter-spacing: 0;
+      text-shadow: 0 1px 2px darken(@color-accent, 15%);
+    }
 
-  h1 {
-    text-align: left;
-    font-size: 64px;
-    letter-spacing: 0;
-    text-shadow: 0 1px 2px darken(@color-accent, 15%);
+    &:hover {
+      h1 {
+        color: darken(@color-accent, 15%);
+        text-shadow: 0 1px 0 lighten(@color-accent, 5%), 0 -1px 0 darken(@color-accent, 10%);
+      }
+    }
   }
 }
 
@@ -448,6 +463,13 @@ body > .navbar .brand {
     padding: 10px;
     margin-top: 15px;
     .box-shadow(0 0 6px rgba(0,0,0,0.05));
+
+    h4 {
+      margin: 0;
+    }
+    p {
+      margin: 0 0 10px 0;
+    }
 
     .block {
       padding-bottom: 10px;
@@ -528,7 +550,8 @@ body > .navbar .brand {
 
 .wrapper-doctrine,
 .wrapper-blog,
-.wrapper-quotes  {
+.wrapper-quotes,
+.wrapper-studies  {
   padding: 0 0 100px 0;
 
   .entry {
@@ -596,6 +619,9 @@ body > .navbar .brand {
   }
 }
 
+// BLOG
+// =====
+
 .wrapper-blog {
   margin-top: 60px;
 
@@ -603,6 +629,7 @@ body > .navbar .brand {
 
     h1  {
       font-size: 48px;
+      margin-bottom: 0;
     }
 
     img {
@@ -611,6 +638,9 @@ body > .navbar .brand {
 
   }
 }
+
+// QUOTES
+// ======
 
 .wrapper-quotes {
   margin-top: 60px;
@@ -621,7 +651,49 @@ body > .navbar .brand {
       margin-bottom: 20px;
     }
   }
+
+  .entry {
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+  }
 }
+
+.quote {
+
+  blockquote {
+    background: #fff;
+    border: 1px solid #ededec;
+    border-left-width: 4px;
+    h4 {
+      margin: 0;
+    }
+    p {
+      margin: 0 0 10px 0;
+    }
+  }
+
+}
+
+// STUDIES
+// =======
+
+.wrapper-studies {
+  margin-top: 60px;
+
+  .entry {
+
+    h1 {
+      margin-top: 40px;
+      font-size: 48px;
+    }
+
+  }
+
+}
+
 
 // FOOTER
 // ======
