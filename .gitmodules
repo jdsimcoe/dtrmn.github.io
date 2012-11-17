@@ -37,3 +37,6 @@
 [submodule "workspace/bootstrap"]
 	path = workspace/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "extensions/pagesfield"]
+	path = extensions/pagesfield
+	url = git://github.com/symphonists/pagesfield.git
