@@ -11,7 +11,7 @@
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
-		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
+		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
 		public $dsParamFILTERS = array(
@@ -37,7 +37,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-17T17:50:11+00:00'
+				'release-date' => '2012-11-17T21:31:56+00:00'
 			);
 		}
 
