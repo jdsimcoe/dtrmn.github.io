@@ -80,6 +80,10 @@
     <td>
       <a href="{$root}/{$root-page}/{title/@handle}">
         <xsl:value-of select="title" />
+        <xsl:if test="upcoming = 'Yes'">
+          <xsl:text>&#160;&#160;</xsl:text>
+          <span class="label label-inverse">UPCOMING</span>
+        </xsl:if>
       </a>
     </td>
     <td><xsl:value-of select="doctrine" /></td>

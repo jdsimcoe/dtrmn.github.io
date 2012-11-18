@@ -287,11 +287,18 @@ body > .navbar .brand {
         }
       }
 
+      &:last-child {
+        a {
+          border-right: 1px solid darken(@color-accent, 10%);
+        }
+      }
+
       a {
         height: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
         color: #fff;
+        border-left: 1px solid darken(@color-accent, 10%);
 
         .label {
           position: relative;
@@ -305,6 +312,8 @@ body > .navbar .brand {
         &:hover {
           background: darken(@color-accent, 20%);
         }
+
+
       }
 
       .dropdown-menu {
