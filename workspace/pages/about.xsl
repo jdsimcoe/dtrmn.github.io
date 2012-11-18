@@ -16,8 +16,9 @@
   <div class="wrapper-about">
     <div class="container">
       <div class="marketing">
-        <br /><br />
-        <span class="logo icon-huge">a</span>
+        <br />
+        <span class="logo icon-large">a</span>
+        <br />
         <h2>About Determine</h2>
         <p class="marketing-byline">Determine was started with the intent and purpose to share the Gospel of Jesus Christ with a dying world and to encourage Christians to live every day in light of what Christ did for us.</p>
         <hr class="soften" />
