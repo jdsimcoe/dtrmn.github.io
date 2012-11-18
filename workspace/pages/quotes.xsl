@@ -23,6 +23,7 @@
             <h2>Sounding Off</h2>
             <p class="marketing-byline">While the Scriptures are the primary way we hear from God, it is clear from the Scriptures themselves that nothing is of private interpretation (2 Peter 1:20). This quote board is a place to find encouragement from other Christian leaders and pastors that will help unpack the Scriptures for us.</p>
           </div>
+          <hr class="soften" />
           <div class="row">
             <div class="span12">
               <xsl:apply-templates select="/data/quotes-all/entry"/>

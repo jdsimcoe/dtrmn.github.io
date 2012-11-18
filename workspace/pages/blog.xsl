@@ -18,6 +18,12 @@
 
       <xsl:choose>
         <xsl:when test="$title = ''">
+          <div class="marketing">
+            <i class="glyphicon-list-alt icon-large"></i>
+            <h2>Articles of Devotion</h2>
+            <p class="marketing-byline">The Determine blog has the purpose of deeping our devotion to Christ. Mediations on the Scripture help us see the beauty of God in the face of Jesus Christ (2 Corinthians 4:6) and respond to Him in worshipful obedience and sacrifice (Romans 12:1).</p>
+          </div>
+          <hr class="soften" />
           <div class="row">
             <div class="span9">
               <xsl:apply-templates select="/data/articles-all/entry"/>
