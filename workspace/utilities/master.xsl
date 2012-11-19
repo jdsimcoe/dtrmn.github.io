@@ -219,7 +219,7 @@
             <xsl:value-of select="name"/>
             <xsl:text>&#160;&#160;</xsl:text>
             <xsl:if test="/data/studies-upcoming/entry != ''">
-              <span class="label label-inverse">
+              <span class="label">
                 <xsl:call-template name="format-date">
                   <xsl:with-param name="date" select="/data/studies-upcoming/entry/date/date/start/@iso" />
                   <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
