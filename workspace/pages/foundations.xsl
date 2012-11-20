@@ -106,7 +106,7 @@
 <xsl:template match="/data/studies-single/entry">
   <div class="entry">
     <xsl:if test="//data/page-data/entry/title != ''">
-      <img class="img-polaroid" style="width:100%;" src="/workspace/img/spacer.gif" alt="//data/page-data/entry/image/item/image/caption">
+      <img class="img-polaroid" style="width:900px; height:353px" src="/workspace/img/spacer.gif" alt="//data/page-data/entry/image/item/image/caption">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
         </xsl:attribute>
