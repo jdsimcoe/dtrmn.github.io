@@ -47,6 +47,7 @@ module.exports = function (grunt) {
         src : [
           '../bootstrap/docs/assets/js/jquery.js',
           '../bootstrap/docs/assets/js/bootstrap.min.js',
+          '../js/responsimage.js',
           '../js/reftagger.js',
           '<config:lint.all>'],
         dest: '../js/dtrmn.1.0.1.js',

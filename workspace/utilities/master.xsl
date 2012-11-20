@@ -32,8 +32,10 @@
     </xsl:choose>
     <title>Determine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content="Gospel-centered writing, articles, doctrine and studies to build up the body of Jesus Christ." />
+    <meta name="keywords" content="Gospel, Jesus Christ, Jesus, Scripture, Gospel-centered" />
+    <meta name="author" content="Jonathan and Colsey Simcoe" />
+    <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
     <link href="{$workspace}/css/dtrmn.1.0.1.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />

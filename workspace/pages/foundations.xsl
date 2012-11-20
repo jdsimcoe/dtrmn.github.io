@@ -29,9 +29,9 @@
                   <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 </div>
                 <hr class="soften" />
-                <img class="img-polaroid" src="{$root}/workspace{//data/page-data/entry/image/item/image/@path}/{//data/page-data/entry/image/item/image/filename}">
-                  <xsl:attribute name="alt">
-                    <xsl:value-of select="//data/page-data/entry/image/item/imag/caption" />
+                <img class="img-polaroid" style="width:1275px; height:500px" src="/workspace/img/spacer.gif">
+                  <xsl:attribute name="data-responsimage">
+                    <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
                   </xsl:attribute>
                 </img>
               </xsl:if>
@@ -106,9 +106,9 @@
 <xsl:template match="/data/studies-single/entry">
   <div class="entry">
     <xsl:if test="//data/page-data/entry/title != ''">
-      <img class="img-polaroid" src="{$root}/workspace{//data/page-data/entry/image/item/image/@path}/{//data/page-data/entry/image/item/image/filename}">
-        <xsl:attribute name="alt">
-          <xsl:value-of select="//data/page-data/entry/image/item/imag/caption" />
+      <img class="img-polaroid" style="width:100%;" src="/workspace/img/spacer.gif" alt="//data/page-data/entry/image/item/image/caption">
+        <xsl:attribute name="data-responsimage">
+          <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
         </xsl:attribute>
       </img>
     </xsl:if>

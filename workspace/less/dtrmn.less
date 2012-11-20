@@ -115,6 +115,16 @@
 
 @helvetica: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
+// RESPONSIMAGE
+// ============
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+
+  [data-responsimage] {
+    font-family: 'pixel-ratio-2';
+  }
+}
+
 // Bootstrap Overrides
 // ===================
 
@@ -737,3 +747,93 @@ body > .navbar .brand {
   }
 }
 
+// RESPONSIVE IMAGES
+// =================
+
+.span9 {
+
+  img {
+    width: 900px;
+    height: 353px;
+  }
+
+}
+
+.span12 {
+
+  img {
+    width: 1275px;
+    height: 500px;
+  }
+}
+
+// tablets and below
+
+@media (max-width: 979px)  {
+
+  .span9 {
+
+    img {
+      width: 720px !important;
+      height: 282px !important;
+    }
+
+  }
+
+  .span12 {
+
+    img {
+      width: 920px !important;
+      height: 361px !important;
+    }
+  }
+
+}
+
+// iPhone 5 landscape
+
+@media (max-width: 640px)  {
+
+  .span9,
+  .span12 {
+
+    img {
+      width: 620px !important;
+      height: 243px !important;
+    }
+
+  }
+
+}
+
+// iPhone Landscape
+
+@media (max-width: 480px)  {
+
+  .span9,
+  .span12 {
+
+    img {
+      width: 460px !important;
+      height: 180px !important;
+    }
+
+  }
+
+}
+
+// iPhone Portrait
+
+@media (max-width: 320px) {
+
+  .span9,
+  .span12 {
+
+    img {
+      width: 300px !important;
+      height: 118px !important;
+    }
+
+  }
+
+}
