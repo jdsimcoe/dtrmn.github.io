@@ -63,7 +63,7 @@
       </a>
     </h2>
     <xsl:if test="image != ''">
-      <img class="img-polaroid" style="width:900px; height:353px" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
@@ -92,7 +92,7 @@
     </h1>
     <hr class="soften" />
     <xsl:if test="image != ''">
-      <img class="img-polaroid" style="width:1275px; height:500px" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
