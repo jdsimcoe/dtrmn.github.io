@@ -39,7 +39,7 @@
 
     <link href="{$workspace}/css/dtrmn.1.0.1.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
   </head>
 
   <body>
