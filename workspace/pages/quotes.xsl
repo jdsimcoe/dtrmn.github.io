@@ -38,7 +38,7 @@
             <div class="span3">
               <h4>From the Blog</h4>
               <hr />
-              <xsl:apply-templates select="/data/articles-4-latest/entry"/>
+              <xsl:apply-templates select="/data/articles-4-latest/entry [ position() &lt; 3 ]"/>
             </div>
           </div>
           <hr class="soften" />
