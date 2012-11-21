@@ -2,27 +2,28 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourcestudies_upcoming extends SectionDatasource{
+	Class datasourceinspiration_random extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'studies-upcoming';
-		public $dsParamORDER = 'desc';
+		public $dsParamROOTELEMENT = 'inspiration-random';
+		public $dsParamORDER = 'random';
 		public $dsParamPAGINATERESULTS = 'yes';
 		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'date';
+		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
+		public $dsParamCACHE = '3600';
 		
 
 		public $dsParamFILTERS = array(
-				'35' => 'yes',
+				'31' => 'no',
 		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
-				'date'
+				'content: formatted',
+				'cite'
 		);
 		
 
@@ -33,18 +34,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Studies: Upcoming',
+				'name' => 'Inspiration: Random',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-21T16:14:47+00:00'
+				'release-date' => '2012-11-21T16:12:11+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '5';
+			return '7';
 		}
 
 		public function allowEditorToParse(){

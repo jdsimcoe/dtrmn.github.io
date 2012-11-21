@@ -125,6 +125,18 @@
   }
 }
 
+// Logo
+// ====
+
+.logo {
+  font-family: Determine;
+  text-transform: lowercase;
+  font-weight: normal;
+  position: relative;
+  top: 0;
+  margin-right: -3px;
+}
+
 // Bootstrap Overrides
 // ===================
 
@@ -157,16 +169,6 @@
 
 }
 
-
-.logo {
-  font-family: Determine;
-  text-transform: lowercase;
-  font-weight: normal;
-  position: relative;
-  top: 0;
-  margin-right: -3px;
-}
-
 // Glyphicon Tweaks
 
 .icon-large {
@@ -178,11 +180,11 @@
 }
 
 .icon-white {
-  color: #fff !important;
+  color: #fff;
 }
 
 .icon-black {
-  color: #000 !important;
+  color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,0.15);
 }
 
@@ -744,7 +746,91 @@ body > .navbar .brand {
 
   p {
     color: darken(@color-white, 30%);
+
+    .logo {
+
+      &.icon-black {
+        color: #292929;
+        text-shadow: none;
+      }
+    }
   }
+
+  h5 {
+    color: @color-accent;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .inspiration {
+    background-color: #333;
+    border: none;
+    .box-shadow(inset 0 0 10px #222);
+    border-top: 1px solid lighten(@color-black, 2%);
+    border-bottom: 1px solid lighten(@color-black, 10%);
+    .border-radius(5px);
+    padding: 20px;
+
+    blockquote {
+      font-size: 16px;
+      padding-left: 0;
+      border: none;
+      text-align: center;
+      font-weight: 300;
+      padding-bottom: 5px;
+    }
+
+    cite {
+      color: #111;
+      text-shadow: 0 1px 0 lighten(@color-black, 5%);
+      font-weight: bold;
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+
+      span {
+        padding-top: 10px;
+        border-top: 2px solid lighten(@color-black, 15%);
+      }
+    }
+  }
+
+  .nav {
+    border: none;
+
+    &.nav-list {
+      background-color: @color-black;
+      .box-shadow(none);
+
+      .nav-header {
+        text-shadow: 0 1px 0 lighten(@color-black, 10%);
+        color: #000;
+      }
+
+      li {
+        a {
+          font-weight: bold;
+          text-transform: uppercase;
+          border: none;
+          .border-radius(0);
+          margin: 5px 0;
+
+          .label {
+            background: @color-accent;
+            color: @color-black;
+            text-shadow: none;
+          }
+
+          &:hover {
+            color: @color-accent;
+            background-color: #222;
+          }
+        }
+      }
+    }
+
+  }
+
 }
 
 // RESPONSIVE IMAGES

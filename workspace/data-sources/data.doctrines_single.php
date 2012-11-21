@@ -26,7 +26,8 @@
 				'title',
 				'date',
 				'summary: formatted',
-				'content: formatted'
+				'content: formatted',
+				'verse: passage'
 		);
 		
 
@@ -43,7 +44,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-19T19:12:42+00:00'
+				'release-date' => '2012-11-21T17:00:35+00:00'
 			);
 		}
 

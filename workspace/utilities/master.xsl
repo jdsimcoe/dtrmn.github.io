@@ -124,19 +124,39 @@
 
     <footer class="footer">
       <div class="container">
-      <p class="center">
-        <xsl:text>&#xa9;&#160;</xsl:text>
-        <xsl:value-of select="$this-year" />
-        <xsl:text>.&#160;</xsl:text>
-        <xsl:text>The Simcoes. All rights reserved. | Built on </xsl:text>
-        <a class="symphony" href="http://getsymphony.com/">Symphony</a>
-        <xsl:text>&#160;|&#160;</xsl:text>
-        <a class="rss" href="{$root}/rss/">RSS</a>
-      </p>
-      <p class="center">
-        <br /><br />
-        <span class="logo icon-large icon-black">a</span>
-      </p>
+        <div class="row">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <xsl:apply-templates select="data/navigation/page"/>
+            </ul>
+          </div>
+          <div class="span9">
+            <h5>Inspiration</h5>
+            <div class="inspiration">
+              <blockquote>
+                <xsl:value-of select="//data/inspiration-random/entry/content" />
+              </blockquote>
+              <cite>
+                <span>
+                  <xsl:value-of select="//data/inspiration-random/entry/cite" />
+                </span>
+              </cite>
+            </div>
+          </div>
+        </div>
+        <p class="center">
+          <xsl:text>&#xa9;&#160;</xsl:text>
+          <xsl:value-of select="$this-year" />
+          <xsl:text>.&#160;</xsl:text>
+          <xsl:text>The Simcoes. All rights reserved. | Built on </xsl:text>
+          <a class="symphony" href="http://getsymphony.com/">Symphony</a>
+          <xsl:text>&#160;|&#160;</xsl:text>
+          <a class="rss" href="{$root}/rss/">RSS</a>
+        </p>
+        <p class="center">
+          <br /><br />
+          <span class="logo icon-large icon-black">a</span>
+        </p>
       </div>
     </footer>
 
