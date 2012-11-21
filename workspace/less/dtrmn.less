@@ -745,14 +745,19 @@ body > .navbar .brand {
   color: darken(@color-white, 30%);
 
   p {
-    color: darken(@color-white, 30%);
+    color: darken(@color-black, 10%);
+    text-shadow: 0 1px 0 lighten(@color-black, 5%);
 
     .logo {
 
       &.icon-black {
-        color: #292929;
-        text-shadow: none;
+        color: #202020;
+        text-shadow: 0 1px 0 lighten(@color-black, 7%), 0 -1px 0 darken(@color-black, 10%);
       }
+    }
+
+    a {
+      text-shadow: none;
     }
   }
 
@@ -829,6 +834,17 @@ body > .navbar .brand {
       }
     }
 
+  }
+
+  hr {
+    height: 1px;
+    background: #222;
+    border: none;
+    border-bottom: 1px solid lighten(@color-black, 5%);
+    margin-bottom: 40px;
+    -webkit-mask-box-image:
+      -webkit-linear-gradient(
+          left,transparent, transparent 5%, white 30%, white 70%, transparent 95%);
   }
 
 }

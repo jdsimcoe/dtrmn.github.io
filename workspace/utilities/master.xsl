@@ -144,13 +144,12 @@
             </div>
           </div>
         </div>
+        <hr />
         <p class="center">
-          <xsl:text>&#xa9;&#160;</xsl:text>
+          <xsl:text>&#xa9;&#160;2011–</xsl:text>
           <xsl:value-of select="$this-year" />
           <xsl:text>.&#160;</xsl:text>
-          <xsl:text>The Simcoes. All rights reserved. | Built on </xsl:text>
-          <a class="symphony" href="http://getsymphony.com/">Symphony</a>
-          <xsl:text>&#160;|&#160;</xsl:text>
+          <xsl:text>The Simcoes. All rights reserved.&#160;|&#160;</xsl:text>
           <a class="rss" href="{$root}/rss/">RSS</a>
         </p>
         <p class="center">
