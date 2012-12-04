@@ -29,30 +29,6 @@
 
           <div class="row">
             <xsl:apply-templates select="/data/doctrines-all/entry"/>
-            <div class="span4 doctrine">
-              <a href="">
-                <h3>Coming Soon...</h3>
-                <div class="summary"> </div>
-              </a>
-            </div>
-            <div class="span4 doctrine">
-              <a href="">
-                <h3>Coming Soon...</h3>
-                <div class="summary"> </div>
-              </a>
-            </div>
-            <div class="span4 doctrine">
-              <a href="">
-                <h3>Coming Soon...</h3>
-                <div class="summary"> </div>
-              </a>
-            </div>
-            <div class="span4 doctrine">
-              <a href="">
-                <h3>Coming Soon...</h3>
-                <div class="summary"> </div>
-              </a>
-            </div>
           </div>
         </xsl:when>
         <xsl:otherwise>

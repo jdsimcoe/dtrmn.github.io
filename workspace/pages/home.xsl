@@ -46,12 +46,6 @@
         <p class="marketing-byline">The Bible is God's revelation to mankind and points us to the redemptive work accomplished in Christ for us. Learning doctrine deepens us in truth, and enables us to see Jesus for who He is and transforms our lives.</p>
         <div class="row">
           <xsl:apply-templates select="/data/doctrines-3-latest/entry"/>
-          <div class="span4 doctrine">
-            <a href="">
-              <h3>Coming Soon...</h3>
-              <div class="summary"> </div>
-            </a>
-          </div>
         </div>
       </div>
     </div>
