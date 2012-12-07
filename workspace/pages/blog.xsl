@@ -25,10 +25,10 @@
           </div>
           <hr class="soften" />
           <div class="row">
-            <div class="span9">
+            <div class="span8">
               <xsl:apply-templates select="/data/articles-all/entry"/>
             </div>
-            <div class="span3">
+            <div class="span4">
               <h4>Latest Quotes</h4>
               <hr />
               <xsl:apply-templates select="/data/quotes-4-latest/entry"/>
@@ -37,7 +37,7 @@
         </xsl:when>
         <xsl:otherwise>
           <div class="row">
-            <div class="span12">
+            <div class="span8 offset2">
               <xsl:apply-templates select="/data/articles-single/entry"/>
             </div>
           </div>
