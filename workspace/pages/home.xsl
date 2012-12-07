@@ -16,22 +16,39 @@
     <div class="marketing">
 
       <h1>What is Determine?</h1>
-      <p class="marketing-byline">Like Paul declared above, our goal is to make the Gospel of Jesus Christ known, treasured and embraced by in every facet of life. We are striving to do this in the following ways:</p>
-      <div class="row">
+      <p class="marketing-byline">Like Paul declared above, our goal is to make the Gospel of Jesus Christ known, treasured and embraced in every facet of life. We are striving to do this in the following ways:</p>
+      <div class="row grid first">
+        <div class="span4">
+          <span class="logo icon-large">a</span>
+          <h2>The Gospel</h2>
+          <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives. We, like Paul declared in 1 Corinthians 2:2, want to make everything we do in life about Jesus Christ.</p>
+        </div>
         <div class="span4">
           <i class="glyphicon-book icon-large"></i>
           <h2>Surveys of Bible doctrine</h2>
           <p>In addition to the regular articles and notes, we wanted to offer something different for visitors in the form of short surveys of <a href="{$root}/doctrine">Biblical doctrine</a>. These pieces will highlight a theological subject for more rigorous study and application.</p>
         </div>
         <div class="span4">
-          <i class="glyphicon-comment icon-large"></i>
-          <h2>Gospel-centered content</h2>
-          <p>Our <a href="{$root}/blog">blog articles</a> are longer pieces centered on the Gospel to help you deepen your relationship with Christ. <a href="{$root}/quotes">Quotes</a> are usually short sound-bites from Gospel-centered preachers and scholars with short bits of commentary.</p>
-        </div>
-        <div class="span4">
-          <i class="glyphicon-road icon-large"></i>
+          <span class="logo icon-large">b</span>
           <h2>Studies to dive deeper</h2>
           <p>Another way to get encouraged is to follow along with the <a href="{$root}/foundations">Foundations</a> curriculum we are developing. We are doing this study at our <a href="http://atheycreek.com/">local church</a> and offering the discussion questions and summaries free of charge for visitors.</p>
+        </div>
+      </div>
+      <div class="row grid second">
+        <div class="span4">
+          <i class="glyphicon-list-alt icon-large"></i>
+          <h2>Gospel-centered articles</h2>
+          <p>Our <a href="{$root}/blog">blog articles</a> are longer pieces centered on the Gospel to help you deepen your relationship with Christ and your love of the Scriptures.</p>
+        </div>
+        <div class="span4">
+          <i class="glyphicon-comment icon-large"></i>
+          <h2>Helpful quotes</h2>
+          <p><a href="{$root}/quotes">Quotes</a> are usually short sound-bites from Gospel-centered preachers and scholars with short bits of commentary and reflection.</p>
+        </div>
+        <div class="span4">
+          <i class="glyphicon-bookmark icon-large"></i>
+          <h2>Book reviews <span class="label">Coming Soon</span></h2>
+          <p>Soon we will have reviews of relevant Christian books that we have found helpful in pursuing Christ and growing in our love for Him.</p>
         </div>
       </div>
 
@@ -40,13 +57,9 @@
 
   <div class="stripe first">
     <div class="container">
-      <div class="marketing">
-        <i class="glyphicon-book icon-large"></i>
-        <h2>Study Biblical Doctrine</h2>
-        <p class="marketing-byline">The Bible is God's revelation to mankind and points us to the redemptive work accomplished in Christ for us. Learning doctrine deepens us in truth, and enables us to see Jesus for who He is and transforms our lives.</p>
-        <div class="row">
-          <xsl:apply-templates select="/data/doctrines-3-latest/entry"/>
-        </div>
+      <h3>Bible Doctrines</h3>
+      <div class="row">
+        <xsl:apply-templates select="/data/doctrines-3-latest/entry"/>
       </div>
     </div>
   </div>

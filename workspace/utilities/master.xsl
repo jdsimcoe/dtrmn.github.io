@@ -117,12 +117,6 @@
               </xsl:for-each>
             </div>
           </div>
-          <hr class="soften" />
-          <p class="link-bar">
-            <a href="{$root}/about/" class="btn btn-primary btn-large">The Gospel</a>
-            <a href="{$root}/doctrine/" class="btn btn-primary btn-large">Explore Doctrine</a>
-            <a href="{$root}/blog/" class="btn btn-primary btn-large">Read the Blog</a>
-          </p>
         </div>
       </xsl:if>
     </div>

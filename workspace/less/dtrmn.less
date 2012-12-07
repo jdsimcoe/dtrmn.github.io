@@ -188,6 +188,17 @@
   text-shadow: 0 1px 0 rgba(255,255,255,0.15);
 }
 
+.logo {
+
+  &.icon-large {
+    display: block;
+    text-align: center;
+    font-size: 75px;
+    padding: 25px 0;
+  }
+
+}
+
 // General Tweaks
 
 hr.soften {
@@ -215,12 +226,15 @@ a {
 .stripe {
   left: 0;
   width: 100%;
-  padding: 30px 0 50px 0;
+  padding: 30px 0;
 
   &.first {
     background: lighten(@color-gray-light, 5%);
     border-top: 1px solid @color-gray-light;
-    // border-bottom: 1px solid @color-gray-light;
+
+    .row {
+      padding-top: 20px;
+    }
   }
 
   &.second {
@@ -233,6 +247,13 @@ a {
     border-top: 1px solid darken(@color-gray-light, 10%);
   }
 
+}
+
+.grid {
+
+  &.first {
+    margin-bottom: 40px;
+  }
 }
 
 .center {
@@ -962,6 +983,20 @@ body > .navbar .brand {
     top: 0px;
   }
 
+}
+
+// TABLET PORTRAIT & BELOW
+
+@media (max-width: 767px) {
+
+  .stripe {
+
+    &.first,
+    &.second,
+    &.third {
+      background: @color-white;
+    }
+  }
 }
 
 // iPHONE 5
