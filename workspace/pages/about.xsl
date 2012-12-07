@@ -16,9 +16,7 @@
   <div class="wrapper-about">
     <div class="container">
       <div class="marketing">
-        <br />
         <span class="logo icon-large">a</span>
-        <br />
         <h2>About Determine</h2>
         <p class="marketing-byline">Determine was started with the intent and purpose to share the Gospel of Jesus Christ with a dying world and to encourage Christians to live every day in light of what Christ did for us.</p>
         <hr class="soften" />
@@ -32,11 +30,11 @@
             <h2>God's Holiness</h2>
             <p>The Scripture teaches us that God is infintely holy and worthy of all glory, honor and praise (Revelation 4:11). We as human beings, made in His image, have failed to give Him the glory that is due His name (Romans 1:27).</p>
             <h2>Man's Sin</h2>
-            <p>This reality that we are horribly wicked and have fallen short of God’s glory (Romans 3:23) means that we are are deserving of eternal death (Romans 6:23). The Bible teaches that we were born into sin and we have also chosen to willfully rebel against God and His rule of our life. This has made us enemies with God and has earned His just and righteous punishment of eternal separation from Hi.</p>
+            <p>This reality that we are horribly wicked and have fallen short of God’s glory (Romans 3:23) means that we are are deserving of eternal death (Romans 6:23). The Bible teaches that we were born into sin and we have also chosen to willfully rebel against God and His rule of our life. This has made us enemies with God and has earned His just and righteous punishment of eternal separation from Him.</p>
             <h2>Christ's Atonement</h2>
-            <p>The more brilliant reality of the Gospel is that God clothed Himself in human flesh in the Person of Jesus Christ (John 1:14) and absorbed the wrath of God, atoning for and removing our sin.</p>
+            <p>The more brilliant reality of the Gospel is that God clothed Himself in human flesh in the Person of Jesus Christ (John 1:14) and absorbed the wrath of God, atoning for and removing our sin through His death on the Cross. Because of His resurrection to eternal life, Christ offers this eternal life to all freely (John 17:3).</p>
             <h2>Our Response</h2>
-            <p>The way we respond to Christ's work is a moment in time where God opens our heart (Acts 16:14) enabling us to see the beauty of Jesus. We act on this work in the heart by trusting Jesus for salvation and repenting from our sin.</p>
+            <p>The way we respond to Christ's work is a moment in time where God opens our heart (Acts 16:14) enabling us to see the beauty of Jesus. We act on this work in the heart by trusting Jesus for salvation and repenting from our sin (Acts 2:38; Ephesians 2:8-9).</p>
             <hr class="soften" />
           </div>
         </div>

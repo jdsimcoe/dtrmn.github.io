@@ -22,9 +22,7 @@
             <div class="span12">
               <xsl:if test="//data/page-data/entry/title != ''">
                 <div class="marketing">
-                  <br />
                   <span class="logo icon-large">b</span>
-                  <br />
                   <h2>Foundations Study</h2>
                   <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 </div>
