@@ -57,28 +57,15 @@
 
 
 <xsl:template match="/data/quotes-all/entry">
-  <div class="span3 quote">
-    <a href="{$root}/{$root-page}/{title/@handle}" class="blog-entry">
+<div class="span3 quote">
+    <a href="{$root}/quotes/{title/@handle}" class="quote-entry">
       <blockquote>
-        <div class="block">
-          <div>
-            <xsl:attribute name="class">
-              <xsl:choose>
-                <xsl:when test="position() = 1">
-                  <xsl:text>label accent</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>label</xsl:text>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
+        <xsl:if test="position() = 1">
+          <xsl:attribute name="class">
+          <xsl:text>latest</xsl:text>
+          </xsl:attribute>
+        </xsl:if>
 
-            <xsl:call-template name="format-date">
-              <xsl:with-param name="date" select="date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-            </xsl:call-template>
-          </div>
-        </div>
         <h4>
           <xsl:value-of select="title" />
         </h4>
@@ -87,7 +74,7 @@
           <xsl:value-of select="cite" />
         </p>
         <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="quote" disable-output-escaping="yes" />
+          <xsl:with-param name="node" select="quote" />
           <xsl:with-param name="length" select="100" />
         </xsl:call-template>
       </blockquote>

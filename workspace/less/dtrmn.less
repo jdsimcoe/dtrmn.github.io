@@ -318,7 +318,7 @@ body > .navbar .brand {
 
         a {
           background: darken(@color-accent, 20%);
-
+          border-left: 1px solid darken(@color-accent, 20%);
           &:hover {
             background: darken(@color-accent, 30%);
           }
@@ -366,6 +366,7 @@ body > .navbar .brand {
         li {
           a {
             color: @color-accent;
+            border: none;
 
             &:hover {
               background: @color-accent;
@@ -438,6 +439,11 @@ body > .navbar .brand {
   &.subhead {
     background: darken(@color-accent, 2%);
     .box-shadow(none);
+    padding: 60px 0;
+
+    .lead{
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -505,13 +511,49 @@ body > .navbar .brand {
 
 .blog-entry {
   position: relative;
+  display: block;
+  background: @color-white;
+  .box-shadow(0 0 6px rgba(0,0,0,0.05));
+  min-height: 240px;
+  margin-bottom: 40px;
 
-  h4 {
-    color: #777;
+  .entry-header {
+    background: lighten(@color-black, 25%) url(../img/noise.png) repeat;
+    border-bottom: 1px solid lighten(@color-black, 10%);
+
+      h4 {
+        color: @color-white;
+        padding: 5px 15px 0 15px;
+        margin: 0;
+        text-shadow: 0 1px 0 lighten(@color-black, 10%);
+      }
+
+    &.latest {
+      background: @color-accent url(../img/noise.png) repeat;
+      border-bottom: 1px solid darken(@color-accent, 20%);
+
+      h4 {
+        text-shadow: 0 1px 0 darken(@color-accent, 20%);
+      }
+    }
+
+
   }
 
   p {
     color: #999;
+    padding: 0 15px;
+    margin: 0;
+  }
+
+  .content {
+    font-weight: 300;
+    padding: 10px 15px;
+  }
+
+  .blog-date {
+    color: darken(@color-white, 15%);
+    padding-bottom: 5px;
   }
 
   blockquote {
@@ -535,6 +577,67 @@ body > .navbar .brand {
 
     &:hover {
       border-left: 4px solid @color-accent;
+    }
+  }
+
+  &:hover {
+
+    .content {
+      color: @color-accent;
+    }
+
+    .entry-header {
+      background: lighten(@color-black, 15%) url(../img/noise.png) repeat;
+
+      &.latest {
+        background: darken(@color-accent, 10%) url(../img/noise.png) repeat;
+      }
+    }
+  }
+}
+
+.quote-entry {
+  position: relative;
+
+  h4 {
+    color: #777;
+  }
+
+  p {
+    color: #999;
+  }
+
+  blockquote {
+    background: #fff;
+    color: #a0a0a0;
+    border-left: 4px solid #a0a0a0;
+    padding: 10px;
+    margin-top: 15px;
+    .box-shadow(0 0 6px rgba(0,0,0,0.05));
+
+    &.latest {
+      border-left-color: @color-accent;
+
+      &:hover {
+        border-left: 4px solid darken(@color-accent, 10%);
+      }
+    }
+
+    h4 {
+      margin: 0;
+    }
+    p {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .block {
+      padding-bottom: 10px;
+    }
+
+    &:hover {
+      border-left: 4px solid darken(#a0a0a0, 10%);
     }
   }
 

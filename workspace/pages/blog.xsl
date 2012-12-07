@@ -104,37 +104,31 @@
   </div>
   <hr class="soften" />
   <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
-            <xsl:text>&#8592; Back to </xsl:text>
-            <strong>
-              <xsl:value-of select="$page-title" />
-            </strong>
-          </a>
+    <xsl:text>&#8592; Back to </xsl:text>
+    <strong>
+      <xsl:value-of select="$page-title" />
+    </strong>
+  </a>
 </xsl:template>
 
 
 <xsl:template match="/data/quotes-4-latest/entry">
   <div class="quote">
-    <a href="{$root}/quotes/{title/@handle}" class="blog-entry">
+    <a href="{$root}/quotes/{title/@handle}" class="quote-entry">
       <blockquote>
-        <div class="block">
-          <div>
-            <xsl:attribute name="class">
-              <xsl:choose>
-                <xsl:when test="position() = 1">
-                  <xsl:text>label accent</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>label</xsl:text>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
+        <xsl:if test="position() = 1">
+          <xsl:attribute name="class">
+          <xsl:text>latest</xsl:text>
+          </xsl:attribute>
+        </xsl:if>
 
-            <xsl:call-template name="format-date">
-              <xsl:with-param name="date" select="date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-            </xsl:call-template>
-          </div>
-        </div>
+        <h4>
+          <xsl:value-of select="title" />
+        </h4>
+        <p>
+          <xsl:text>by </xsl:text>
+          <xsl:value-of select="cite" />
+        </p>
         <xsl:call-template name="truncate">
           <xsl:with-param name="node" select="quote" />
           <xsl:with-param name="length" select="100" />
