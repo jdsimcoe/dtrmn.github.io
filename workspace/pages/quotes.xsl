@@ -108,28 +108,30 @@
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="position() = 1">
-            <xsl:text>label accent</xsl:text>
+            <xsl:text>entry-header latest</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:text>label</xsl:text>
+            <xsl:text>entry-header</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:attribute>
-      <xsl:call-template name="format-date">
-        <xsl:with-param name="date" select="date/date/start/@iso" />
-        <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-      </xsl:call-template>
+      <h4>
+        <xsl:call-template name="truncate">
+          <xsl:with-param name="node" select="title" />
+          <xsl:with-param name="length" select="25" />
+        </xsl:call-template>
+      </h4>
+      <p class="blog-date">
+        <xsl:call-template name="format-date">
+          <xsl:with-param name="date" select="date/date/start/@iso" />
+          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+        </xsl:call-template>
+      </p>
     </div>
-    <h4>
-      <xsl:call-template name="truncate">
-        <xsl:with-param name="node" select="title" />
-        <xsl:with-param name="length" select="25" />
-      </xsl:call-template>
-    </h4>
-    <p>
+    <p class="content">
       <xsl:call-template name="truncate">
           <xsl:with-param name="node" select="content" />
-          <xsl:with-param name="length" select="290" />
+          <xsl:with-param name="length" select="260" />
       </xsl:call-template>
     </p>
   </a>
