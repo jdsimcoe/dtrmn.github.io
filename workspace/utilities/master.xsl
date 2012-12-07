@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:output method="xml"
     doctype-public="-W3CDTD XHTML 1.0 Strict//EN"
@@ -30,14 +30,13 @@
         </title>
       </xsl:otherwise>
     </xsl:choose>
-    <title>Determine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Gospel-centered writing, articles, doctrine and studies to build up the body of Jesus Christ." />
     <meta name="keywords" content="Gospel, Jesus Christ, Jesus, Scripture, Gospel-centered" />
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.2.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.0.3.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -56,48 +55,48 @@
 
   <body>
     <xsl:apply-templates select="data/navigation"/>
-    <div class="jumbotron masthead">
+    <div>
       <xsl:if test="$page-title != 'Home'">
+        <xsl:attribute name="class">
+          <xsl:text>jumbotron subhead</xsl:text>
+        </xsl:attribute>
         <div class="page-headers">
           <div class="container">
-            <div class="row">
-              <div class="span4">
-                <a>
-                  <xsl:attribute name="href">
-                    <xsl:choose>
-                      <xsl:when test="$root-page = 'error'">
-                        <xsl:value-of select="$root" />
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:value-of select="$root" />
-                        <xsl:text>/</xsl:text>
-                        <xsl:value-of select="$root-page" />
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </xsl:attribute>
-                  <h1>
-                    <xsl:choose>
-                      <xsl:when test="$root-page = 'foundations'">
-                        <span class="logo">b&#160;&#160;</span>
-                        <xsl:value-of select="//data/page-data/entry/title" />
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:value-of select="//data/page-data/entry/title" />
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </h1>
-                </a>
-              </div>
-              <div class="span8">
-                <p>
-                  <xsl:value-of select="//data/page-data/entry/description" />
-                </p>
-              </div>
-            </div>
+            <h1>
+              <a>
+                <xsl:attribute name="href">
+                  <xsl:choose>
+                    <xsl:when test="$root-page = 'error'">
+                      <xsl:value-of select="$root" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$root" />
+                      <xsl:text>/</xsl:text>
+                      <xsl:value-of select="$root-page" />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:attribute>
+              <xsl:choose>
+                <xsl:when test="$root-page = 'foundations'">
+                  <span class="logo">b&#160;&#160;</span>
+                  <xsl:value-of select="//data/page-data/entry/title" />
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="//data/page-data/entry/title" />
+                </xsl:otherwise>
+              </xsl:choose>
+              </a>
+            </h1>
+            <p class="lead">
+              <xsl:value-of select="//data/page-data/entry/description" />
+            </p>
           </div>
         </div>
       </xsl:if>
       <xsl:if test="$page-title = 'Home'">
+        <xsl:attribute name="class">
+          <xsl:text>jumbotron masthead</xsl:text>
+        </xsl:attribute>
         <div class="container">
           <div id="featureCarousel" class="carousel slide">
             <!-- Carousel items -->
@@ -178,7 +177,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.2.js"
+            "/workspace/js/dtrmn.1.0.3.js"
           ]
         };
         for (var key in js.scripts) {
@@ -213,8 +212,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand pull-left hidden-desktop" href="/"><span class="logo">a</span> Determine</a>
-
+      <a class="brand pull-left" href="/"><span class="logo">a</span>etermine</a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <xsl:apply-templates select="page"/>
@@ -229,9 +227,6 @@
             </li>
           </xsl:if>
         </ul>
-        <div class="container">
-          <a class="title hidden-phone hidden-tablet" href="/"><span class="logo">a</span>etermine</a>
-        </div>
       </div>
     </div>
   </div>

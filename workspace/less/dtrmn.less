@@ -248,6 +248,11 @@ a {
 }
 
 body > .navbar .brand {
+  position: relative;
+  top: 7px;
+  float: left;
+  margin-left: 0;
+  font-size: 32px;
   color: darken(@color-accent, 30%);
   text-shadow: 0 1px 0 rgba(255,255,255,0.25);
 }
@@ -408,26 +413,30 @@ body > .navbar .brand {
     }
 
   }
+
+  &.subhead {
+    background: darken(@color-accent, 2%);
+    .box-shadow(none);
+  }
 }
 
 .page-headers {
-  padding-bottom: 60px;
-  a {
-    h1 {
+
+  h1 {
+
+    a {
       color: #fff;
       text-align: left;
       font-size: 58px;
-      letter-spacing: 0;
       text-shadow: 0 1px 2px darken(@color-accent, 15%);
-    }
 
-    &:hover {
-      h1 {
+      &:hover {
         color: darken(@color-accent, 15%);
         text-shadow: 0 1px 0 lighten(@color-accent, 5%), 0 -1px 0 darken(@color-accent, 10%);
       }
     }
   }
+
 }
 
 .marketing {
@@ -651,14 +660,14 @@ body > .navbar .brand {
 // ========
 
 .wrapper-doctrine {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 // BLOG
 // ====
 
 .wrapper-blog {
-  margin-top: 60px;
+  margin-top: 30px;
 
   .entry {
 
@@ -678,7 +687,7 @@ body > .navbar .brand {
 // ======
 
 .wrapper-quotes {
-  margin-top: 60px;
+  margin-top: 30px;
 
   .container {
     position: relative;
@@ -716,7 +725,7 @@ body > .navbar .brand {
 // =======
 
 .wrapper-studies {
-  margin-top: 60px;
+  margin-top: 30px;
 
   .entry {
 
@@ -733,7 +742,7 @@ body > .navbar .brand {
 // =====
 
 .wrapper-about {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 
@@ -940,3 +949,33 @@ body > .navbar .brand {
   }
 
 }
+
+// RESPONSIVE DESIGN
+// =================
+
+// TABLETS & BELOW
+
+@media (max-width: 979px) {
+
+  body > .navbar .brand {
+    position: relative;
+    top: 0px;
+  }
+
+}
+
+// iPHONE 5
+
+@media (max-width: 568px) {
+
+  .marketing {
+
+    .marketing-byline {
+      font-size: 16px;
+      padding: 0;
+    }
+
+  }
+
+}
+
