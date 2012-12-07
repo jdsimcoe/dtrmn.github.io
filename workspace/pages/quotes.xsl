@@ -135,7 +135,6 @@
       </xsl:call-template>
     </p>
   </a>
-  <br />
 </xsl:template>
 
 
