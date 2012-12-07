@@ -21,17 +21,17 @@
         <div class="span4">
           <span class="logo icon-large">a</span>
           <h2>The Gospel</h2>
-          <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives. We, like Paul declared in 1 Corinthians 2:2, want to make everything we do in life about Jesus Christ.</p>
+          <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives.</p>
         </div>
         <div class="span4">
           <i class="glyphicon-book icon-large"></i>
           <h2>Surveys of Bible doctrine</h2>
-          <p>In addition to the regular articles and notes, we wanted to offer something different for visitors in the form of short surveys of <a href="{$root}/doctrine">Biblical doctrine</a>. These pieces will highlight a theological subject for more rigorous study and application.</p>
+          <p>We are working on a library of short surveys of <a href="{$root}/doctrine">Biblical doctrine</a>. These pieces highlight theological subjects for further study.</p>
         </div>
         <div class="span4">
           <span class="logo icon-large">b</span>
           <h2>Studies to dive deeper</h2>
-          <p>Another way to get encouraged is to follow along with the <a href="{$root}/foundations">Foundations</a> curriculum we are developing. We are doing this study at our <a href="http://atheycreek.com/">local church</a> and offering the discussion questions and summaries free of charge for visitors.</p>
+          <p>Follow along with the <a href="{$root}/foundations">Foundations</a> curriculum we are developing as a group study at our <a href="http://atheycreek.com/">local church</a>. Access dicsussion questions free of charge.</p>
         </div>
       </div>
       <div class="row grid second">
