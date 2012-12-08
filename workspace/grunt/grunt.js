@@ -48,8 +48,6 @@ module.exports = function (grunt) {
           '../bootstrap/docs/assets/js/jquery.js',
           '../bootstrap/docs/assets/js/bootstrap.min.js',
           '../js/responsimage.js',
-          '../js/paintbrush-common.js',
-          '../js/paintbrush.js',
           '../js/reftagger.js',
           '<config:lint.all>'],
         dest: '../js/dtrmn.1.0.3.js',
