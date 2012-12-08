@@ -13,7 +13,7 @@
     <xsl:variable name="entries">
       <xsl:for-each select="/data/articles-all/entry">
         <entry>
-          <date>
+          <date timestamp="{date}">
             <xsl:call-template name="format-date">
               <xsl:with-param name="date" select="date/date/start/@iso" />
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
@@ -35,7 +35,7 @@
 
       <xsl:for-each select="/data/doctrines-all/entry">
         <entry>
-          <date>
+          <date timestamp="{date}">
             <xsl:call-template name="format-date">
               <xsl:with-param name="date" select="date/date/start/@iso" />
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
@@ -59,7 +59,7 @@
 
       <xsl:for-each select="/data/quotes-all/entry">
         <entry>
-          <date>
+          <date timestamp="{date}">
             <xsl:call-template name="format-date">
               <xsl:with-param name="date" select="date/date/start/@iso" />
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
@@ -83,7 +83,7 @@
     </xsl:variable>
 
   <xsl:for-each select="exsl:node-set($entries)/entry">
-    <xsl:sort select="date" date-type="iso" order="descending" />
+    <xsl:sort select="date/@timestamp" date-type="number" order="descending" />
     <xsl:copy-of select="." />
   </xsl:for-each>
 
