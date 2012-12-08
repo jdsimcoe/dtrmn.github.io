@@ -83,7 +83,7 @@
     </xsl:variable>
 
   <xsl:for-each select="exsl:node-set($entries)/entry">
-    <xsl:sort select="date" date-type="number" order="descending" />
+    <xsl:sort select="date" date-type="iso" order="descending" />
     <xsl:copy-of select="." />
   </xsl:for-each>
 
