@@ -13,7 +13,7 @@
 <xsl:template match="data">
 
   <div class="container">
-    <div class="marketing">
+    <div class="marketing main">
 
       <h1>What is Determine?</h1>
       <p class="marketing-byline">Like Paul declared above, our goal is to make the Gospel of Jesus Christ known, treasured and embraced in every facet of life. We are striving to do this in the following ways:</p>

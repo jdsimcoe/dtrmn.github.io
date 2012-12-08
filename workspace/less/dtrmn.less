@@ -384,8 +384,6 @@ body > .navbar .brand {
 
 .jumbotron {
 
-
-
   &.masthead {
     padding: 80px 0 0 0;
     background: darken(@color-accent, 2%);
@@ -473,6 +471,19 @@ body > .navbar .brand {
     padding: 20px 100px;
     line-height: 1.5;
   }
+
+  &.main {
+
+    h2 {
+
+      .label {
+        text-transform: uppercase;
+        position: relative;
+        top: -3px;
+        padding: 5px;
+      }
+    }
+  }
 }
 
 @month-height: 16px;
@@ -517,7 +528,7 @@ body > .navbar .brand {
   margin-bottom: 40px;
 
   .entry-header {
-    background: lighten(@color-black, 25%) url(../img/noise.png) repeat;
+    background: lighten(@color-black, 25%);
     border: 1px solid lighten(@color-black, 25%);
 
       h4 {
@@ -528,7 +539,7 @@ body > .navbar .brand {
       }
 
     &.latest {
-      background: @color-accent url(../img/noise.png) repeat;
+      background: @color-accent;
       border: 1px solid @color-accent;
 
       h4 {
@@ -547,10 +558,10 @@ body > .navbar .brand {
 
   .content {
     font-weight: 300;
-    padding: 10px 15px;
+    padding: 15px;
     border: 1px solid darken(@color-white, 10%);
     border-top: none;
-    min-height: 180px;
+    min-height: 160px;
   }
 
   .blog-date {
@@ -589,10 +600,10 @@ body > .navbar .brand {
     }
 
     .entry-header {
-      background: lighten(@color-black, 15%) url(../img/noise.png) repeat;
+      background: lighten(@color-black, 15%);
 
       &.latest {
-        background: darken(@color-accent, 10%) url(../img/noise.png) repeat;
+        background: darken(@color-accent, 10%);
       }
     }
   }
@@ -739,6 +750,7 @@ body > .navbar .brand {
     h1 {
       font-size: 72px;
       text-align: center;
+      font-weight: 300;
       margin: 20px 0 80px 0;
       color: #bbb;
 
@@ -790,9 +802,6 @@ body > .navbar .brand {
   }
 }
 
-// DOCTRINE
-// ========
-
 .wrapper-doctrine {
   margin-top: 30px;
 }
@@ -812,6 +821,75 @@ body > .navbar .brand {
 
     img {
       margin: 20px 0;
+    }
+
+    &.list {
+      position: relative;
+      display: block;
+      background: @color-white;
+      .box-shadow(0 0 6px rgba(0,0,0,0.05));
+      margin-bottom: 40px;
+
+      &:hover {
+        .entry-header {
+          background: lighten(@color-black, 15%);
+          border: 1px solid lighten(@color-black, 15%);
+          border-bottom: 1px solid lighten(@color-black, 15%);
+        }
+
+        .content, p, blockquote {
+          color: @color-accent;
+        }
+      }
+
+      .entry-header {
+        background: lighten(@color-black, 25%);
+        border: 1px solid lighten(@color-black, 15%);
+        border-bottom: 1px solid lighten(@color-black, 25%);
+
+        h2 {
+          font-size: 24px;
+          color: @color-white;
+          padding: 5px 15px 0 15px;
+          margin: 0;
+          text-shadow: 0 1px 0 lighten(@color-black, 10%);
+        }
+
+        h4 {
+          font-size: 18px;
+          color: #999;
+          font-weight: normal;
+          padding: 0 15px;
+          margin: 0 0 5px 0;
+          color: darken(@color-white, 15%);
+          padding-bottom: 5px;
+        }
+
+      }
+
+      p {
+        color: #999;
+        padding: 0 15px;
+        margin: 10px 0;
+      }
+
+      blockquote {
+        padding: 0 15px;
+        margin: 15px;
+      }
+
+      .content {
+        font-weight: 300;
+        padding: 10px 15px;
+        border: 1px solid darken(@color-white, 10%);
+        border-top: none;
+        min-height: 180px;
+      }
+
+      img {
+        border-top: 1px solid lighten(@color-black, 15%);
+        margin: 0;
+      }
     }
 
   }

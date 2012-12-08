@@ -104,7 +104,7 @@
               <div class="active item">
                 <p class="vision">For I determined to know nothing among you except Jesus Christ, and <br/>Him crucified.</p>
                 <br/>
-                <cite>1 Cor. 2:2</cite>
+                <cite>1 Corinthians 2:2</cite>
               </div>
               <xsl:for-each select="//data/inspiration-all/entry">
                 <div class="item">
