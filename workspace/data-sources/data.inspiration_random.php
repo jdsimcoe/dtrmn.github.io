@@ -12,7 +12,7 @@
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '3600';
+		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
@@ -37,10 +37,10 @@
 				'name' => 'Inspiration: Random',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtrmn',
+					'website' => 'http://dtr.mn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-21T16:12:11+00:00'
+				'release-date' => '2012-12-08T17:19:48+00:00'
 			);
 		}
 
