@@ -74,7 +74,7 @@
           <xsl:with-param name="node" select="content" />
           <xsl:with-param name="length" select="500" />
         </xsl:call-template>
-        <p class="right">Read Article <strong>&#8594;</strong></p>
+        <p class="right">Read <strong>Full Article </strong> <strong>&#8594;</strong></p>
       </div>
     </a>
   </div>
