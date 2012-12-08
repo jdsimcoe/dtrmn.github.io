@@ -275,7 +275,11 @@ body > .navbar .brand {
   margin-left: 0;
   font-size: 32px;
   color: darken(@color-accent, 30%);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  text-shadow: 0 1px 0 lighten(@color-accent, 10%);
+
+  &:hover {
+    text-shadow: 0 -1px 0 darken(@color-accent, 25%);
+  }
 }
 
 .navbar {
@@ -385,14 +389,14 @@ body > .navbar .brand {
 .jumbotron {
 
   &.masthead {
-    padding: 80px 0 0 0;
+    padding: 59px 0 8px 0;
     background: darken(@color-accent, 2%);
     .box-shadow(none);
     border-bottom: 2px solid darken(@color-accent, 4%);
 
     p {
       margin-bottom: 0;
-      padding: 0 30px;
+      padding: 0 60px;
 
       &.vision {
         font-size: 32px;
