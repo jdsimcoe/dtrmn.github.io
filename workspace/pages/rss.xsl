@@ -50,7 +50,7 @@
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
-            <xsl:value-of select="summary"/>
+            <xsl:value-of select="summary[@mode='formatted']"/>
             <hr />
             <xsl:value-of select="content"/>
           </text>
@@ -74,7 +74,7 @@
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
-            <xsl:value-of select="quote"/>
+            <xsl:value-of select="quote[@mode='formatted']"/>
             <xsl:value-of select="commentary"/>
           </text>
         </entry>

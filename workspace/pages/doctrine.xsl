@@ -68,7 +68,7 @@
         </span>
       </h3>
       <div class="summary">
-        <xsl:value-of select="summary" />
+        <xsl:value-of select="summary[@mode='unformatted']" />
       </div>
       <br />
       <div class="right">Study <strong><xsl:value-of select="title" /> &#8594;</strong></div>

@@ -73,10 +73,19 @@
           <xsl:text>by </xsl:text>
           <xsl:value-of select="cite" />
         </p>
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="quote" />
-          <xsl:with-param name="length" select="100" />
+        <xsl:variable name="quote-raw">
+          <xsl:call-template name="truncate">
+            <xsl:with-param name="node" select="quote[@mode='unformatted']" disable-output-escaping="yes" />
+            <xsl:with-param name="length" select="100" />
+          </xsl:call-template>
+        </xsl:variable>
+
+        <xsl:call-template name="string-replace-all">
+          <xsl:with-param name="text" select="$quote-raw" />
+          <xsl:with-param name="replace" select="'>'" />
+          <xsl:with-param name="by" select="''" />
         </xsl:call-template>
+
       </blockquote>
     </a>
   </div>
