@@ -63,7 +63,7 @@
         </h4>
       </div>
       <xsl:if test="image != ''">
-        <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+        <img src="/workspace/img/spacer.gif" class="filter-greyscale">
           <xsl:attribute name="data-responsimage">
             <xsl:value-of select="image/item/image/filename" />
           </xsl:attribute>

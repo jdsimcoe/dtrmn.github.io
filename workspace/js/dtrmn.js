@@ -15,6 +15,9 @@
         pause: ""
       });
 
+
+
     });
+
   });
 }(jQuery, document, window));
