@@ -25,6 +25,20 @@
       </xsl:when>
       <xsl:otherwise>
         <title>
+          <xsl:if test="$title != ''">
+            <xsl:variable name="title-spaced">
+              <xsl:call-template name="string-replace-all">
+                <xsl:with-param name="text" select="$title" />
+                <xsl:with-param name="replace" select="'-'" />
+                <xsl:with-param name="by" select="' '" />
+              </xsl:call-template>
+            </xsl:variable>
+            <xsl:call-template name="TitleCase">
+              <xsl:with-param name="text" select="translate(normalize-space($title-spaced),
+          'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')" />
+            </xsl:call-template>
+            <xsl:text> | </xsl:text>
+          </xsl:if>
           <xsl:value-of select="//data/page-data/entry/title" />
           <xsl:text> | Determine</xsl:text>
         </title>

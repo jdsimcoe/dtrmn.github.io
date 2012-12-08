@@ -32,10 +32,10 @@
         </xsl:when>
         <xsl:otherwise>
           <div class="row">
-            <div class="span9">
+            <div class="span8">
               <xsl:apply-templates select="/data/quotes-single/entry"/>
             </div>
-            <div class="span3">
+            <div class="span4">
               <h4>From the Blog</h4>
               <hr />
               <xsl:apply-templates select="/data/articles-4-latest/entry [ position() &lt; 3 ]"/>

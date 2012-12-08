@@ -124,4 +124,68 @@ or to lower case
 <xsl:variable name="en-uppercase-letters">ABCDEFGHIJKLMNOPQRSTUVWXYZ</xsl:variable>
 
 
+<!--
+
+Title Case
+
+<xsl:variable name="CatName">
+  <xsl:call-template name="TitleCase">
+    <xsl:with-param name="text" select="translate(normalize-space($ypcategoryname),
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')" />
+  </xsl:call-template>
+</xsl:variable>
+
+-->
+
+<xsl:template name="TitleCase">
+  <xsl:param name="text" />
+  <xsl:param name="lastletter" select="' '"/>
+
+  <xsl:if test="$text">
+    <xsl:variable name="thisletter" select="substring($text,1,1)"/>
+    <xsl:choose>
+      <xsl:when test="$lastletter=' '">
+        <xsl:value-of select="translate($thisletter,'abcdefghijklmnopqrstuvwxyz',
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$thisletter"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="TitleCase">
+      <xsl:with-param name="text" select="substring($text,2)"/>
+      <xsl:with-param name="lastletter" select="$thisletter"/>
+    </xsl:call-template>
+  </xsl:if>
+
+</xsl:template>
+
+<!--
+
+Search and replace
+
+-->
+
+
+<xsl:template name="string-replace-all">
+  <xsl:param name="text" />
+  <xsl:param name="replace" />
+  <xsl:param name="by" />
+  <xsl:choose>
+    <xsl:when test="contains($text,$replace)">
+      <xsl:value-of select="substring-before($text,$replace)" />
+      <xsl:value-of select="$by" />
+      <xsl:call-template name="string-replace-all">
+        <xsl:with-param name="text" select="substring-after($text,$replace)" />
+        <xsl:with-param name="replace" select="$replace" />
+        <xsl:with-param name="by" select="$by" />
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$text" />
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+
 </xsl:stylesheet>

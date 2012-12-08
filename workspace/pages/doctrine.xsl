@@ -77,7 +77,7 @@
 </xsl:template>
 
 <xsl:template match="doctrines-single/entry">
-  <div class="container entry">
+  <div class="container entry span8 offset2">
     <div class="title-label">The <strong>Doctrine</strong> of</div>
     <h1>
       <span><xsl:value-of select="title" /></span>

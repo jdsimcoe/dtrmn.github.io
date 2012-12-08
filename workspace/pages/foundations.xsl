@@ -27,11 +27,14 @@
                   <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 </div>
                 <hr class="soften" />
-                <img class="img-polaroid" src="/workspace/img/spacer.gif">
-                  <xsl:attribute name="data-responsimage">
-                    <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
-                  </xsl:attribute>
-                </img>
+                <div class="span8 offset2">
+                  <img class="img-polaroid" src="/workspace/img/spacer.gif">
+                    <xsl:attribute name="data-responsimage">
+                      <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
+                    </xsl:attribute>
+                  </img>
+                  <br /><br />
+                </div>
               </xsl:if>
               <br /><br />
               <table class="table table-striped">
@@ -52,10 +55,10 @@
         </xsl:when>
         <xsl:otherwise>
           <div class="row">
-            <div class="span9">
+            <div class="span8">
               <xsl:apply-templates select="/data/studies-single/entry"/>
             </div>
-            <div class="span3">
+            <div class="span4">
               <h4>Related Doctrine</h4>
               <hr />
               <xsl:apply-templates select="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]"/>
