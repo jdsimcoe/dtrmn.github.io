@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exsl="http://exslt.org/common" extension-element-prefixes="exsl">
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:exsl="http://exslt.org/common"
+  extension-element-prefixes="exsl">
 
 <xsl:import href="../utilities/date-time-advanced.xsl" />
 
@@ -22,9 +24,7 @@
           </title>
           <uri>
             <xsl:value-of select="$root" />
-              <xsl:text>/</xsl:text>
-              <xsl:value-of select="$root-page" />
-              <xsl:text>/</xsl:text>
+              <xsl:text>/blog/</xsl:text>
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
@@ -46,9 +46,7 @@
           </title>
           <uri>
             <xsl:value-of select="$root" />
-              <xsl:text>/</xsl:text>
-              <xsl:value-of select="$root-page" />
-              <xsl:text>/</xsl:text>
+              <xsl:text>/doctrine/</xsl:text>
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
@@ -72,9 +70,7 @@
           </title>
           <uri>
             <xsl:value-of select="$root" />
-              <xsl:text>/</xsl:text>
-              <xsl:value-of select="$root-page" />
-              <xsl:text>/</xsl:text>
+              <xsl:text>/quotes/</xsl:text>
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
