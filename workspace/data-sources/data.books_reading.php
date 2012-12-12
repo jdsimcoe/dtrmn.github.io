@@ -2,32 +2,28 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourcequotes_all extends SectionDatasource{
+	Class datasourcebooks_reading extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'quotes-all';
+		public $dsParamROOTELEMENT = 'books-reading';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'date';
-		public $dsParamHTMLENCODE = 'yes';
+		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
-				'23' => 'no',
+				'54' => 'yes',
 		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
-				'cite: name',
-				'date',
-				'quote: formatted',
-				'quote: unformatted',
-				'commentary: formatted'
+				'author: name',
+				'image: image',
+				'image: caption'
 		);
 		
 
@@ -38,18 +34,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Quotes: All',
+				'name' => 'Books: Reading',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:28:25+00:00'
+				'release-date' => '2012-12-09T00:38:35+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '3';
+			return '9';
 		}
 
 		public function allowEditorToParse(){

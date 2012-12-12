@@ -25,19 +25,19 @@
         </div>
         <div class="span4">
           <i class="glyphicon-book icon-large"></i>
-          <h2>Surveys of Bible doctrine</h2>
+          <h2>Bible doctrine</h2>
           <p>We are working on a library of short surveys of <a href="{$root}/doctrine">Biblical doctrine</a>. These pieces highlight theological subjects for further study.</p>
         </div>
         <div class="span4">
           <span class="logo icon-large">b</span>
-          <h2>Studies to dive deeper</h2>
+          <h2>In-depth studies</h2>
           <p>Follow along with the <a href="{$root}/foundations">Foundations</a> curriculum we are developing as a group study at our <a href="http://atheycreek.com/">local church</a>. Access dicsussion questions free of charge.</p>
         </div>
       </div>
       <div class="row grid second">
         <div class="span4">
           <i class="glyphicon-list-alt icon-large"></i>
-          <h2>Gospel-centered articles</h2>
+          <h2>Blog articles</h2>
           <p>Our <a href="{$root}/blog">blog articles</a> are longer pieces centered on the Gospel to help you deepen your relationship with Christ and your love of the Scriptures.</p>
         </div>
         <div class="span4">

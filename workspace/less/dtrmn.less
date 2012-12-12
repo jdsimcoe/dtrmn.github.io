@@ -535,12 +535,12 @@ body > .navbar .brand {
     background: lighten(@color-black, 25%);
     border: 1px solid lighten(@color-black, 25%);
 
-      h4 {
-        color: @color-white;
-        padding: 5px 15px 0 15px;
-        margin: 0;
-        text-shadow: 0 1px 0 lighten(@color-black, 10%);
-      }
+    h4 {
+      color: @color-white;
+      padding: 5px 15px 0 15px;
+      margin: 0;
+      text-shadow: 0 1px 0 lighten(@color-black, 10%);
+    }
 
     &.latest {
       background: @color-accent;
@@ -833,40 +833,25 @@ body > .navbar .brand {
       background: @color-white;
       .box-shadow(0 0 6px rgba(0,0,0,0.05));
       margin-bottom: 40px;
+      border: 1px solid darken(@color-white, 10%);
 
-      &:hover {
-        .entry-header {
-          background: darken(@color-white, 25%);
-          border: 1px solid darken(@color-white, 25%);
-          border-bottom: 1px solid darken(@color-white, 25%);
-        }
-
-        .content, p, blockquote {
-          color: @color-accent;
-        }
-      }
 
       .entry-header {
-        background: darken(@color-white, 15%);
-        border: 1px solid darken(@color-white, 20%);
-        border-bottom: 1px solid darken(@color-white, 15%);
+
 
         h2 {
-          font-size: 24px;
-          color: lighten(@color-black, 15%);
-          padding: 5px 15px 0 15px;
+          font-size: 26px;
+          padding: 10px 15px 0 15px;
           margin: 0;
-          text-shadow: 0 1px 0 darken(@color-white, 5%);
         }
 
         h4 {
           font-size: 18px;
-          color: @color-white;
+          color: darken(@color-white, 15%);
           font-weight: normal;
           padding: 0 15px;
-          margin: 0 0 5px 0;
+          margin: 0 0 10px 0;
           padding-bottom: 5px;
-          text-shadow: -1px -1px 0 darken(@color-white, 20%);
         }
 
       }
@@ -885,13 +870,11 @@ body > .navbar .brand {
       .content {
         font-weight: 300;
         padding: 10px 15px;
-        border: 1px solid darken(@color-white, 10%);
         border-top: none;
         min-height: 180px;
       }
 
       img {
-        border-top: 1px solid darken(@color-white, 15%);
         margin: 0;
       }
     }

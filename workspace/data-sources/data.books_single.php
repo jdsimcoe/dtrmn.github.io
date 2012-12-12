@@ -2,32 +2,37 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourcequotes_all extends SectionDatasource{
+	Class datasourcebooks_single extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'quotes-all';
+		public $dsParamROOTELEMENT = 'books-single';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'no';
-		public $dsParamLIMIT = '20';
+		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'date';
+		public $dsParamREQUIREDPARAM = '$title';
+		public $dsParamSORT = 'system:id';
 		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
-				'23' => 'no',
+				'41' => '{$title}',
 		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
-				'cite: name',
+				'author: name',
+				'author: link',
+				'synopsis: formatted',
+				'synopsis: unformatted',
+				'review: formatted',
+				'review: unformatted',
 				'date',
-				'quote: formatted',
-				'quote: unformatted',
-				'commentary: formatted'
+				'image: image',
+				'image: caption',
+				'rating'
 		);
 		
 
@@ -38,18 +43,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Quotes: All',
+				'name' => 'Books: Single',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:28:25+00:00'
+				'release-date' => '2012-12-09T00:37:26+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '3';
+			return '9';
 		}
 
 		public function allowEditorToParse(){
