@@ -283,7 +283,7 @@
             <xsl:value-of select="name"/>
             <xsl:text>&#160;&#160;</xsl:text>
             <span class="label">
-              <xsl:text>NEW!</xsl:text>
+              <xsl:text>NEW</xsl:text>
             </span>
           </xsl:when>
           <xsl:otherwise>
