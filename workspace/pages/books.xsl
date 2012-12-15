@@ -146,36 +146,5 @@
   </div>
 </xsl:template>
 
-<xsl:template name="ratings">
-
-  <xsl:param name="i" />
-  <xsl:param name="count" />
-  <xsl:param name="rating-num" />
-
-  <xsl:if test="$i &lt;= $count">
-    <xsl:choose>
-      <xsl:when test="$i &lt;= $rating-num">
-       <i class="glyphicon-star"></i>
-      </xsl:when>
-      <xsl:otherwise>
-       <i class="glyphicon-star light"></i>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:if>
-
-  <xsl:if test="$i &lt;= $count">
-    <xsl:call-template name="ratings">
-      <xsl:with-param name="i">
-        <xsl:value-of select="$i + 1"/>
-      </xsl:with-param>
-      <xsl:with-param name="count">
-        <xsl:value-of select="$count"/>
-      </xsl:with-param>
-      <xsl:with-param name="rating-num">
-        <xsl:value-of select="$rating-num"/>
-      </xsl:with-param>
-    </xsl:call-template>
-  </xsl:if>
-</xsl:template>
 
 </xsl:stylesheet>

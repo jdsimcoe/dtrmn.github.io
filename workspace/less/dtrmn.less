@@ -251,6 +251,11 @@ a {
     border-top: 1px solid darken(@color-gray-light, 10%);
   }
 
+  &.fourth {
+    background: lighten(@color-gray-light, 5%);
+    border-top: 1px solid darken(@color-gray-light, 15%);
+  }
+
 }
 
 .grid {
@@ -939,46 +944,89 @@ body > .navbar .brand {
 // BOOKS
 // =====
 
+.ratings {
+  font-size: 16px;
+  padding: 7px 0 3px 0;
+  margin: 0 0 0 0;
+  border-top: 1px solid darken(@color-white, 5%);
+  color: @color-accent;
+
+  .light {
+    color: lighten(@color-accent, 40%);
+  }
+}
+
+.book-entry {
+  text-align: center;
+
+  h4 {
+    margin-bottom: 5px;
+    color: lighten(@color-black, 15%);
+  }
+
+  p {
+    font-weight: 300;
+    color: lighten(@color-black, 15%);
+  }
+
+  &:hover {
+
+    h4,
+    p {
+      color: @color-accent;
+    }
+  }
+
+  &.home {
+
+    .metadata {
+      background: rgba(255,255,255,0.85);
+      border-top: 1px solid #fff;
+      position: relative;
+      top: -113px;
+      margin-left: 5px;
+      margin-right: -5px;
+
+      h4,
+      p {
+        color: #222;
+        text-shadow: 0 1px 0 #fff;
+      }
+
+      p {
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #bdbdbd;
+      }
+
+      .ratings {
+        margin-top: none;
+        border-top: 1px solid #efefef;
+        padding: 10px 0;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+
+        .light {
+          color: #999;
+        }
+      }
+
+      &:hover {
+
+        h4,
+        p {
+          color: @color-accent;
+        }
+      }
+    }
+  }
+
+}
+
 .wrapper-books {
   margin-top: 30px;
 
   h3 {
     font-weight: 300;
-  }
-
-  .ratings {
-    font-size: 16px;
-    padding: 7px 0 3px 0;
-    margin: 0 0 0 0;
-    border-top: 1px solid darken(@color-white, 5%);
-    color: @color-accent;
-
-    .light {
-      color: lighten(@color-accent, 40%);
-    }
-  }
-
-  .book-entry {
-    text-align: center;
-
-    h4 {
-      margin-bottom: 5px;
-      color: lighten(@color-black, 15%);
-    }
-
-    p {
-      font-weight: 300;
-      color: lighten(@color-black, 15%);
-    }
-
-    &:hover {
-
-      h4,
-      p {
-        color: @color-accent;
-      }
-    }
-
   }
 
   .entry {
@@ -1273,7 +1321,8 @@ body > .navbar .brand {
 
     &.first,
     &.second,
-    &.third {
+    &.third,
+    &.fourth {
       background: @color-white;
     }
   }

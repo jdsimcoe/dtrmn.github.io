@@ -82,6 +82,7 @@ USAGE:
 
 -->
 
+
 <xsl:template name="truncate">
 
   <xsl:param name="node" select="." />
@@ -98,6 +99,7 @@ USAGE:
   </xsl:choose>
 
 </xsl:template>
+
 
 <!--
 
@@ -120,6 +122,7 @@ or to lower case
 
 -->
 
+
 <xsl:variable name="en-lowercase-letters">abcdefghijklmnopqrstuvwxyz</xsl:variable>
 <xsl:variable name="en-uppercase-letters">ABCDEFGHIJKLMNOPQRSTUVWXYZ</xsl:variable>
 
@@ -136,6 +139,7 @@ Title Case
 </xsl:variable>
 
 -->
+
 
 <xsl:template name="TitleCase">
   <xsl:param name="text" />
@@ -159,6 +163,7 @@ Title Case
   </xsl:if>
 
 </xsl:template>
+
 
 <!--
 
@@ -185,6 +190,46 @@ Search and replace
       <xsl:value-of select="$text" />
     </xsl:otherwise>
   </xsl:choose>
+</xsl:template>
+
+
+<!--
+
+Book ratings
+
+-->
+
+
+<xsl:template name="ratings">
+
+  <xsl:param name="i" />
+  <xsl:param name="count" />
+  <xsl:param name="rating-num" />
+
+  <xsl:if test="$i &lt;= $count">
+    <xsl:choose>
+      <xsl:when test="$i &lt;= $rating-num">
+       <i class="glyphicon-star"></i>
+      </xsl:when>
+      <xsl:otherwise>
+       <i class="glyphicon-star light"></i>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:if>
+
+  <xsl:if test="$i &lt;= $count">
+    <xsl:call-template name="ratings">
+      <xsl:with-param name="i">
+        <xsl:value-of select="$i + 1"/>
+      </xsl:with-param>
+      <xsl:with-param name="count">
+        <xsl:value-of select="$count"/>
+      </xsl:with-param>
+      <xsl:with-param name="rating-num">
+        <xsl:value-of select="$rating-num"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:if>
 </xsl:template>
 
 
