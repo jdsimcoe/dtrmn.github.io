@@ -1,3 +1,0 @@
-[submodule "extensions/image_preview"]
-	path = extensions/image_preview
-	url = git://github.com/Solutions-Nitriques/image_preview.git
