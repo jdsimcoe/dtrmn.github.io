@@ -27,20 +27,9 @@
 
           <div class="row">
             <div class="span12">
-              <h3 class="center">Synopsis Only</h3>
-              <xsl:apply-templates select="/data/books-all/entry[review = '']"/>
+              <xsl:apply-templates select="/data/books-all/entry"/>
             </div>
           </div>
-
-          <xsl:if test="/data/books-all/entry[review != '']">
-            <hr class="soften" />
-            <div class="row">
-              <div class="span12">
-                <h3 class="center">Synopsis + Review</h3>
-                <xsl:apply-templates select="/data/books-all/entry[review != '']"/>
-              </div>
-            </div>
-          </xsl:if>
 
           <hr class="soften" />
           <div class="row">
@@ -78,6 +67,10 @@
       <p>
         <xsl:text>by </xsl:text>
         <xsl:value-of select="author" />
+        <xsl:if test="review != ''">
+          <xsl:text>&#160;</xsl:text>
+          <span class="label">Review</span>
+        </xsl:if>
       </p>
       <div class="ratings">
         <xsl:call-template name="ratings">
