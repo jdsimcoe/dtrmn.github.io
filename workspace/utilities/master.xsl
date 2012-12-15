@@ -50,7 +50,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.3.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.0.4.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -116,7 +116,7 @@
             <!-- Carousel items -->
             <div class="carousel-inner">
               <div class="active item">
-                <p class="vision">For I determined to know nothing among you except Jesus Christ, and <br/>Him crucified.</p>
+                <p class="vision">For I determined to know nothing among you except Jesus Christ, and Him crucified.</p>
                 <br/>
                 <cite>1 Corinthians 2:2</cite>
               </div>
@@ -185,7 +185,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.3.js"
+            "/workspace/js/dtrmn.1.0.4.js"
           ]
         };
         for (var key in js.scripts) {
@@ -228,8 +228,8 @@
             <li class="">
               <a href="#" data-toggle="dropdown"><i class="glyphicon-wrench"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="/symphony/">Symphony</a></li>
-                <li><a href="?debug">Debug</a></li>
+                <li><a href="/symphony/" target="_blank">Symphony</a></li>
+                <li><a href="?debug" target="_blank">Debug</a></li>
                 <li><a href="{$root}/symphony/logout/">Logout</a></li>
               </ul>
             </li>
@@ -278,6 +278,13 @@
                 </xsl:call-template>
               </span>
             </xsl:if>
+          </xsl:when>
+          <xsl:when test="@handle = 'books'">
+            <xsl:value-of select="name"/>
+            <xsl:text>&#160;&#160;</xsl:text>
+            <span class="label">
+              <xsl:text>NEW!</xsl:text>
+            </span>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="name"/>

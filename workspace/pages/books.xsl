@@ -14,7 +14,7 @@
 
 <xsl:template match="data">
 
-  <div class="wrapper-quotes">
+  <div class="wrapper-books">
     <div class="container">
       <xsl:choose>
         <xsl:when test="$title = ''">
@@ -24,11 +24,32 @@
             <p class="marketing-byline">Here you will find snyposes and reviews of books that we recommend. While the Scriptures stand as the sole source of Divine inpsiration, books can help us see Biblical truth that we didn't see before.</p>
           </div>
           <hr class="soften" />
+
           <div class="row">
             <div class="span12">
-               <xsl:apply-templates select="/data/books-all/entry"/>
+              <h3 class="center">Synopsis Only</h3>
+              <xsl:apply-templates select="/data/books-all/entry[review = '']"/>
             </div>
           </div>
+
+          <xsl:if test="/data/books-all/entry[review != '']">
+            <hr class="soften" />
+            <div class="row">
+              <div class="span12">
+                <h3 class="center">Synopsis + Review</h3>
+                <xsl:apply-templates select="/data/books-all/entry[review != '']"/>
+              </div>
+            </div>
+          </xsl:if>
+
+          <hr class="soften" />
+          <div class="row">
+            <div class="span12">
+              <h3 class="center">Currently Reading</h3>
+              <xsl:apply-templates select="/data/books-reading/entry"/>
+            </div>
+          </div>
+
         </xsl:when>
         <xsl:otherwise>
           <xsl:apply-templates select="/data/books-single/entry"/>
@@ -49,44 +70,48 @@
 
  <xsl:template match="/data/books-all/entry">
   <div class="span3 book">
+
     <a href="{$root}/books/{title/@handle}" class="book-entry">
-
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:350px;">
-        <xsl:attribute name="data-responsimage">
-          <xsl:value-of select="image/item/image/filename" />
-        </xsl:attribute>
-      </img>
-
-<!--       <h4>
+      <h4>
         <xsl:value-of select="title" />
       </h4>
       <p>
         <xsl:text>by </xsl:text>
         <xsl:value-of select="author" />
       </p>
-      <p>
-        <xsl:value-of select="synopsis[@mode='unformatted']" />
-      </p>
-      <xsl:variable name="quote-raw">
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="quote[@mode='unformatted']" disable-output-escaping="yes" />
-          <xsl:with-param name="length" select="100" />
+      <div class="ratings">
+        <xsl:call-template name="ratings">
+          <xsl:with-param name="i" select="1" />
+          <xsl:with-param name="count" select="10" />
+          <xsl:with-param name="rating-num" select="rating" />
         </xsl:call-template>
-      </xsl:variable>
-
-      <xsl:call-template name="string-replace-all">
-        <xsl:with-param name="text" select="$quote-raw" />
-        <xsl:with-param name="replace" select="'>'" />
-        <xsl:with-param name="by" select="''" />
-      </xsl:call-template> -->
+      </div>
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:350px;">
+        <xsl:attribute name="data-responsimage">
+          <xsl:value-of select="image/item/image/filename" />
+        </xsl:attribute>
+      </img>
 
     </a>
   </div>
 </xsl:template>
 
 
+ <xsl:template match="/data/books-reading/entry">
+  <div class="span3 book">
+
+    <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:350px;">
+      <xsl:attribute name="data-responsimage">
+        <xsl:value-of select="image/item/image/filename" />
+      </xsl:attribute>
+    </img>
+
+  </div>
+</xsl:template>
+
+
 <xsl:template match="/data/books-single/entry">
-  <div class="row">
+  <div class="row entry">
     <div class="span3">
       <img class="img-polaroid" src="/workspace/img/spacer.gif" style="width:100%; height:350px;">
         <xsl:attribute name="data-responsimage">
@@ -100,18 +125,64 @@
       </h2>
       <h3>
         <xsl:text>by </xsl:text>
-        <a href="{author/item/link}" target="_blank">
-          <xsl:value-of select="author/item/name" />
-        </a>
+        <xsl:value-of select="author/item/name" />
       </h3>
-
-      <h4>Synopsis</h4>
-      <div class="synopsis">
-        <xsl:value-of select="synopsis[@mode='formatted']" disable-output-escaping="yes" />
+      <div class="ratings">
+        <xsl:call-template name="ratings">
+          <xsl:with-param name="i" select="1" />
+          <xsl:with-param name="count" select="10" />
+          <xsl:with-param name="rating-num" select="rating" />
+        </xsl:call-template>
       </div>
+
+      <div class="content">
+        <h4>Synopsis</h4>
+        <xsl:value-of select="synopsis[@mode='formatted']" disable-output-escaping="yes" />
+        <xsl:if test="review != ''">
+          <hr />
+          <h3 class="center">Book Review</h3>
+          <xsl:value-of select="review[@mode='formatted']" disable-output-escaping="yes" />
+        </xsl:if>
+      </div>
+
+      <hr />
+
+      <a href="{author/item/link}" class="btn" target="_blank">More about the Author &#8594;</a>
 
     </div>
   </div>
+</xsl:template>
+
+<xsl:template name="ratings">
+
+  <xsl:param name="i" />
+  <xsl:param name="count" />
+  <xsl:param name="rating-num" />
+
+  <xsl:if test="$i &lt;= $count">
+    <xsl:choose>
+      <xsl:when test="$i &lt;= $rating-num">
+       <i class="glyphicon-star"></i>
+      </xsl:when>
+      <xsl:otherwise>
+       <i class="glyphicon-star light"></i>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:if>
+
+  <xsl:if test="$i &lt;= $count">
+    <xsl:call-template name="ratings">
+      <xsl:with-param name="i">
+        <xsl:value-of select="$i + 1"/>
+      </xsl:with-param>
+      <xsl:with-param name="count">
+        <xsl:value-of select="$count"/>
+      </xsl:with-param>
+      <xsl:with-param name="rating-num">
+        <xsl:value-of select="$rating-num"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>

@@ -169,6 +169,10 @@
 
 }
 
+.carousel {
+  margin-bottom: 0px;
+}
+
 // Glyphicon Tweaks
 
 .icon-large {
@@ -271,6 +275,7 @@ a {
 body > .navbar .brand {
   position: relative;
   top: 7px;
+  left: 0;
   float: left;
   margin-left: 0;
   font-size: 32px;
@@ -389,14 +394,14 @@ body > .navbar .brand {
 .jumbotron {
 
   &.masthead {
-    padding: 59px 0 8px 0;
+    padding: 68px 0 50px 0;
     background: darken(@color-accent, 2%);
     .box-shadow(none);
     border-bottom: 2px solid darken(@color-accent, 4%);
 
     p {
       margin-bottom: 0;
-      padding: 0 60px;
+      padding: 0 30px;
 
       &.vision {
         font-size: 32px;
@@ -408,17 +413,10 @@ body > .navbar .brand {
         }
       }
 
-      &.link-bar {
-        margin: 60px 0 40px 0;
-
-        a {
-          margin-bottom: 20px;
-        }
-      }
     }
 
     .carousel {
-      padding: 10px 0 20px 0;
+      padding: 0;
 
       .item {
 
@@ -737,7 +735,8 @@ body > .navbar .brand {
 .wrapper-doctrine,
 .wrapper-blog,
 .wrapper-quotes,
-.wrapper-studies  {
+.wrapper-studies,
+.wrapper-books  {
   padding: 0 0 100px 0;
 
   .entry {
@@ -937,6 +936,81 @@ body > .navbar .brand {
 
 }
 
+// BOOKS
+// =====
+
+.wrapper-books {
+  margin-top: 30px;
+
+  h3 {
+    font-weight: 300;
+  }
+
+  .ratings {
+    font-size: 16px;
+    padding: 7px 0 3px 0;
+    margin: 0 0 0 0;
+    border-top: 1px solid darken(@color-white, 5%);
+    color: @color-accent;
+
+    .light {
+      color: lighten(@color-accent, 40%);
+    }
+  }
+
+  .book-entry {
+    text-align: center;
+
+    h4 {
+      margin-bottom: 5px;
+      color: lighten(@color-black, 15%);
+    }
+
+    p {
+      font-weight: 300;
+      color: lighten(@color-black, 15%);
+    }
+
+    &:hover {
+
+      h4,
+      p {
+        color: @color-accent;
+      }
+    }
+
+  }
+
+  .entry {
+    margin-top: 30px;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-weight: 300;
+      margin-top: 0;
+    }
+
+    .ratings {
+      font-size: 24px;
+      border-bottom: 1px solid darken(@color-white, 5%);
+      padding: 10px 0;
+    }
+
+    .content {
+
+      h4 {
+        position: relative;
+        bottom: -15px;
+      }
+    }
+  }
+
+}
+
+
 // ABOUT
 // =====
 
@@ -1133,7 +1207,39 @@ body > .navbar .brand {
 // RESPONSIVE DESIGN
 // =================
 
-// TABLETS & BELOW
+// Standard
+
+@media (min-width: 980px) {
+
+  body > .navbar .brand {
+    position: relative;
+    left: 20px;
+  }
+
+}
+
+// Wide Desktop
+
+@media (min-width: 1200px) {
+
+  body > .navbar .brand {
+    position: relative;
+    left: 0;
+  }
+
+  .jumbotron {
+
+    &.masthead {
+
+      p {
+        padding: 0 80px;
+      }
+    }
+  }
+
+}
+
+// Tablets & Below
 
 @media (max-width: 979px) {
 
@@ -1142,9 +1248,24 @@ body > .navbar .brand {
     top: 0px;
   }
 
+  .jumbotron {
+
+    &.masthead {
+      padding: 60px 0;
+
+      p {
+        padding: 0 80px;
+
+        &.vision {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
 }
 
-// TABLET PORTRAIT & BELOW
+// Tablet Portrait & Below
 
 @media (max-width: 767px) {
 
@@ -1161,6 +1282,20 @@ body > .navbar .brand {
 // iPHONE 5
 
 @media (max-width: 568px) {
+
+  .jumbotron {
+
+    &.masthead {
+
+      p {
+        padding: 0 30px;
+
+        &.vision {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 
   .marketing {
 
