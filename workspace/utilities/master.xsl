@@ -39,8 +39,8 @@
             </xsl:call-template>
             <xsl:text> | </xsl:text>
           </xsl:if>
+          <xsl:text>Determine | </xsl:text>
           <xsl:value-of select="//data/page-data/entry/title" />
-          <xsl:text> | Determine</xsl:text>
         </title>
       </xsl:otherwise>
     </xsl:choose>

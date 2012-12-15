@@ -11,6 +11,9 @@
 
 <xsl:include href="../utilities/master.xsl"/>
 
+<xsl:variable name="title">
+  <xsl:text>The Gospel</xsl:text>
+</xsl:variable>
 
 <xsl:template match="data">
   <div class="wrapper-about">
