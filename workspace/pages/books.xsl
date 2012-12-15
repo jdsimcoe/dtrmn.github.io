@@ -106,7 +106,7 @@
 <xsl:template match="/data/books-single/entry">
   <div class="row entry">
     <div class="span3">
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" style="width:100%; height:350px;">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" style="width:100%; height:400px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
