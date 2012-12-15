@@ -47,8 +47,8 @@
         </div>
         <div class="span4">
           <i class="glyphicon-bookmark icon-large"></i>
-          <h2>Book reviews <span class="label">Coming Soon</span></h2>
-          <p>Soon we will have reviews of relevant Christian books that we have found helpful in pursuing Christ and growing in our love for Him.</p>
+          <h2>Book reviews</h2>
+          <p>We have <a href="{$root}/books">reviews of relevant Christian books</a> that we have found helpful in pursuing Christ and growing in our love for Him.</p>
         </div>
       </div>
 
