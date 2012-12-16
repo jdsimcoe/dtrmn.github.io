@@ -192,7 +192,6 @@
 
 <xsl:template match="/data/books-4-latest/entry">
   <div class="span3 book">
-
     <a href="{$root}/books/{title/@handle}" class="book-entry home">
 
       <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
@@ -213,6 +212,7 @@
             <span class="label">Review</span>
           </xsl:if>
         </p>
+        <hr class="soften" />
         <div class="ratings">
           <xsl:call-template name="ratings">
             <xsl:with-param name="i" select="1" />

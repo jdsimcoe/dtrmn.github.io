@@ -59,32 +59,35 @@
 
  <xsl:template match="/data/books-all/entry">
   <div class="span3 book">
+    <a href="{$root}/books/{title/@handle}" class="book-entry home">
 
-    <a href="{$root}/books/{title/@handle}" class="book-entry">
-      <h4>
-        <xsl:value-of select="title" />
-      </h4>
-      <p>
-        <xsl:text>by </xsl:text>
-        <xsl:value-of select="author" />
-        <xsl:if test="review != ''">
-          <xsl:text>&#160;</xsl:text>
-          <span class="label">Review</span>
-        </xsl:if>
-      </p>
-      <div class="ratings">
-        <xsl:call-template name="ratings">
-          <xsl:with-param name="i" select="1" />
-          <xsl:with-param name="count" select="10" />
-          <xsl:with-param name="rating-num" select="rating" />
-        </xsl:call-template>
-      </div>
       <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
       </img>
 
+      <div class="metadata">
+        <h4>
+          <xsl:value-of select="title" />
+        </h4>
+        <p>
+          <xsl:text>by </xsl:text>
+          <xsl:value-of select="author" />
+          <xsl:if test="review != ''">
+            <xsl:text>&#160;</xsl:text>
+            <span class="label">Review</span>
+          </xsl:if>
+        </p>
+        <hr class="soften" />
+        <div class="ratings">
+          <xsl:call-template name="ratings">
+            <xsl:with-param name="i" select="1" />
+            <xsl:with-param name="count" select="10" />
+            <xsl:with-param name="rating-num" select="rating" />
+          </xsl:call-template>
+        </div>
+      </div>
     </a>
   </div>
 </xsl:template>
