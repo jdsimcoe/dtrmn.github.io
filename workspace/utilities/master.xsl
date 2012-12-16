@@ -50,7 +50,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.4.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.0.5.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -185,7 +185,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.4.js"
+            "/workspace/js/dtrmn.1.0.5.js"
           ]
         };
         for (var key in js.scripts) {
