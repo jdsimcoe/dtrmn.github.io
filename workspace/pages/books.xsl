@@ -36,6 +36,7 @@
           <div class="row">
             <div class="span12">
               <h3 class="center">Currently Reading</h3>
+              <br />
               <xsl:apply-templates select="/data/books-reading/entry"/>
             </div>
           </div>
