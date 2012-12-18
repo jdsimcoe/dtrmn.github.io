@@ -88,6 +88,8 @@
       <div class="row">
         <xsl:apply-templates select="/data/books-4-latest/entry"/>
       </div>
+      <br />
+      <br />
     </div>
   </div>
 
