@@ -480,6 +480,17 @@ body > .navbar .brand {
 
   &.main {
 
+    a.icon-large {
+      color: darken(@color-white, 10%);
+      text-shadow: 0 -1px 0 darken(@color-white, 20%);
+
+      &:hover {
+        color: lighten(desaturate(@color-accent, 10%), 10%);
+        text-shadow: none;
+      }
+
+    }
+
     h2 {
 
       .label {
