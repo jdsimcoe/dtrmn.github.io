@@ -147,7 +147,7 @@
         </span>
       </h3>
       <div class="summary">
-        <xsl:value-of select="summary" />
+        <xsl:value-of select="summary" disable-output-escaping="yes" />
       </div>
       <br />
       <div class="right">Study <strong><xsl:value-of select="title" /> &#8594;</strong></div>

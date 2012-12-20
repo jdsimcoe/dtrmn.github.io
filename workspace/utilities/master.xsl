@@ -92,7 +92,7 @@
                 </xsl:attribute>
               <xsl:choose>
                 <xsl:when test="$root-page = 'foundations'">
-                  <span class="logo">b&#160;&#160;</span>
+                  <span class="logo visible-desktop">b&#160;&#160;</span>
                   <xsl:value-of select="//data/page-data/entry/title" />
                 </xsl:when>
                 <xsl:otherwise>
