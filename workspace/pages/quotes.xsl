@@ -95,7 +95,7 @@
 <xsl:template match="/data/quotes-single/entry">
   <div class="span12 entry">
     <div>
-      <span class="label accent">
+      <span class="badge accent">
         <xsl:call-template name="format-date">
           <xsl:with-param name="date" select="date/date/start/@iso" />
           <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />

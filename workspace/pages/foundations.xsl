@@ -88,7 +88,7 @@
         <xsl:value-of select="title" />
         <xsl:if test="upcoming = 'Yes'">
           <xsl:text>&#160;&#160;</xsl:text>
-          <span class="label label-inverse">UPCOMING</span>
+          <span class="badge badge-inverse">UPCOMING</span>
         </xsl:if>
       </a>
     </td>
@@ -133,10 +133,10 @@
           <xsl:attribute name="class">
             <xsl:choose>
               <xsl:when test="position() = 1">
-                <xsl:text>label accent</xsl:text>
+                <xsl:text>badge accent</xsl:text>
               </xsl:when>
               <xsl:otherwise>
-                <xsl:text>label</xsl:text>
+                <xsl:text>badge</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>

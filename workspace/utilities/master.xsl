@@ -50,7 +50,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.5.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.0.6.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -185,7 +185,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.5.js"
+            "/workspace/js/dtrmn.1.0.6.js"
           ]
         };
         for (var key in js.scripts) {
@@ -271,7 +271,7 @@
             <xsl:value-of select="name"/>
             <xsl:text>&#160;&#160;</xsl:text>
             <xsl:if test="/data/studies-upcoming/entry != ''">
-              <span class="label">
+              <span class="badge">
                 <xsl:call-template name="format-date">
                   <xsl:with-param name="date" select="/data/studies-upcoming/entry/date/date/start/@iso" />
                   <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
@@ -282,7 +282,7 @@
           <xsl:when test="@handle = 'books'">
             <xsl:value-of select="name"/>
             <xsl:text>&#160;&#160;</xsl:text>
-            <span class="label">
+            <span class="badge">
               <xsl:text>NEW</xsl:text>
             </span>
           </xsl:when>

@@ -54,10 +54,10 @@
           <xsl:attribute name="class">
             <xsl:choose>
               <xsl:when test="position() = 1">
-                <xsl:text>label accent</xsl:text>
+                <xsl:text>badge accent</xsl:text>
               </xsl:when>
               <xsl:otherwise>
-                <xsl:text>label</xsl:text>
+                <xsl:text>badge</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>

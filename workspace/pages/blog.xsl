@@ -24,6 +24,7 @@
             <p class="marketing-byline">The Determine blog has the purpose of deeping our devotion to Christ. Mediations on the Scripture help us see the beauty of God in the face of Jesus Christ (2 Corinthians 4:6) and respond to Him in worshipful obedience and sacrifice (Romans 12:1).</p>
           </div>
           <hr class="soften" />
+          <br /><br />
           <div class="row">
             <div class="span8">
               <xsl:apply-templates select="/data/articles-all/entry"/>

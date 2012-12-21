@@ -1,14 +1,13 @@
-// CSS Reset
-@import "../bootstrap/less/reset.less";
-
 // Core variables and mixins
 @import "../bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "../bootstrap/less/mixins.less";
 
+// Reset
+@import "../bootstrap/less/normalize.less";
+
 // Grid system and page structure
 @import "../bootstrap/less/scaffolding.less";
 @import "../bootstrap/less/grid.less";
-@import "../bootstrap/less/layouts.less";
 
 // Base CSS
 @import "../bootstrap/less/type.less";
@@ -43,14 +42,15 @@
 // Components: Misc
 @import "../bootstrap/less/thumbnails.less";
 @import "../bootstrap/less/media.less";
-@import "../bootstrap/less/labels-badges.less";
+@import "../bootstrap/less/badges.less";
 @import "../bootstrap/less/progress-bars.less";
 @import "../bootstrap/less/accordion.less";
 @import "../bootstrap/less/carousel.less";
-@import "../bootstrap/less/hero-unit.less";
+@import "../bootstrap/less/jumbotron.less";
 
 // Utility classes
 @import "../bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
 
 
 // Responsive
@@ -77,7 +77,7 @@
 // From 979px and below, show a button to toggle navbar contents
 @import "../bootstrap/less/responsive-navbar.less";
 
-// Bootstrap Docs
+// // Bootstrap Docs
 @import "docs.less";
 
 // Custom Mixins
@@ -148,16 +148,17 @@
           border-radius: @radius;
 }
 
-@linkColor: @color-accent;
-@baseBorderRadius: 0px;
-@borderRadiusLarge: @baseBorderRadius;
-@borderRadiusSmall: @baseBorderRadius;
-@btnPrimaryBackgroundHighlight: darken(@btnPrimaryBackground, 5%);
+@link-color: @color-accent;
+@border-radius-base: 0px;
+@border-radius-large: @border-radius-base;
+@border-radius-small: @border-radius-base;
+@btn-background-primary-highlight: darken(@btn-background-primary, 5%);
 
 .navbar {
 
   .btn-navbar {
     background: darken(@color-accent, 10%);
+    border-color: darken(@color-accent, 15%);
     .border-radius(0);
     position: relative;
     top: -3px;
@@ -242,17 +243,16 @@ a {
   }
 
   &.second {
-    background: @color-gray-light;
-    border-top: 1px solid darken(@color-gray-light, 5%);
+    border-top: 1px solid @color-gray-light;
   }
 
   &.third {
-    background: darken(@color-gray-light, 5%);
-    border-top: 1px solid darken(@color-gray-light, 10%);
+    background: lighten(@color-gray-light, 5%);
+    border-top: 1px solid @color-gray-light
   }
 
   &.fourth {
-    border-top: 1px solid darken(@color-gray-light, 15%);
+    border-top: 1px solid @color-gray-light;
   }
 
 }
@@ -351,13 +351,10 @@ body > .navbar .brand {
         color: #fff;
         border-left: 1px solid darken(@color-accent, 10%);
 
-        .label {
+        .badge {
           background: @color-white;
           color: @color-accent;
           text-shadow: none;
-        }
-
-        .label {
           position: relative;
           top: -2px;
         }
@@ -396,12 +393,13 @@ body > .navbar .brand {
 }
 
 .jumbotron {
+  .border-radius(0);
 
   &.masthead {
-    padding: 63px 0 45px 0;
+    padding: 54px 0 40px 0;
     background: darken(@color-accent, 2%);
     .box-shadow(none);
-    border-bottom: 2px solid darken(@color-accent, 4%);
+    border-bottom: none;
 
     p {
       margin-bottom: 0;
@@ -444,6 +442,7 @@ body > .navbar .brand {
     background: darken(@color-accent, 2%);
     .box-shadow(none);
     padding: 60px 0;
+    border-bottom: none;
 
     .lead{
       margin-bottom: 0;
@@ -494,7 +493,7 @@ body > .navbar .brand {
 
     h2 {
 
-      .label {
+      .badge {
         text-transform: uppercase;
         position: relative;
         top: -3px;
@@ -710,7 +709,7 @@ body > .navbar .brand {
       border-bottom: 1px solid darken(@color-white, 5%);
       text-shadow: 0 1px 0 rgba(255,255,255,1.0);
 
-      .label {
+      .badge {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -736,7 +735,7 @@ body > .navbar .brand {
       color: @color-accent;
     }
     h3 {
-      .label {
+      .badge {
         color: #fff;
       }
     }
@@ -1168,7 +1167,7 @@ body > .navbar .brand {
           .border-radius(0);
           margin: 5px 0;
 
-          .label {
+          .badge {
             background: @color-accent;
             color: @color-black;
             text-shadow: none;
@@ -1281,6 +1280,16 @@ body > .navbar .brand {
     left: 20px;
   }
 
+  .navbar {
+
+    .nav {
+
+      li {
+        font-size: 14px;
+      }
+    }
+  }
+
 }
 
 // Wide Desktop
@@ -1289,7 +1298,17 @@ body > .navbar .brand {
 
   body > .navbar .brand {
     position: relative;
-    left: 0;
+    left: -5px;
+  }
+
+  .navbar {
+
+    .nav {
+
+      li {
+        font-size: 18px;
+      }
+    }
   }
 
   .jumbotron {

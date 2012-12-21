@@ -170,10 +170,10 @@
           <xsl:attribute name="class">
             <xsl:choose>
               <xsl:when test="position() = 1">
-                <xsl:text>label accent</xsl:text>
+                <xsl:text>badge accent</xsl:text>
               </xsl:when>
               <xsl:otherwise>
-                <xsl:text>label</xsl:text>
+                <xsl:text>badge</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>
@@ -211,7 +211,7 @@
           <xsl:value-of select="author" />
           <xsl:if test="review != ''">
             <xsl:text>&#160;</xsl:text>
-            <span class="label">Review</span>
+            <span class="badge">Review</span>
           </xsl:if>
         </p>
         <hr class="soften" />
