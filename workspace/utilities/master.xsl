@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+<xsl:include href="toolkit.xsl"/>
+<xsl:include href="date-time-advanced.xsl" />
 
 <xsl:output method="xml"
-    doctype-public="-W3CDTD XHTML 1.0 Strict//EN"
+    doctype-public="XSLT-compat"
     doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
     omit-xml-declaration="yes"
     encoding="UTF-8"
     indent="yes" />
-
-<xsl:include href="toolkit.xsl"/>
-<xsl:include href="date-time-advanced.xsl" />
 
 <xsl:param name="cookie-username" />
 
@@ -18,7 +18,6 @@
 
   <html lang="en">
   <head>
-    <meta charset="utf-8" />
     <xsl:choose>
       <xsl:when test="$page-title = 'Home'">
         <title>Determine</title>
