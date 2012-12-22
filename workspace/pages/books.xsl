@@ -122,6 +122,9 @@
     <div class="span9">
       <h2>
         <xsl:value-of select="title" />
+        <xsl:call-template name="edit-entry">
+          <xsl:with-param name="component" select="'books'"/>
+        </xsl:call-template>
       </h2>
       <h3>
         <xsl:text>by </xsl:text>

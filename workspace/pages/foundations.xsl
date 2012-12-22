@@ -114,6 +114,9 @@
       </img>
     </xsl:if>
     <br /><br />
+    <xsl:call-template name="edit-entry">
+      <xsl:with-param name="component" select="'studies'"/>
+    </xsl:call-template>
     <h1>
       <xsl:value-of select="title" />
     </h1>

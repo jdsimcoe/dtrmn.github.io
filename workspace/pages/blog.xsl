@@ -13,6 +13,7 @@
 
 
 <xsl:template match="data">
+
   <div class="wrapper-blog">
     <div class="container">
 
@@ -54,7 +55,14 @@
 <xsl:template match="/data/articles-all/entry">
   <div class="article entry list">
     <div class="entry-header">
-      <h2><a href="{$root}/{$root-page}/{title/@handle}"><xsl:value-of select="title" /></a></h2>
+      <h2>
+        <a href="{$root}/{$root-page}/{title/@handle}">
+          <xsl:value-of select="title" />
+        </a>
+        <xsl:call-template name="edit-entry">
+          <xsl:with-param name="component" select="'articles'"/>
+        </xsl:call-template>
+      </h2>
       <h4 class="blog-date">
         <xsl:call-template name="format-date">
           <xsl:with-param name="date" select="date/date/start/@iso" />
@@ -88,6 +96,9 @@
       <xsl:call-template name="format-date">
         <xsl:with-param name="date" select="date/date/start/@iso" />
         <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+      </xsl:call-template>
+      <xsl:call-template name="edit-entry">
+        <xsl:with-param name="component" select="'articles'"/>
       </xsl:call-template>
     </h4>
     <h1 class="center">

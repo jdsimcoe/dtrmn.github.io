@@ -102,7 +102,12 @@
         </xsl:call-template>
       </span>
     </div>
-    <h3><xsl:value-of select="title" /></h3>
+    <h3>
+      <xsl:value-of select="title" />
+      <xsl:call-template name="edit-entry">
+        <xsl:with-param name="component" select="'quotes'"/>
+      </xsl:call-template>
+    </h3>
     <div class="content">
       <xsl:value-of select="quote" disable-output-escaping="yes" />
       <xsl:value-of select="commentary" disable-output-escaping="yes" />

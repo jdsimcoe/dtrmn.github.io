@@ -274,7 +274,13 @@ a {
 
 .right {
   text-align: right;
+
+  &.float {
+    float: right;
+    clear: both;
+  }
 }
+
 
 body > .navbar .brand {
   position: relative;
@@ -446,6 +452,25 @@ body > .navbar .brand {
 
     .lead{
       margin-bottom: 0;
+    }
+  }
+}
+
+// EDIT LINKS
+// ==========
+
+.edit {
+  position: relative;
+  top: -2px;
+
+
+  .badge {
+    background: darken(@color-white, 10%);
+    color: @color-white;
+    text-shadow: none;
+
+    &:hover {
+      background: darken(@color-white, 15%);
     }
   }
 }

@@ -233,4 +233,32 @@ Book ratings
 </xsl:template>
 
 
+<!--
+
+Edit links
+
+-->
+
+<xsl:template name="edit-entry">
+
+  <xsl:param name="component" />
+  <xsl:param name="link">
+    <xsl:value-of select="$root" />
+    <xsl:text>/symphony/publish/</xsl:text>
+    <xsl:value-of select="$component" />
+    <xsl:text>/edit/</xsl:text>
+    <xsl:value-of select="@id" />
+    <xsl:text>/</xsl:text>
+  </xsl:param>
+  <xsl:param name="class" />
+
+  <xsl:if test="$cookie-username">
+    <a href="{$link}" target="_blank" class="edit right float">
+      <span class="badge">EDIT</span>
+    </a>
+  </xsl:if>
+
+</xsl:template>
+
+
 </xsl:stylesheet>

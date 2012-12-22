@@ -78,9 +78,14 @@
 
 <xsl:template match="doctrines-single/entry">
   <div class="container entry span8 offset2">
+    <xsl:call-template name="edit-entry">
+      <xsl:with-param name="component" select="'doctrines'"/>
+    </xsl:call-template>
     <div class="title-label">The <strong>Doctrine</strong> of</div>
     <h1>
-      <span><xsl:value-of select="title" /></span>
+      <span>
+        <xsl:value-of select="title" />
+      </span>
     </h1>
     <div class="summary">
       <xsl:value-of select="summary" disable-output-escaping="yes" />
