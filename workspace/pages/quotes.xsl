@@ -125,7 +125,7 @@
                 <xsl:value-of select="quote" disable-output-escaping="yes" />
                 <p>
                   <xsl:text>—</xsl:text>
-                  <xsl:value-of select="author" disable-output-escaping="yes" />
+                  <xsl:value-of select="book/item/author" disable-output-escaping="yes" />
                   <xsl:text>, </xsl:text>
                   <a href="{$root}/books/{book/item/title/@handle}">
                     <em>
