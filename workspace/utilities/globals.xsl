@@ -107,7 +107,7 @@
         </p>
         <xsl:call-template name="truncate">
           <xsl:with-param name="node" select="quote" />
-          <xsl:with-param name="length" select="100" />
+          <xsl:with-param name="length" select="80" />
         </xsl:call-template>
       </blockquote>
     </a>
