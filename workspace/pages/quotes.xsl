@@ -2,14 +2,9 @@
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:output method="xml"
-  doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-  doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-  omit-xml-declaration="yes"
-  encoding="UTF-8"
-  indent="yes" />
 
 <xsl:include href="../utilities/master.xsl"/>
+<xsl:include href="../utilities/globals.xsl"/>
 
 
 <xsl:template match="data">
@@ -53,49 +48,6 @@
     </div>
   </div>
 
-</xsl:template>
-
-
-<xsl:template match="/data/quotes-all/entry">
-<div class="span3 quote">
-    <a href="{$root}/quotes/{title/@handle}" class="quote-entry">
-      <blockquote>
-        <xsl:if test="position() = 1">
-          <xsl:attribute name="class">
-          <xsl:text>latest</xsl:text>
-          </xsl:attribute>
-        </xsl:if>
-
-        <h4>
-          <xsl:value-of select="title" />
-        </h4>
-        <p>
-          <xsl:text>by </xsl:text>
-          <xsl:choose>
-            <xsl:when test="book != ''">
-              <xsl:value-of select="book/item/author"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="author" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </p>
-        <xsl:variable name="quote-raw">
-          <xsl:call-template name="truncate">
-            <xsl:with-param name="node" select="quote[@mode='unformatted']" disable-output-escaping="yes" />
-            <xsl:with-param name="length" select="100" />
-          </xsl:call-template>
-        </xsl:variable>
-
-        <xsl:call-template name="string-replace-all">
-          <xsl:with-param name="text" select="$quote-raw" />
-          <xsl:with-param name="replace" select="'>'" />
-          <xsl:with-param name="by" select="''" />
-        </xsl:call-template>
-
-      </blockquote>
-    </a>
-  </div>
 </xsl:template>
 
 
@@ -171,42 +123,6 @@
 
     </div>
   </div>
-</xsl:template>
-
-
-<xsl:template match="/data/articles-4-latest/entry">
-  <a href="{$root}/blog/{title/@handle}" class="blog-entry">
-    <div>
-      <xsl:attribute name="class">
-        <xsl:choose>
-          <xsl:when test="position() = 1">
-            <xsl:text>entry-header latest</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>entry-header</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:attribute>
-      <h4>
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="title" />
-          <xsl:with-param name="length" select="25" />
-        </xsl:call-template>
-      </h4>
-      <p class="blog-date">
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-        </xsl:call-template>
-      </p>
-    </div>
-    <p class="content">
-      <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="content" />
-          <xsl:with-param name="length" select="260" />
-      </xsl:call-template>
-    </p>
-  </a>
 </xsl:template>
 
 

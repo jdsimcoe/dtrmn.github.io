@@ -2,14 +2,9 @@
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:output method="xml"
-  doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-  doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-  omit-xml-declaration="yes"
-  encoding="UTF-8"
-  indent="yes" />
 
 <xsl:include href="../utilities/master.xsl"/>
+<xsl:include href="../utilities/globals.xsl"/>
 
 
 <xsl:template match="data">
@@ -79,30 +74,6 @@
 
 </xsl:template>
 
-<xsl:template match="/data/studies-all/entry">
-
-  <tr>
-    <td><xsl:value-of select="position()" /></td>
-    <td>
-      <a href="{$root}/{$root-page}/{title/@handle}">
-        <xsl:value-of select="title" />
-        <xsl:if test="upcoming = 'Yes'">
-          <xsl:text>&#160;&#160;</xsl:text>
-          <span class="badge badge-inverse">UPCOMING</span>
-        </xsl:if>
-      </a>
-    </td>
-    <td><xsl:value-of select="doctrine" /></td>
-    <td>
-      <xsl:call-template name="format-date">
-        <xsl:with-param name="date" select="date/date/start/@iso" />
-        <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-      </xsl:call-template>
-    </td>
-  </tr>
-
-</xsl:template>
-
 
 <xsl:template match="/data/studies-single/entry">
   <div class="entry">
@@ -123,38 +94,6 @@
     <div class="content">
       <xsl:value-of select="recap" disable-output-escaping="yes" />
     </div>
-  </div>
-</xsl:template>
-
-
-<xsl:template match="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]">
-  <div class="doctrine">
-    <a href="{$root}/doctrine/{title/@handle}">
-      <h3>
-        <xsl:value-of select="title" />
-        <span>
-          <xsl:attribute name="class">
-            <xsl:choose>
-              <xsl:when test="position() = 1">
-                <xsl:text>badge accent</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>badge</xsl:text>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:attribute>
-          <xsl:call-template name="format-date">
-            <xsl:with-param name="date" select="date/date/start/@iso" />
-            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-          </xsl:call-template>
-        </span>
-      </h3>
-      <div class="summary">
-        <xsl:value-of select="summary" disable-output-escaping="yes" />
-      </div>
-      <br />
-      <div class="right">Study <strong><xsl:value-of select="title" /> &#8594;</strong></div>
-    </a>
   </div>
 </xsl:template>
 

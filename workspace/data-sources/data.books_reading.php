@@ -23,7 +23,8 @@
 				'title',
 				'author: name',
 				'image: image',
-				'image: caption'
+				'image: caption',
+				'reading'
 		);
 		
 
@@ -37,10 +38,10 @@
 				'name' => 'Books: Reading',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-15T01:27:00+00:00'
+				'release-date' => '2012-12-22T21:12:57+00:00'
 			);
 		}
 
