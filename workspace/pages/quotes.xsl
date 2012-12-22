@@ -71,7 +71,7 @@
         </h4>
         <p>
           <xsl:text>by </xsl:text>
-          <xsl:value-of select="cite" />
+          <xsl:value-of select="author" />
         </p>
         <xsl:variable name="quote-raw">
           <xsl:call-template name="truncate">

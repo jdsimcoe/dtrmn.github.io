@@ -13,7 +13,6 @@
 		public $dsParamSORT = 'date';
 		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
@@ -23,7 +22,7 @@
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
-				'cite: name',
+				'author: name',
 				'date',
 				'quote: formatted',
 				'quote: unformatted',
@@ -41,10 +40,10 @@
 				'name' => 'Quotes: All',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:28:25+00:00'
+				'release-date' => '2012-12-22T18:13:15+00:00'
 			);
 		}
 

@@ -149,7 +149,7 @@
         </h4>
         <p>
           <xsl:text>by </xsl:text>
-          <xsl:value-of select="cite" />
+          <xsl:value-of select="author" />
         </p>
         <xsl:call-template name="truncate">
           <xsl:with-param name="node" select="quote" />

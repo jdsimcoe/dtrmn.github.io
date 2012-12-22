@@ -21,9 +21,9 @@
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
+				'author: name',
 				'date',
-				'quote: formatted',
-				'cite: name'
+				'quote: formatted'
 		);
 		
 
@@ -40,7 +40,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:18:24+00:00'
+				'release-date' => '2012-12-22T18:12:56+00:00'
 			);
 		}
 
