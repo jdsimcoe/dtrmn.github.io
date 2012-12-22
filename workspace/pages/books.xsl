@@ -139,13 +139,23 @@
       </div>
 
       <div class="content">
-        <h4>Synopsis</h4>
-        <xsl:value-of select="synopsis[@mode='formatted']" disable-output-escaping="yes" />
-        <xsl:if test="review != ''">
-          <hr />
-          <h3 class="center">Book Review</h3>
-          <xsl:value-of select="review[@mode='formatted']" disable-output-escaping="yes" />
-        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="reading = 'Yes'">
+            <br/>
+            <h3>
+              This book is currently being read.
+            </h3>
+          </xsl:when>
+          <xsl:otherwise>
+            <h4>Synopsis</h4>
+            <xsl:value-of select="synopsis[@mode='formatted']" disable-output-escaping="yes" />
+            <xsl:if test="review != ''">
+              <hr />
+              <h3 class="center">Book Review</h3>
+              <xsl:value-of select="review[@mode='formatted']" disable-output-escaping="yes" />
+            </xsl:if>
+          </xsl:otherwise>
+        </xsl:choose>
       </div>
 
       <hr />

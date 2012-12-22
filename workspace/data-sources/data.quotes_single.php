@@ -26,6 +26,11 @@
 				'author: name',
 				'date',
 				'quote: formatted',
+				'book: title',
+				'book: author: name',
+				'book: image: image',
+				'source',
+				'link',
 				'commentary: formatted'
 		);
 		
@@ -43,7 +48,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-22T18:13:23+00:00'
+				'release-date' => '2012-12-22T18:59:14+00:00'
 			);
 		}
 

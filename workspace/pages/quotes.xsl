@@ -93,7 +93,7 @@
 
 
 <xsl:template match="/data/quotes-single/entry">
-  <div class="span12 entry">
+  <div class="entry">
     <div>
       <span class="badge accent">
         <xsl:call-template name="format-date">
@@ -109,8 +109,59 @@
       </xsl:call-template>
     </h3>
     <div class="content">
-      <xsl:value-of select="quote" disable-output-escaping="yes" />
-      <xsl:value-of select="commentary" disable-output-escaping="yes" />
+
+      <xsl:choose>
+        <xsl:when test="book != ''">
+          <div class="row">
+            <div class="span9">
+              <blockquote>
+                <xsl:value-of select="quote" disable-output-escaping="yes" />
+                <p>
+                  <xsl:text>—</xsl:text>
+                  <xsl:value-of select="author" disable-output-escaping="yes" />
+                  <xsl:text>, </xsl:text>
+                  <a href="{$root}/books/{book/item/title/@handle}">
+                    <em>
+                      <xsl:value-of select="book/item/title" disable-output-escaping="yes" />
+                    </em>
+                  </a>
+                </p>
+              </blockquote>
+            </div>
+            <div class="span3">
+              <a href="{$root}/books/{book/item/title/@handle}">
+                <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" style="width:100%; height:250px;">
+                  <xsl:attribute name="data-responsimage">
+                    <xsl:value-of select="book/item/image/item/image/filename" />
+                  </xsl:attribute>
+                </img>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <hr />
+            <xsl:value-of select="commentary" disable-output-escaping="yes" />
+          </div>
+        </xsl:when>
+        <xsl:otherwise>
+          <blockquote>
+            <xsl:value-of select="quote" disable-output-escaping="yes" />
+            <p>
+              <xsl:text>—</xsl:text>
+              <xsl:value-of select="author" disable-output-escaping="yes" />
+              <xsl:text>, </xsl:text>
+              <a href="{link}">
+                <em>
+                  <xsl:value-of select="source" disable-output-escaping="yes" />
+                </em>
+              </a>
+            </p>
+          </blockquote>
+          <hr />
+          <xsl:value-of select="commentary" disable-output-escaping="yes" />
+        </xsl:otherwise>
+      </xsl:choose>
+
     </div>
   </div>
 </xsl:template>
