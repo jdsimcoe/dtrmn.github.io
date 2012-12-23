@@ -23,7 +23,7 @@
 
           <div class="row">
             <div class="span12">
-              <xsl:apply-templates select="/data/books-all/entry"/>
+              <xsl:apply-templates select="/data/books-all/entry[reading='No']"/>
             </div>
           </div>
 

@@ -32,6 +32,49 @@
               <xsl:apply-templates select="doctrines-single/entry"/>
             </div>
           </div>
+          <hr/>
+          <div class="row">
+            <div>
+              <xsl:attribute name="class">
+                <xsl:choose>
+                  <xsl:when test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] = ''">
+                    <xsl:text>span12</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:text>span6</xsl:text>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:attribute>
+              <xsl:if test="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id] != ''">
+                <h4>Related Foundations Study</h4>
+                <hr/>
+                <xsl:apply-templates select="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id]"/>
+                <hr class="soften"/>
+                <h5>More About Foundations</h5>
+                <p>The goal of Foundations is to study Biblical doctrines in a group setting to learn how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
+                <p>
+                  <a href="{$root}/foundations" class="btn">
+                    <xsl:text>View All Studies&#8594;</xsl:text>
+                  </a>
+                </p>
+              </xsl:if>
+            </div>
+            <xsl:if test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] != ''">
+              <h4>Related Books</h4>
+              <hr/>
+              <xsl:apply-templates select="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]"/>
+            </xsl:if>
+          </div>
+          <div class="row">
+            <br/><br/><br/><br/>
+            <hr class="soften" />
+            <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
+              <xsl:text>&#8592; Back to </xsl:text>
+              <strong>
+                <xsl:value-of select="$page-title" />
+              </strong>
+            </a>
+          </div>
         </xsl:otherwise>
       </xsl:choose>
 
@@ -59,13 +102,6 @@
     <div class="content">
       <xsl:value-of select="content" disable-output-escaping="yes" />
     </div>
-    <hr class="soften" />
-    <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
-      <xsl:text>&#8592; Back to </xsl:text>
-      <strong>
-        <xsl:value-of select="$page-title" />
-      </strong>
-    </a>
   </div>
 </xsl:template>
 

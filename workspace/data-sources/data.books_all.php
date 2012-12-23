@@ -17,7 +17,6 @@
 
 		public $dsParamFILTERS = array(
 				'45' => 'no',
-				'52' => 'no',
 		);
 		
 
@@ -31,7 +30,8 @@
 				'date',
 				'image: image',
 				'image: caption',
-				'rating'
+				'rating',
+				'reading'
 		);
 		
 
@@ -45,10 +45,10 @@
 				'name' => 'Books: All',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-15T01:26:37+00:00'
+				'release-date' => '2012-12-22T23:20:27+00:00'
 			);
 		}
 
