@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         src: [
         '../less/dtrmn.less'
         ],
-        dest: '../css/dtrmn.1.0.6.css',
+        dest: '../css/dtrmn.1.0.7.css',
         options: {
             compile: true,
             compress: true
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
           '../js/responsimage.js',
           '../js/reftagger.js',
         ],
-        dest: '../js/dtrmn.1.0.6.js',
+        dest: '../js/dtrmn.1.0.7.js',
         separator: ';'
       }
     },

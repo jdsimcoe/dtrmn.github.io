@@ -981,7 +981,8 @@ body > .navbar .brand {
 // =====
 
 .book {
-  margin-bottom: -90px;
+  position: relative;
+  margin: 15px 0;
 }
 
 .ratings {
@@ -1029,10 +1030,12 @@ body > .navbar .brand {
     background: linear-gradient(to right, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
     border-top: 1px solid #fff;
-    position: relative;
-    top: -260px;
-    margin-left: 5px;
-    margin-right: -5px;
+    position: absolute;
+    display: block;
+    margin: 0 15px;
+    top: 150px;
+    left: 5px;
+    right: -5px;
 
     h4,
     p {
@@ -1052,6 +1055,7 @@ body > .navbar .brand {
       margin-top: none;
       padding: 0 0 10px 0;
       text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+      border: none;
 
       .light {
         color: #999;
