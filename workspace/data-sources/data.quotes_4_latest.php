@@ -11,7 +11,9 @@
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
+		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
+		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
@@ -21,10 +23,10 @@
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
-				'author: name',
 				'date',
 				'quote: formatted',
-				'book: author: name'
+				'book: author: name',
+				'author: name'
 		);
 		
 
@@ -41,7 +43,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-22T19:30:35+00:00'
+				'release-date' => '2012-12-29T21:09:47+00:00'
 			);
 		}
 

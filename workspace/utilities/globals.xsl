@@ -71,14 +71,11 @@
   <div>
     <xsl:attribute name="class">
       <xsl:choose>
-        <xsl:when test="$root-page = 'home'">
+        <xsl:when test="$root-page = 'home' or $root-page = 'quotes'">
           <xsl:text>span3</xsl:text>
         </xsl:when>
-        <xsl:when test="$root-page = 'quotes'">
-          <xsl:text>span3 quote</xsl:text>
-        </xsl:when>
         <xsl:when test="$root-page = 'blog'">
-          <xsl:text>quote</xsl:text>
+          <xsl:text></xsl:text>
         </xsl:when>
       </xsl:choose>
     </xsl:attribute>
