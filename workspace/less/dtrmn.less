@@ -712,6 +712,32 @@ body > .navbar .brand {
   }
 }
 
+// VERSES
+// ======
+
+.verse {
+  padding: 15px 0;
+
+  blockquote {
+    border: none;
+    color: #ccc !important;
+    display: block;
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 100;
+    width: 65%;
+    margin: 0 auto !important;
+
+    cite {
+      margin: 10px 0;
+      color: #999;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
+
 // DOCTRINE
 // ========
 
@@ -896,7 +922,7 @@ body > .navbar .brand {
       }
 
       p {
-        color: #999;
+        color: lighten(@color-black, 25%);
         padding: 0 15px;
         margin: 10px 0;
       }

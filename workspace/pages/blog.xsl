@@ -73,6 +73,9 @@
       </img>
     </xsl:if>
     <div class="content">
+      <xsl:for-each select="verses/item">
+        <xsl:call-template name="verse-entry" />
+      </xsl:for-each>
       <xsl:call-template name="truncate">
         <xsl:with-param name="node" select="content" />
         <xsl:with-param name="length" select="900" />
@@ -110,6 +113,9 @@
       </img>
     </xsl:if>
     <div class="content">
+      <xsl:for-each select="verses/item">
+        <xsl:call-template name="verse-entry" />
+      </xsl:for-each>
       <xsl:value-of select="content" disable-output-escaping="yes" />
     </div>
   </div>

@@ -300,4 +300,24 @@
 </xsl:template>
 
 
+<!-- VERSES
+     ====== -->
+
+
+<xsl:template name="verse-entry">
+  <div class="verse center">
+    <blockquote>
+      <xsl:value-of select="content" />
+      <br />
+      <cite>
+        <xsl:value-of select="passage" />
+        <xsl:text> (</xsl:text>
+        <xsl:value-of select="version/item/abbreviation" />
+        <xsl:text>)</xsl:text>
+      </cite>
+    </blockquote>
+  </div>
+</xsl:template>
+
+
 </xsl:stylesheet>
