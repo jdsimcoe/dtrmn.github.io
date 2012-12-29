@@ -19,7 +19,6 @@
             <p class="marketing-byline">Here you will find snyposes and reviews of books that we recommend. While the Scriptures stand as the sole source of Divine inpsiration, books can help us see Biblical truth that we didn't see before.</p>
           </div>
           <hr class="soften" />
-          <br />
 
           <div class="row">
             <div class="span12">
@@ -31,12 +30,11 @@
           <div class="row">
             <div class="span12">
               <h3 class="center">Currently Reading</h3>
-              <br />
               <xsl:apply-templates select="/data/books-reading/entry"/>
             </div>
           </div>
 
-          <br /><br /><br />
+
 
         </xsl:when>
         <xsl:otherwise>
