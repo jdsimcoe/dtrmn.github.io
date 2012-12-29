@@ -25,7 +25,9 @@
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
-				'passage'
+				'passage',
+				'content',
+				'version: abbreviation'
 		);
 		
 
@@ -42,7 +44,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-11-21T18:06:16+00:00'
+				'release-date' => '2012-12-29T18:43:53+00:00'
 			);
 		}
 
