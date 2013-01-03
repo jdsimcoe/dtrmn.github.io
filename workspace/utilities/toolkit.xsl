@@ -54,8 +54,10 @@ USAGE:
     </xsl:when>
     <xsl:otherwise>
       <xsl:value-of select="." />
+      <br/>
     </xsl:otherwise>
   </xsl:choose>
+
 
 </xsl:template>
 
