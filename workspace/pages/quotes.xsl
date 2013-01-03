@@ -108,12 +108,14 @@
             <p>
               <xsl:text>—</xsl:text>
               <xsl:value-of select="author" disable-output-escaping="yes" />
-              <xsl:text>, </xsl:text>
-              <a href="{link}">
-                <em>
-                  <xsl:value-of select="source" disable-output-escaping="yes" />
-                </em>
-              </a>
+              <xsl:if test="source != ''">
+                <xsl:text>, </xsl:text>
+                <a href="{link}">
+                  <em>
+                    <xsl:value-of select="source" disable-output-escaping="yes" />
+                  </em>
+                </a>
+              </xsl:if>
             </p>
           </blockquote>
           <hr />

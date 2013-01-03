@@ -12,6 +12,7 @@
     encoding="UTF-8"
     indent="yes" />
 
+
 <xsl:param name="cookie-username" />
 
 <xsl:template match="/">
