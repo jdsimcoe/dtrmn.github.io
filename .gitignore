@@ -4,3 +4,5 @@ sql/
 install-log.txt
 install/logs/
 *.sublime-*
+
+workspace/bootstrap
