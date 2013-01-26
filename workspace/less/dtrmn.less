@@ -113,7 +113,20 @@
 // Font Variables
 // ==============
 
+@font-face {
+    font-family: 'LeagueGothic-Regular';
+    src: url('../fonts/leaguegothic-regular-webfont.eot');
+    src: local('O'),
+         url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-regular-webfont.svg#LeagueGothic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @helvetica: "Helvetica Neue", Arial, Helvetica, sans-serif;
+@league: "LeagueGothic-Regular", "proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
 
 // RESPONSIMAGE
 // ============
@@ -254,6 +267,10 @@ a {
 
   h3 {
     margin-bottom: 20px;
+    font-family: @league;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: normal;
   }
 
   &.first {
@@ -553,6 +570,10 @@ body > .navbar .brand {
       }
     }
 
+    p {
+      font-weight: 300;
+    }
+
     h2 {
 
       .badge {
@@ -798,12 +819,14 @@ body > .navbar .brand {
       background: darken(@color-white, 2%);
       border-bottom: 1px solid darken(@color-white, 5%);
       text-shadow: 0 1px 0 rgba(255,255,255,1.0);
+      font-family: @helvetica;
+      font-size: 24px;
+      text-transform: none;
 
       .badge {
         position: absolute;
         top: 10px;
         right: 10px;
-
       }
     }
   }
@@ -812,6 +835,7 @@ body > .navbar .brand {
     text-align: left;
     color: lighten(@color-black, 20%);
     padding: 15px;
+    font-weight: 300;
   }
 
   .right {
@@ -911,6 +935,16 @@ body > .navbar .brand {
 
 .wrapper-doctrine {
   margin-top: 30px;
+
+  .doctrine {
+
+    a {
+
+      h3 {
+        font-weight: normal;
+      }
+    }
+  }
 }
 
 // BLOG
@@ -922,7 +956,11 @@ body > .navbar .brand {
   .entry {
 
     h1  {
-      font-size: 48px;
+      font-family: @league;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 64px;
+      margin-top: 35px;
       margin-bottom: 0;
     }
 
@@ -943,17 +981,29 @@ body > .navbar .brand {
 
 
         h2 {
-          font-size: 26px;
+          font-size: 32px;
           padding: 10px 15px 0 15px;
           margin: 0;
+          font-family: @league;
+          font-weight: normal;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+
+          .badge {
+            position: relative;
+            top: -10px;
+            font-family: @helvetica;
+            font-weight: bold;
+            text-transform: none;
+          }
         }
 
         h4 {
           font-size: 18px;
           color: darken(@color-white, 15%);
-          font-weight: normal;
+          font-weight: 300;
           padding: 0 15px;
-          margin: 0 0 10px 0;
+          margin: -2px 0 10px 0;
           padding-bottom: 5px;
         }
 
