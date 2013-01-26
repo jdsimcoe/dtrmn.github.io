@@ -178,6 +178,10 @@
 
 .icon-large {
   font-size: 64px;
+
+  &.huge {
+    font-size: 100px;
+  }
 }
 
 .icon-huge {
@@ -200,6 +204,11 @@
     text-align: center;
     font-size: 75px;
     padding: 25px 0;
+
+    &.huge {
+      font-size: 111px;
+      padding: 42px 0;
+    }
   }
 
 }
@@ -298,7 +307,7 @@ body > .navbar .brand {
   left: 0;
   float: left;
   margin-left: 0;
-  font-size: 32px;
+  font-size: 38px;
   color: darken(@color-accent, 30%);
   text-shadow: 0 1px 0 lighten(@color-accent, 10%);
 
@@ -417,6 +426,12 @@ body > .navbar .brand {
     .box-shadow(none);
     border-bottom: none;
 
+    h2 {
+      color: darken(@color-accent, 10%);
+      text-shadow: 0 -1px 0 darken(@color-accent, 15%), 0 1px 0 lighten(@color-accent, 4%);
+      font-size: 48px;
+    }
+
     p {
       margin-bottom: 0;
       padding: 0 30px;
@@ -524,6 +539,18 @@ body > .navbar .brand {
         text-shadow: none;
       }
 
+    }
+
+    .span6 {
+
+      h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 18px;
+      }
     }
 
     h2 {
@@ -1344,7 +1371,7 @@ body > .navbar .brand {
 
   body > .navbar .brand {
     position: relative;
-    left: 20px;
+    left: 0;
   }
 
   .navbar {

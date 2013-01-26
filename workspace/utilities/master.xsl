@@ -50,7 +50,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.7.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.0.8.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -112,6 +112,8 @@
           <xsl:text>jumbotron masthead</xsl:text>
         </xsl:attribute>
         <div class="container">
+          <h2><span class="logo">a</span>etermine</h2>
+          <hr class="soften"/>
           <div id="featureCarousel" class="carousel slide">
             <!-- Carousel items -->
             <div class="carousel-inner">
@@ -185,7 +187,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.7.js"
+            "/workspace/js/dtrmn.1.0.8.js"
           ]
         };
         for (var key in js.scripts) {
@@ -220,7 +222,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand pull-left" href="/"><span class="logo">a</span>etermine</a>
+      <a class="brand pull-left" href="/"><span class="logo">a</span></a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <xsl:apply-templates select="page"/>
@@ -278,13 +280,6 @@
                 </xsl:call-template>
               </span>
             </xsl:if>
-          </xsl:when>
-          <xsl:when test="@handle = 'books'">
-            <xsl:value-of select="name"/>
-            <xsl:text>&#160;&#160;</xsl:text>
-            <span class="badge">
-              <xsl:text>NEW</xsl:text>
-            </span>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="name"/>
