@@ -51,8 +51,6 @@
 // Utility classes
 @import "../bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
-
-
 // Responsive
 // -------------------------------------------------------------
 
@@ -81,18 +79,18 @@
 @import "docs.less";
 
 // Custom Mixins
-
 @import "easing.less";
 @import "mask-image.less";
 
 // RefTagger
 // =========
-
 @import "reftagger.less";
 
 // Logo
-
 @import "logo.less";
+
+// Google Fonts
+@import "oldstandard.less";
 
 
 // Color Variables
@@ -125,8 +123,9 @@
     font-style: normal;
 }
 
-@helvetica: "Helvetica Neue", Arial, Helvetica, sans-serif;
-@league: "LeagueGothic-Regular", "proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
+@helvetica: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@oldstandard: 'Old Standard TT', Georgia, Times, serif;
+@league: 'LeagueGothic-Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 // RESPONSIMAGE
 // ============
@@ -318,6 +317,12 @@ a {
   }
 }
 
+.summary {
+  font-family: @oldstandard;
+}
+
+// Advanced Styles
+// ===============
 
 body > .navbar .brand {
   position: relative;
@@ -337,7 +342,6 @@ body > .navbar .brand {
 .navbar {
   background: darken(@color-accent, 2%);
   border: none;
-  border-bottom: 1px solid lighten(@color-accent, 2%);
   .box-shadow(inset 0 -2px 12px rgba(0,0,0,0.1));
 
  .title {
@@ -367,6 +371,8 @@ body > .navbar .brand {
   .nav {
 
     li {
+      font-family: @oldstandard;
+      font-weight: bold;
       text-transform: uppercase;
       font-size: 18px;
 
@@ -437,9 +443,11 @@ body > .navbar .brand {
 
 .jumbotron {
   .border-radius(0);
+  border-top: 1px solid lighten(@color-accent, 2%);
+  margin-top: 16px;
 
   &.masthead {
-    padding: 54px 0 40px 0;
+    padding: 38px 0 40px 0;
     background: darken(@color-accent, 2%);
     .box-shadow(none);
     border-bottom: none;
@@ -490,7 +498,7 @@ body > .navbar .brand {
   &.subhead {
     background: darken(@color-accent, 2%);
     .box-shadow(none);
-    padding: 60px 0;
+    padding: 44px 0 60px 0;
     border-bottom: none;
 
   }
@@ -542,10 +550,11 @@ body > .navbar .brand {
     }
   }
 
-  .lead{
+  .lead {
+    font-family: @oldstandard;
     margin-bottom: 0;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 24px;
   }
 
 }
@@ -554,6 +563,8 @@ body > .navbar .brand {
   margin: 40px 0;
 
   .marketing-byline {
+    font-family: 'Old Standard TT', Georgia, Times, serif;
+    font-weight: 400;
     padding: 20px 100px;
     line-height: 1.5;
   }
@@ -594,10 +605,19 @@ body > .navbar .brand {
     }
 
     p {
-      font-weight: 300;
+      font-family: 'Old Standard TT', Georgia, Times, serif;
+      font-weight: 400;
     }
 
     h2 {
+
+      a {
+        color: #5a5a5a;
+
+        &:hover {
+          color: @color-accent;
+        }
+      }
 
       .badge {
         text-transform: uppercase;
@@ -680,6 +700,8 @@ body > .navbar .brand {
   }
 
   .content {
+    font-family: @oldstandard;
+    font-size: 15px;
     font-weight: 300;
     padding: 15px;
     border: 1px solid darken(@color-white, 10%);
@@ -777,6 +799,13 @@ body > .navbar .brand {
       font-weight: 300;
     }
 
+    .content {
+
+      p {
+        font-family: @oldstandard;
+      }
+    }
+
     .block {
       padding-bottom: 10px;
     }
@@ -855,10 +884,11 @@ body > .navbar .brand {
   }
 
   .summary {
+    font-family: @oldstandard;
+    font-size: 16px;
     text-align: left;
     color: lighten(@color-black, 20%);
     padding: 15px;
-    font-weight: 300;
   }
 
   .right {
@@ -915,6 +945,7 @@ body > .navbar .brand {
     }
 
     .summary {
+      font-style: italic;
       color: #777;
       text-align: center;
       margin: 0 auto 40px auto;
@@ -933,7 +964,8 @@ body > .navbar .brand {
       }
 
       p {
-        font-size: 16px;
+        font-family: @oldstandard;
+        font-size: 18px;
         line-height: 1.8;
         margin: 30px 0;
         font-weight: 300;
@@ -1259,6 +1291,8 @@ body > .navbar .brand {
   color: darken(@color-white, 30%);
 
   p {
+    font-family: @oldstandard;
+    font-size: 16px;
     color: darken(@color-black, 10%);
     text-shadow: 0 1px 0 lighten(@color-black, 5%);
 

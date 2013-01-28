@@ -59,8 +59,10 @@
           <p class="marketing-byline">Determine was started with the intent and purpose to share the Gospel of Jesus Christ with a dying world and to encourage Christians to live every day in light of what Christ did for us. Join us in that cause:</p>
           <div class="row grid second">
             <div class="span6 offset3">
-              <a href="{$root}/quotes" class="glyphicon-book icon-large"></a>
-              <h2>Doctrine</h2>
+              <a href="{$root}/doctrine" class="glyphicon-book icon-large"></a>
+              <h2>
+                <a href="{$root}/doctrine">Doctrine</a>
+              </h2>
               <p>We have a growing library of short surveys on <a href="{$root}/doctrine">Biblical doctrines</a>. These pieces highlight theological subjects for further study and help engage our hearts and minds with the truths of Scripture</p>
             </div>
           </div>
@@ -68,22 +70,30 @@
           <div class="row grid second">
             <div class="span3">
               <a href="{$root}/blog" class="glyphicon-list-alt icon-large"></a>
-              <h2>Blog</h2>
+              <h2>
+                <a href="{$root}/blog">Blog</a>
+              </h2>
               <p>Our <a href="{$root}/blog">blog articles</a> are longer pieces centered on the Gospel to help you deepen your relationship with Christ and your love of the Scriptures.</p>
             </div>
             <div class="span3">
               <a href="{$root}/quotes" class="glyphicon-comment icon-large"></a>
-              <h2>Quotes</h2>
+              <h2>
+                <a href="{$root}/quotes">Quotes</a>
+              </h2>
               <p><a href="{$root}/quotes">Quotes</a> are usually short sound-bites from Gospel-centered preachers and scholars with short bits of commentary and reflection.</p>
             </div>
             <div class="span3">
               <a href="{$root}/books" class="glyphicon-bookmark icon-large"></a>
-              <h2>Books</h2>
+              <h2>
+                <a href="{$root}/books">Books</a>
+              </h2>
               <p>We have <a href="{$root}/books">reviews of relevant Christian books</a> that we have found helpful in pursuing Christ and growing in our love for Him.</p>
             </div>
             <div class="span3">
               <a href="{$root}/foundations" class="logo icon-large">b</a>
-              <h2>Studies</h2>
+              <h2>
+                <a href="{$root}/foundations">Studies</a>
+              </h2>
               <p>Follow along with the <a href="{$root}/foundations">Foundations</a> groudy study we are doing at our <a href="http://atheycreek.com/">local church</a> as a way to more deeply interact with Scripture.</p>
             </div>
           </div>

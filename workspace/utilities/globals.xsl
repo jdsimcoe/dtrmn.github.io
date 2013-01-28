@@ -91,7 +91,7 @@
         <h4>
           <xsl:value-of select="title" />
         </h4>
-        <p>
+        <p class="author">
           <xsl:text>by </xsl:text>
           <xsl:choose>
             <xsl:when test="book != ''">
@@ -102,10 +102,12 @@
             </xsl:otherwise>
           </xsl:choose>
         </p>
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="quote" />
-          <xsl:with-param name="length" select="80" />
-        </xsl:call-template>
+        <div class="content">
+          <xsl:call-template name="truncate">
+            <xsl:with-param name="node" select="quote" />
+            <xsl:with-param name="length" select="80" />
+          </xsl:call-template>
+        </div>
       </blockquote>
     </a>
   </div>

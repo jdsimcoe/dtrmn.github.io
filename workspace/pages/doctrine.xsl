@@ -51,7 +51,7 @@
                 <xsl:apply-templates select="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id]"/>
                 <hr class="soften"/>
                 <h5>More About Foundations</h5>
-                <p>The goal of Foundations is to study Biblical doctrines in a group setting to learn how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
+                <p class="summary">The goal of Foundations is to study Biblical doctrines in a group setting to learn how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 <p>
                   <a href="{$root}/foundations" class="btn">
                     <xsl:text>View All Studies&#8594;</xsl:text>
