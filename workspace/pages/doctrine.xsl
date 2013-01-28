@@ -33,7 +33,7 @@
             </div>
           </div>
           <hr/>
-          <div class="row">
+          <div class="row related">
             <div>
               <xsl:attribute name="class">
                 <xsl:choose>
@@ -65,7 +65,7 @@
               <xsl:apply-templates select="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]"/>
             </xsl:if>
           </div>
-          <div class="row">
+          <div class="row back-nav">
             <br/><br/><br/><br/>
             <hr class="soften" />
             <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">

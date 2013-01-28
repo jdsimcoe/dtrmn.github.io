@@ -265,10 +265,11 @@ a {
   padding: 30px 0;
 
   h3 {
+    color: #5a5a5a;
     margin-bottom: 20px;
     font-family: @league;
     text-transform: uppercase;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: normal;
     letter-spacing: 0.03em;
   }
@@ -498,7 +499,7 @@ body > .navbar .brand {
   &.subhead {
     background: darken(@color-accent, 2%);
     .box-shadow(none);
-    padding: 44px 0 60px 0;
+    padding: 50px 0 60px 0;
     border-bottom: none;
 
   }
@@ -872,7 +873,8 @@ body > .navbar .brand {
       border-bottom: 1px solid darken(@color-white, 5%);
       text-shadow: 0 1px 0 rgba(255,255,255,1.0);
       font-family: @helvetica;
-      font-size: 24px;
+      font-weight: bold;
+      font-size: 20px;
       text-transform: none;
 
       .badge {
@@ -990,16 +992,6 @@ body > .navbar .brand {
 
 .wrapper-doctrine {
   margin-top: 30px;
-
-  .doctrine {
-
-    a {
-
-      h3 {
-        font-weight: normal;
-      }
-    }
-  }
 }
 
 // BLOG
@@ -1594,3 +1586,49 @@ body > .navbar .brand {
 
 }
 
+// PRINT STYLESHEET
+// ================
+
+@media print {
+
+  .navbar, .jumbotron, .footer, .related, .back-nav, .edit {
+    display: none;
+  }
+
+  a[href]:after, abbr[title]:after {
+    display: none;
+  }
+
+  // Don't show links for images, or javascript/internal links
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: none;
+    border-left: 3px solid #ccc;
+    page-break-inside: auto;
+  }
+
+  .wrapper-doctrine {
+
+    .span12 {
+
+      .span8 {
+        width: 100%;
+
+        &.offset2 {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @page {
+    margin: 1cm;
+  }
+
+}
