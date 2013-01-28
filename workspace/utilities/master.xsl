@@ -50,7 +50,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.0.9.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.1.0.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -146,36 +146,46 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="span3">
+          <div class="span2">
+            <a href="{root}" class="logo">
+              <span class="icon-large">a</span>
+            </a>
             <ul class="nav nav-list">
               <xsl:apply-templates select="data/navigation/page"/>
             </ul>
           </div>
-          <div class="span9">
+          <div class="span6">
             <h5>Inspiration</h5>
-            <div class="inspiration">
-              <blockquote>
-                <xsl:value-of select="//data/inspiration-random/entry/content" />
-              </blockquote>
-              <cite>
-                <span>
-                  <xsl:value-of select="//data/inspiration-random/entry/cite" />
-                </span>
-              </cite>
-            </div>
+            <xsl:for-each select="//data/inspiration-random/entry">
+              <div class="inspiration">
+                <blockquote>
+                  <xsl:value-of select="content" />
+                </blockquote>
+                <cite>
+                  <xsl:text>—</xsl:text>
+                  <span>
+                    <xsl:value-of select="cite" />
+                  </span>
+                </cite>
+                <xsl:if test="position() = 1">
+                  <hr/>
+                </xsl:if>
+              </div>
+            </xsl:for-each>
+          </div>
+          <div class="span4">
+            <h5>The Gospel</h5>
+            <p class="lead">The Gospel is the good news that God saves sinners from God's wrath to eternal life with Him through the death, burial, and resurrected life of Jesus Christ. God offers this to all freely and invites us into His life through repentance and faith.</p>
+            <a href="{root}/about" class="btn btn-danger">Read More <strong>&#8594;</strong></a>
           </div>
         </div>
-        <hr />
+        <hr class="special"/>
         <p class="center">
           <xsl:text>&#xa9;&#160;2011–</xsl:text>
           <xsl:value-of select="$this-year" />
           <xsl:text>.&#160;</xsl:text>
           <xsl:text>The Simcoes. All rights reserved.&#160;|&#160;</xsl:text>
           <a class="rss" href="{$root}/rss/">RSS</a>
-        </p>
-        <p class="center">
-          <br /><br />
-          <span class="logo icon-large icon-black">a</span>
         </p>
       </div>
     </footer>
@@ -187,7 +197,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.0.9.js"
+            "/workspace/js/dtrmn.1.1.0.js"
           ]
         };
         for (var key in js.scripts) {

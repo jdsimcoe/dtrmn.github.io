@@ -7,12 +7,11 @@
 		public $dsParamROOTELEMENT = 'inspiration-random';
 		public $dsParamORDER = 'random';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '1';
+		public $dsParamLIMIT = '2';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
@@ -37,10 +36,10 @@
 				'name' => 'Inspiration: Random',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:32:03+00:00'
+				'release-date' => '2013-01-28T22:21:30+00:00'
 			);
 		}
 
