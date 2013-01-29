@@ -78,7 +78,7 @@
       </xsl:for-each>
       <xsl:call-template name="truncate">
         <xsl:with-param name="node" select="content" />
-        <xsl:with-param name="length" select="750" />
+        <xsl:with-param name="length" select="730" />
       </xsl:call-template>
       <p class="right">
         <a href="{$root}/{$root-page}/{title/@handle}">Read <strong>Full Article </strong> <strong>&#8594;</strong></a>

@@ -450,7 +450,7 @@ body > .navbar .brand {
     padding: 38px 0 40px 0;
     background: darken(@color-accent, 2%);
     .box-shadow(none);
-    border-bottom: none;
+    border-bottom: 1px solid darken(@color-accent, 15%);
 
     h2 {
       color: darken(@color-accent, 10%);
@@ -689,7 +689,6 @@ body > .navbar .brand {
         text-shadow: 0 1px 0 darken(@color-accent, 20%);
       }
     }
-
 
   }
 
@@ -1028,7 +1027,7 @@ body > .navbar .brand {
 
         h2 {
           font-size: 42px;
-          padding: 20px 15px 5px 15px;
+          padding: 15px 15px 5px 15px;
           margin: 0;
           font-family: @league;
           font-weight: normal;
@@ -1037,7 +1036,7 @@ body > .navbar .brand {
 
           .badge {
             position: relative;
-            top: -10px;
+            top: -15px;
             font-family: @helvetica;
             font-weight: bold;
             text-transform: none;
@@ -1279,9 +1278,12 @@ body > .navbar .brand {
 .footer {
   margin-top: 0;
   background: #333;
+  border-top: 1px solid #000;
   color: darken(@color-white, 30%);
 
   .logo {
+    position: relative;
+    top: -10px;
     text-align: left;
     margin-left: 5px;
     color: #202020;
