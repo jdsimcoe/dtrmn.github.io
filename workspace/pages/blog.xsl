@@ -5,6 +5,7 @@
 
 <xsl:include href="../utilities/master.xsl"/>
 <xsl:include href="../utilities/globals.xsl"/>
+<xsl:include href="../utilities/pagination.xsl"/>
 
 
 <xsl:template match="data">
@@ -13,7 +14,7 @@
     <div class="container">
 
       <xsl:choose>
-        <xsl:when test="$title = ''">
+        <xsl:when test="$title = '' or number($title)">
           <div class="marketing">
             <i class="glyphicon-list-alt icon-large"></i>
             <h2>Articles of Devotion</h2>
@@ -24,7 +25,12 @@
           <div class="row">
             <div class="span8">
               <xsl:apply-templates select="/data/articles-all/entry"/>
-              <hr class="soften" />
+
+              <xsl:call-template name="cd-pagination">
+                <xsl:with-param name="pagination" select="/data/articles-all/pagination" />
+                <xsl:with-param name="pagination-url" select="'/blog/$'" />
+              </xsl:call-template>
+
             </div>
             <div class="span4">
               <h4>Latest Quotes</h4>
@@ -127,6 +133,7 @@
     </strong>
   </a>
 </xsl:template>
+
 
 
 </xsl:stylesheet>
