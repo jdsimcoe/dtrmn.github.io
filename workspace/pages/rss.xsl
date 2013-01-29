@@ -4,7 +4,8 @@
   xmlns:exsl="http://exslt.org/common"
   extension-element-prefixes="exsl">
 
-<xsl:import href="../utilities/date-time-advanced.xsl" />
+<xsl:include href="../utilities/date-time-advanced.xsl" />
+<xsl:include href="../utilities/globals.xsl"/>
 
 <xsl:output method="xml" encoding="UTF-8" indent="yes" />
 
@@ -28,7 +29,34 @@
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
-            <xsl:value-of select="content"/>
+            <xsl:variable name="blog-images">
+              <xsl:for-each select="image/item">
+                <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+                  <xsl:attribute name="data-responsimage">
+                    <xsl:value-of select="image/filename" />
+                  </xsl:attribute>
+                </img>
+              </xsl:for-each>
+            </xsl:variable>
+            <xsl:variable name="blog-verses">
+              <xsl:for-each select="verses/item">
+                <div class="verse center">
+                  <blockquote>
+                    <xsl:value-of select="content" />
+                    <br />
+                    <cite>
+                      <xsl:value-of select="passage" />
+                      <xsl:text> (</xsl:text>
+                      <xsl:value-of select="version/item/abbreviation" />
+                      <xsl:text>)</xsl:text>
+                    </cite>
+                  </blockquote>
+                </div>
+              </xsl:for-each>
+            </xsl:variable>
+            <xsl:value-of select="$blog-images" disable-output-escaping="no" />
+            <xsl:value-of select="$blog-verses" disable-output-escaping="no" />
+            <xsl:value-of select="content" disable-output-escaping="yes" />
           </text>
         </entry>
       </xsl:for-each>
