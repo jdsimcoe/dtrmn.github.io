@@ -15,8 +15,8 @@
         <xsl:when test="$title = ''">
           <div class="marketing">
             <i class="glyphicon-bookmark icon-large"></i>
-            <h2>Book Snyposes &amp; Reviews</h2>
-            <p class="marketing-byline">Here you will find snyposes and reviews of books that we recommend. While the Scriptures stand as the sole source of Divine inpsiration, books can help us see Biblical truth that we didn't see before.</p>
+            <h2>Book Synopses &amp; Reviews</h2>
+            <p class="marketing-byline">Here you will find synopses and reviews of books that we recommend. While the Scriptures stand as the sole source of Divine inpsiration, books can help us see Biblical truth that we didn't see before.</p>
           </div>
           <hr class="soften" />
 
