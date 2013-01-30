@@ -27,11 +27,19 @@
         <title>
           <xsl:if test="$title != ''">
             <xsl:variable name="title-spaced">
-              <xsl:call-template name="string-replace-all">
-                <xsl:with-param name="text" select="$title" />
-                <xsl:with-param name="replace" select="'-'" />
-                <xsl:with-param name="by" select="' '" />
-              </xsl:call-template>
+              <xsl:choose>
+                <xsl:when test="number($title)">
+                  <xsl:text>Page </xsl:text>
+                  <xsl:value-of select="$title" />
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:call-template name="string-replace-all">
+                    <xsl:with-param name="text" select="$title" />
+                    <xsl:with-param name="replace" select="'-'" />
+                    <xsl:with-param name="by" select="' '" />
+                  </xsl:call-template>
+                </xsl:otherwise>
+              </xsl:choose>
             </xsl:variable>
             <xsl:call-template name="TitleCase">
               <xsl:with-param name="text" select="translate(normalize-space($title-spaced),
@@ -50,7 +58,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.1.0.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.1.1.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -197,7 +205,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.1.0.js"
+            "/workspace/js/dtrmn.1.1.1.js"
           ]
         };
         for (var key in js.scripts) {
