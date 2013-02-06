@@ -18,7 +18,7 @@
             <i class="glyphicon-book icon-large"></i>
             <h2>Why Study Doctrines of the Bible?</h2>
             <p class="marketing-byline">Studying Biblical doctrine is how we engage with the God of the Universe. Our depth in knowing God and in being like God is related to how rightly know Him. God has revelead himself in the Scriptures so we can know Him, worship Him and follow Him into mission.</p>
-            <hr class="soften" />
+            <hr/>
             <br />
           </div>
 
@@ -67,7 +67,7 @@
           </div>
           <div class="row back-nav">
             <br/><br/><br/><br/>
-            <hr class="soften" />
+            <hr/>
             <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
               <xsl:text>&#8592; Back to </xsl:text>
               <strong>
@@ -98,7 +98,7 @@
     <div class="summary">
       <xsl:value-of select="summary" disable-output-escaping="yes" />
     </div>
-    <hr class="soften" />
+    <hr/>
     <div class="content">
       <xsl:value-of select="content" disable-output-escaping="yes" />
     </div>

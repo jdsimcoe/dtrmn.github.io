@@ -15,13 +15,6 @@
 
       <xsl:choose>
         <xsl:when test="$title = '' or number($title)">
-          <div class="marketing">
-            <i class="glyphicon-list-alt icon-large"></i>
-            <h2>Articles of Devotion</h2>
-            <p class="marketing-byline">The Determine blog has the purpose of deeping our devotion to Christ. Mediations on the Scripture help us see the beauty of God in the face of Jesus Christ (2 Corinthians 4:6) and respond to Him in worshipful obedience and sacrifice (Romans 12:1).</p>
-          </div>
-          <hr class="soften" />
-          <br /><br />
           <div class="row">
             <div class="span8">
               <xsl:apply-templates select="/data/articles-all/entry"/>
@@ -96,7 +89,7 @@
 
 <xsl:template match="/data/articles-single/entry">
   <div class="article entry">
-    <h4 class="center">
+    <h4>
       <xsl:call-template name="format-date">
         <xsl:with-param name="date" select="date/date/start/@iso" />
         <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
@@ -105,14 +98,14 @@
         <xsl:with-param name="component" select="'articles'"/>
       </xsl:call-template>
     </h4>
-    <h1 class="center">
+    <h1>
       <a href="{$root}/{$root-page}/{title/@handle}">
         <xsl:value-of select="title" />
       </a>
     </h1>
-    <hr class="soften" />
+    <hr/>
     <xsl:if test="image != ''">
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+      <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
@@ -125,7 +118,7 @@
       <xsl:value-of select="content" disable-output-escaping="yes" />
     </div>
   </div>
-  <hr class="soften" />
+  <hr/>
   <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
     <xsl:text>&#8592; Back to the </xsl:text>
     <strong>

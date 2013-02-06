@@ -89,9 +89,6 @@
 // Logo
 @import "logo.less";
 
-// Google Fonts
-@import "oldstandard.less";
-
 
 // Color Variables
 // ===============
@@ -100,7 +97,7 @@
 @color-black: #333;
 @color-gray-light: #e9e9e9;
 @color-body: @color-white;
-@color-accent: #dd3838;
+@color-accent: #a53a3a;
 @color-mast: @color-accent;
 
 // Dimension Variables
@@ -111,21 +108,7 @@
 // Font Variables
 // ==============
 
-@font-face {
-    font-family: 'LeagueGothic-Regular';
-    src: url('../fonts/leaguegothic-regular-webfont.eot');
-    src: local('O'),
-         url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
-         url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
-         url('../fonts/leaguegothic-regular-webfont.svg#LeagueGothic-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@helvetica: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@oldstandard: 'Old Standard TT', Georgia, Times, serif;
-@league: 'LeagueGothic-Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@sans: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 // RESPONSIMAGE
 // ============
@@ -161,7 +144,7 @@
 }
 
 @link-color: @color-accent;
-@border-radius-base: 0px;
+@border-radius-base: 5px;
 @border-radius-large: @border-radius-base;
 @border-radius-small: @border-radius-base;
 @btn-background-primary-highlight: darken(@btn-background-primary, 5%);
@@ -184,6 +167,66 @@
 
 .carousel {
   margin-bottom: 0px;
+}
+
+@btn-background: lighten(desaturate(@color-accent, 20%), 15%);
+@btn-background-highlight: lighten(desaturate(@color-accent, 20%), 5%);
+
+.btn {
+  background-image: none;
+  background: @btn-background;
+  border: 1px solid @btn-background;
+  .border-radius(@border-radius-base);
+  .box-shadow(none);
+  .box-sizing(border-box);
+  color: #fff;
+  text-shadow: none;
+
+  &:hover {
+    background: @btn-background-highlight;
+    border: 1px solid @btn-background-highlight;
+    color: #fff;
+  }
+
+  &.btn-primary {
+    background: @btn-background-primary;
+    border: 1px solid @btn-background-primary;
+
+    &:hover {
+      background: @btn-background-primary-highlight;
+      border: 1px solid @btn-background-primary-highlight;
+    }
+  }
+
+  &.btn-success {
+    background: @btn-background-success;
+    border: 1px solid @btn-background-success;
+
+    &:hover {
+      background: @btn-background-success-highlight;
+      border: 1px solid @btn-background-success-highlight;
+    }
+  }
+
+  &.btn-warning {
+    background: @btn-background-warning;
+    border: 1px solid @btn-background-warning;
+
+    &:hover {
+      background: @btn-background-warning-highlight;
+      border: 1px solid @btn-background-warning-highlight;
+    }
+  }
+
+  &.btn-danger {
+    background: @btn-background-danger;
+    border: 1px solid @btn-background-danger;
+
+    &:hover {
+      background: @btn-background-danger-highlight;
+      border: 1px solid @btn-background-danger-highlight;
+    }
+  }
 }
 
 // Glyphicon Tweaks
@@ -267,7 +310,7 @@ a {
   h3 {
     color: #5a5a5a;
     margin-bottom: 20px;
-    font-family: @league;
+    font-family: @sans;
     text-transform: uppercase;
     font-size: 36px;
     font-weight: normal;
@@ -319,86 +362,77 @@ a {
 }
 
 .summary {
-  font-family: @oldstandard;
+  font-family: @sans;
 }
 
 // Advanced Styles
 // ===============
 
 body > .navbar .brand {
-  position: relative;
-  top: 7px;
-  left: 0;
   float: left;
+  position: relative;
+  top: -2px;
+  left: 0;
   margin-left: 0;
+  margin-right: 15px;
   font-size: 38px;
-  color: darken(@color-accent, 30%);
-  text-shadow: 0 1px 0 lighten(@color-accent, 10%);
+  color: lighten(desaturate(@color-accent, 10%), 15%);
+  text-shadow: none;
+
+  .logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 38px;
+  }
 
   &:hover {
-    text-shadow: 0 -1px 0 darken(@color-accent, 25%);
+    color: darken(@color-accent, 15%);
+    text-shadow: none;
   }
 }
 
 .navbar {
-  background: darken(@color-accent, 2%);
+  background: darken(@color-accent, 5%);
+  .box-shadow(none);
   border: none;
-  .box-shadow(inset 0 -2px 12px rgba(0,0,0,0.1));
-
- .title {
-    font-weight: bold;
-    position: relative;
-    top: 18px;
-    font-size: 32px;
-    color: darken(@color-accent, 30%);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.25);
-
-    &:hover {
-      text-decoration: none;
-      color: darken(@color-accent, 35%);
-    }
-
-    i {
-      background: darken(@color-accent, 30%);
-      .border-radius(100%);
-      font-size: 14px;
-      position: relative;
-      top: -5px;
-      padding: 7px 9px;
-      color: #fff;
-    }
-  }
+  padding: 12px 0 10px 0;
 
   .nav {
 
+
     li {
-      font-family: @oldstandard;
+      font-family: @sans;
+      font-size: 12px;
       text-transform: uppercase;
-      font-size: 18px;
+      .box-shadow(none);
 
       &.active {
 
         a {
-          background: darken(@color-accent, 20%);
-          border-left: 1px solid darken(@color-accent, 20%);
+          background: lighten(desaturate(@color-accent, 10%), 15%);
+          border: 1px solid lighten(desaturate(@color-accent, 10%), 15%);
+          color: darken(@color-accent, 2%);
+          .box-shadow(none);
+
           &:hover {
-            background: darken(@color-accent, 30%);
+            background: lighten(desaturate(@color-accent, 10%), 15%);
+            border: 1px solid lighten(desaturate(@color-accent, 10%), 15%);
+            color: darken(@color-accent, 2%);
+            .box-shadow(none);
           }
         }
       }
 
-      &:last-child {
-        a {
-          border-right: 1px solid darken(@color-accent, 10%);
-        }
-      }
-
       a {
-        height: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: #fff;
-        border-left: 1px solid darken(@color-accent, 10%);
+        font-size: 14px;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: lighten(desaturate(@color-accent, 10%), 15%);
+        .border-radius(@border-radius-base);
+        text-shadow: none;
+        .box-shadow(none);
 
         .badge {
           background: @color-white;
@@ -413,19 +447,45 @@ body > .navbar .brand {
         }
 
         &:hover {
-          background: darken(@color-accent, 20%);
-          border-color: darken(@color-accent, 20%);
+          color: lighten(desaturate(@color-accent, 10%), 30%);
         }
 
 
       }
 
+    }
+
+    &.maint {
+
+      li {
+
+        a {
+          color: lighten(desaturate(@color-accent, 10%), 5%);
+          background: darken(@color-accent, 10%);
+          border: none;
+
+          &:hover {
+            color: lighten(desaturate(@color-accent, 10%), 30%);
+            background: darken(@color-accent, 20%);
+          }
+        }
+      }
+
       .dropdown-menu {
+        background: darken(@color-accent, 10%);
+        border: none;
+
+        &::after,
+        &::before {
+          display: none;
+        }
 
         li {
           a {
-            color: @color-accent;
+            color: lighten(desaturate(@color-accent, 10%), 50%);
             border: none;
+            .border-radius(0);
+            text-shadow: none;
 
             &:hover {
               background: @color-accent;
@@ -434,7 +494,6 @@ body > .navbar .brand {
           }
         }
       }
-
     }
 
   }
@@ -443,18 +502,16 @@ body > .navbar .brand {
 
 .jumbotron {
   .border-radius(0);
-  border-top: 1px solid lighten(@color-accent, 2%);
   margin-top: 16px;
+  background: lighten(desaturate(@color-accent, 20%), 45%);
 
   &.masthead {
-    padding: 38px 0 40px 0;
-    background: darken(@color-accent, 2%);
+    padding: 60px 0;
     .box-shadow(none);
-    border-bottom: 1px solid darken(@color-accent, 15%);
+    border-bottom: none;
 
     h2 {
       color: darken(@color-accent, 10%);
-      text-shadow: 0 -1px 0 darken(@color-accent, 15%), 0 1px 0 lighten(@color-accent, 4%);
       font-size: 48px;
     }
 
@@ -465,10 +522,11 @@ body > .navbar .brand {
       &.vision {
         font-size: 32px;
         text-align: center;
+        text-shadow: none;
+        color: lighten(desaturate(@color-accent, 20%), 25%);
 
         a {
           color: #fff;
-          border-bottom: 3px dotted darken(@color-accent, 10%);
         }
       }
 
@@ -486,8 +544,8 @@ body > .navbar .brand {
           padding: 0 30px;
           margin: 40px 0 0 0;
           font-size: 16px;
-          color: darken(@color-accent, 20%);
-          text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+          color: #fff;
+          text-shadow: none;
         }
 
       }
@@ -496,9 +554,8 @@ body > .navbar .brand {
   }
 
   &.subhead {
-    background: darken(@color-accent, 2%);
     .box-shadow(none);
-    padding: 50px 0 60px 0;
+    padding: 68px 0 78px 0;
     border-bottom: none;
 
   }
@@ -529,32 +586,33 @@ body > .navbar .brand {
     margin-top: 0;
 
     a {
-      color: darken(@color-accent, 15%);
-      text-shadow: 0 1px 0 lighten(@color-accent, 5%), 0 -1px 0 darken(@color-accent, 10%);
+      color: lighten(desaturate(@color-accent, 20%), 25%);
+      text-shadow: none;
       text-align: left;
-      font-size: 72px;
-      font-family: @league;
-      text-transform: uppercase;
+      font-size: 48px;
+      font-family: @sans;
       letter-spacing: 0.04em;
 
       .logo {
-        margin-right: -30px;
+        margin-right: -15px;
         display: inline-block;
       }
 
 
       &:hover {
-        color: #fff;
-        text-shadow: 0 1px 2px darken(@color-accent, 15%);
+        color: lighten(desaturate(@color-accent, 20%), 15%);
+        text-shadow: none;
       }
     }
   }
 
   .lead {
-    font-family: @oldstandard;
+    color: #fff;
+    font-family: @sans;
     margin-bottom: 0;
     font-weight: 300;
     font-size: 24px;
+    text-shadow: none;
   }
 
 }
@@ -563,8 +621,8 @@ body > .navbar .brand {
   margin: 40px 0;
 
   .marketing-byline {
-    font-family: 'Old Standard TT', Georgia, Times, serif;
-    font-weight: 400;
+    font-family: @sans;
+    font-weight: 300;
     padding: 20px 100px;
     line-height: 1.5;
   }
@@ -585,9 +643,9 @@ body > .navbar .brand {
     .span6 {
 
       h2 {
-        font-size: 54px;
-        font-family: @league;
-        text-transform: uppercase;
+        font-size: 38px;
+        font-family: @sans;
+        font-weight: bold;
         margin-top: 25px;
         margin-bottom: 15px;
       }
@@ -605,8 +663,8 @@ body > .navbar .brand {
     }
 
     p {
-      font-family: 'Old Standard TT', Georgia, Times, serif;
-      font-weight: 400;
+      font-family: @sans;
+      font-weight: 300;
     }
 
     h2 {
@@ -699,7 +757,7 @@ body > .navbar .brand {
   }
 
   .content {
-    font-family: @oldstandard;
+    font-family: @sans;
     font-size: 15px;
     font-weight: 300;
     padding: 15px;
@@ -801,7 +859,7 @@ body > .navbar .brand {
     .content {
 
       p {
-        font-family: @oldstandard;
+        font-family: @sans;
       }
     }
 
@@ -870,7 +928,7 @@ body > .navbar .brand {
       background: darken(@color-white, 2%);
       border-bottom: 1px solid darken(@color-white, 5%);
       text-shadow: 0 1px 0 rgba(255,255,255,1.0);
-      font-family: @helvetica;
+      font-family: @sans;
       font-weight: bold;
       font-size: 20px;
       text-transform: none;
@@ -884,7 +942,7 @@ body > .navbar .brand {
   }
 
   .summary {
-    font-family: @oldstandard;
+    font-family: @sans;
     font-size: 16px;
     text-align: left;
     color: lighten(@color-black, 20%);
@@ -964,7 +1022,7 @@ body > .navbar .brand {
       }
 
       p {
-        font-family: @oldstandard;
+        font-family: @sans;
         font-size: 18px;
         line-height: 1.8;
         margin: 30px 0;
@@ -996,17 +1054,17 @@ body > .navbar .brand {
 // ====
 
 .wrapper-blog {
-  margin-top: 30px;
+  margin-top: 60px;
 
   .entry {
 
     h1  {
-      font-family: @league;
-      font-weight: normal;
-      text-transform: uppercase;
-      font-size: 64px;
-      margin-top: 35px;
+      font-family: @sans;
+      font-size: 48px;
+      font-weight: 300;
       margin-bottom: 0;
+      margin-top: 35px;
+      text-align: left;
     }
 
     img {
@@ -1014,30 +1072,27 @@ body > .navbar .brand {
     }
 
     &.list {
-      position: relative;
+      background: darken(@color-white, 2%);
+      border: 1px solid darken(@color-white, 5%);
+      .border-radius(@border-radius-base);
       display: block;
-      background: @color-white;
-      .box-shadow(0 0 6px rgba(0,0,0,0.05));
       margin-bottom: 40px;
-      border: 1px solid darken(@color-white, 10%);
-
+      position: relative;
 
       .entry-header {
 
-
         h2 {
-          font-size: 42px;
-          padding: 15px 15px 5px 15px;
-          margin: 0;
-          font-family: @league;
-          font-weight: normal;
-          text-transform: uppercase;
+          font-family: @sans;
+          font-size: 28px;
+          font-weight: 300;
           letter-spacing: 0.02em;
+          margin: 0;
+          padding: 15px 15px 5px 15px;
 
           .badge {
             position: relative;
             top: -15px;
-            font-family: @helvetica;
+            font-family: @sans;
             font-weight: bold;
             text-transform: none;
           }
@@ -1193,8 +1248,12 @@ body > .navbar .brand {
     display: block;
     margin: 0 15px;
     top: 150px;
-    left: 5px;
-    right: -5px;
+    left: 0;
+    right: 0;
+
+    h4 {
+      margin-bottom: 0;
+    }
 
     h4,
     p {
@@ -1203,7 +1262,7 @@ body > .navbar .brand {
     }
 
     p {
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
 
     .soften {
@@ -1277,20 +1336,18 @@ body > .navbar .brand {
 
 .footer {
   margin-top: 0;
-  background: #333;
-  border-top: 1px solid #000;
-  color: darken(@color-white, 30%);
+  background: lighten(desaturate(@color-accent, 20%), 45%);
+  color: lighten(desaturate(@color-accent, 20%), 55%);
 
   .logo {
     position: relative;
     top: -10px;
     text-align: left;
     margin-left: 5px;
-    color: #202020;
-    text-shadow: 0 1px 0 lighten(@color-black, 7%), 0 -1px 0 darken(@color-black, 10%);
+    color: lighten(desaturate(@color-accent, 20%), 25%);
 
     &:hover {
-      color: @color-accent;
+      color: lighten(desaturate(@color-accent, 20%), 15%);
     }
 
     .icon-large {
@@ -1300,13 +1357,11 @@ body > .navbar .brand {
   }
 
   p {
-    font-family: @oldstandard;
+    font-family: @sans;
     font-size: 16px;
-    color: darken(@color-black, 10%);
-    text-shadow: 0 1px 0 lighten(@color-black, 5%);
+    color: lighten(desaturate(@color-accent, 20%), 55%);
 
     &.lead {
-      color: rgb(179, 179, 179);
       margin-bottom: 15px;
     }
 
@@ -1324,19 +1379,18 @@ body > .navbar .brand {
   }
 
   h5 {
-    margin-top: 55px;
-    color: @color-accent;
-    text-transform: uppercase;
+    color: lighten(desaturate(@color-accent, 20%), 25%);
     font-weight: bold;
+    margin-top: 55px;
+    text-transform: uppercase;
   }
 
   .inspiration {
-    background-color: #333;
     border: none;
     padding: 0;
 
     blockquote {
-      font-family: @oldstandard;
+      font-family: @sans;
       font-size: 16px;
       line-height: 30px;
       border: none;
@@ -1348,10 +1402,9 @@ body > .navbar .brand {
     }
 
     cite {
-      color: #111;
+      color: lighten(desaturate(@color-accent, 20%), 65%);
       display: block;
       margin-top: 10px;
-      text-shadow: 0 1px 0 lighten(@color-black, 5%);
       font-weight: bold;
       text-transform: uppercase;
       text-align: left;
@@ -1362,7 +1415,7 @@ body > .navbar .brand {
     border: none;
 
     &.nav-list {
-      background-color: @color-black;
+      background: transparent;
       .box-shadow(none);
 
       .nav-header {
@@ -1371,12 +1424,31 @@ body > .navbar .brand {
       }
 
       li {
+
+
+        &.active {
+          a {
+            background: lighten(desaturate(@color-accent, 20%), 25%);
+            border: 1px solid lighten(desaturate(@color-accent, 20%), 25%);
+            .box-shadow(none);
+            color: lighten(desaturate(@color-accent, 20%), 45%);
+
+            &:hover {
+              background: lighten(desaturate(@color-accent, 20%), 25%);
+              border: 1px solid lighten(desaturate(@color-accent, 20%), 25%);
+              color: lighten(desaturate(@color-accent, 20%), 45%);
+            }
+          }
+        }
+
         a {
-          font-weight: bold;
-          text-transform: uppercase;
           border: none;
-          .border-radius(0);
+          .border-radius(@border-radius-base);
+          color: lighten(desaturate(@color-accent, 20%), 25%);
+          font-weight: bold;
           margin: 5px 0 10px 0;
+          text-transform: uppercase;
+          text-shadow: none;
 
           .badge {
             display: none;
@@ -1386,8 +1458,9 @@ body > .navbar .brand {
           }
 
           &:hover {
-            color: @color-accent;
-            background-color: #222;
+            color: desaturate(@color-accent, 20%);
+            background: none;
+            border:;
           }
         }
       }
@@ -1397,19 +1470,34 @@ body > .navbar .brand {
 
   hr {
     height: 1px;
-    background: #222;
+    background: lighten(desaturate(@color-accent, 20%), 40%);
+    border-bottom: 1px solid lighten(desaturate(@color-accent, 20%), 40%);
     border: none;
-    border-bottom: 1px solid lighten(@color-black, 5%);
-
-    &.special {
-      margin-bottom: 60px;
-      -webkit-mask-box-image:
-      -webkit-linear-gradient(
-          left,transparent, transparent 2%, white 5%, white 95%, transparent 98%);
-    }
-
   }
 
+}
+
+.baseline {
+  background: lighten(desaturate(@color-accent, 20%), 35%);
+  padding: 20px 0;
+
+  p {
+    color: lighten(desaturate(@color-accent, 20%), 20%);
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+
+    a {
+      border-bottom: 2px solid lighten(desaturate(@color-accent, 20%), 40%);
+      color: lighten(desaturate(@color-accent, 20%), 20%);
+      padding-bottom: 2px;
+
+      &:hover {
+        border-bottom: 2px solid lighten(desaturate(@color-accent, 20%), 45%);
+        color: lighten(desaturate(@color-accent, 20%), 10%);
+      }
+    }
+  }
 }
 
 // RESPONSIVE IMAGES

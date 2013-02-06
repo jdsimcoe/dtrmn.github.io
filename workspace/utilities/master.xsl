@@ -120,8 +120,6 @@
           <xsl:text>jumbotron masthead</xsl:text>
         </xsl:attribute>
         <div class="container">
-          <h2><span class="logo">a</span>etermine</h2>
-          <hr class="soften"/>
           <div id="featureCarousel" class="carousel slide">
             <!-- Carousel items -->
             <div class="carousel-inner">
@@ -170,7 +168,6 @@
                   <xsl:value-of select="content" />
                 </blockquote>
                 <cite>
-                  <xsl:text>—</xsl:text>
                   <span>
                     <xsl:value-of select="cite" />
                   </span>
@@ -184,19 +181,29 @@
           <div class="span4">
             <h5>The Gospel</h5>
             <p class="lead">The Gospel is the good news that God saves sinners from God's wrath to eternal life with Him through the death, burial, and resurrected life of Jesus Christ. God offers this to all freely and invites us into His life through repentance and faith.</p>
-            <a href="{root}/about" class="btn btn-danger">Read More <strong>&#8594;</strong></a>
+            <a href="{root}/about" class="btn">Read More <strong>&#8594;</strong></a>
           </div>
         </div>
-        <hr class="special"/>
-        <p class="center">
-          <xsl:text>&#xa9;&#160;2011–</xsl:text>
-          <xsl:value-of select="$this-year" />
-          <xsl:text>.&#160;</xsl:text>
-          <xsl:text>The Simcoes. All rights reserved.&#160;|&#160;</xsl:text>
-          <a class="rss" href="{$root}/rss/">RSS</a>
-        </p>
       </div>
     </footer>
+
+    <div class="baseline">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <p class="center">
+              <xsl:text>&#xa9;&#160;2011–</xsl:text>
+              <xsl:value-of select="$this-year" />
+              <xsl:text>.&#160;</xsl:text>
+              <xsl:text>The Simcoes. All rights reserved.&#160;&#160;|&#160;&#160;</xsl:text>
+              <a class="rss" href="{$root}/rss/">RSS</a>
+              <xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+              <a href="http://getsymphony.com/">Built with <strong>Symphony CMS</strong></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript">
     <xsl:comment>
@@ -240,12 +247,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand pull-left" href="/"><span class="logo">a</span></a>
+      <a class="brand" href="/"><span class="logo">a</span></a>
       <div class="nav-collapse collapse">
-        <ul class="nav pull-right">
+        <ul class="nav">
           <xsl:apply-templates select="page"/>
-          <xsl:if test="$cookie-username">
-            <li class="">
+        </ul>
+        <xsl:if test="$cookie-username">
+          <ul class="nav maint pull-right">
+            <li>
               <a href="#" data-toggle="dropdown"><i class="glyphicon-wrench"></i></a>
               <ul class="dropdown-menu">
                 <li><a href="/symphony/" target="_blank">Symphony</a></li>
@@ -253,8 +262,8 @@
                 <li><a href="{$root}/symphony/logout/">Logout</a></li>
               </ul>
             </li>
-          </xsl:if>
-        </ul>
+          </ul>
+        </xsl:if>
       </div>
     </div>
   </div>

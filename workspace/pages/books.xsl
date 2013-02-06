@@ -13,33 +13,21 @@
     <div class="container">
       <xsl:choose>
         <xsl:when test="$title = ''">
-          <div class="marketing">
-            <i class="glyphicon-bookmark icon-large"></i>
-            <h2>Book Synopses &amp; Reviews</h2>
-            <p class="marketing-byline">Here you will find synopses and reviews of books that we recommend. While the Scriptures stand as the sole source of Divine inpsiration, books can help us see Biblical truth that we didn't see before.</p>
-          </div>
-          <hr class="soften" />
 
           <div class="row">
-            <div class="span12">
-              <xsl:apply-templates select="/data/books-all/entry[reading='No']"/>
-            </div>
+            <h3 class="center">Book Synopses &amp; Reviews</h3>
+            <xsl:apply-templates select="/data/books-all/entry[reading='No']"/>
           </div>
 
-          <hr class="soften" />
           <div class="row">
-            <div class="span12">
-              <h3 class="center">Currently Reading</h3>
-              <xsl:apply-templates select="/data/books-reading/entry"/>
-            </div>
+            <h3 class="center">Currently Reading</h3>
+            <xsl:apply-templates select="/data/books-reading/entry"/>
           </div>
-
-
 
         </xsl:when>
         <xsl:otherwise>
           <xsl:apply-templates select="/data/books-single/entry"/>
-          <hr class="soften" />
+          <hr/>
           <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
             <xsl:text>&#8592; Back to </xsl:text>
             <strong>
@@ -57,7 +45,7 @@
 <xsl:template match="/data/books-single/entry">
   <div class="row entry">
     <div class="span3">
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" style="width:100%; height:400px;">
+      <img src="/workspace/img/spacer.gif" style="width:100%; height:400px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>

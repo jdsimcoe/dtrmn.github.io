@@ -21,7 +21,7 @@
                   <h2>Foundations Study</h2>
                   <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 </div>
-                <hr class="soften" />
+                <hr/>
                 <div class="span8 offset2">
                   <img class="img-polaroid" src="/workspace/img/spacer.gif">
                     <xsl:attribute name="data-responsimage">
@@ -59,7 +59,7 @@
               <xsl:apply-templates select="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]"/>
             </div>
           </div>
-          <hr class="soften" />
+          <hr/>
           <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
             <xsl:text>&#8592; Back to </xsl:text>
             <strong>

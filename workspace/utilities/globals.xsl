@@ -198,7 +198,7 @@
   <xsl:choose>
     <xsl:when test="reading = 'Yes'">
       <div class="span3 book">
-        <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
+        <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
           <xsl:attribute name="data-responsimage">
             <xsl:value-of select="image/item/image/filename" />
           </xsl:attribute>
@@ -220,7 +220,6 @@
                 <span class="badge">Review</span>
               </xsl:if>
             </p>
-            <hr class="soften" />
             <div class="ratings">
               <xsl:call-template name="ratings">
                 <xsl:with-param name="i" select="1" />
@@ -229,7 +228,7 @@
               </xsl:call-template>
             </div>
           </div>
-          <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
+          <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
             <xsl:attribute name="data-responsimage">
               <xsl:value-of select="image/item/image/filename" />
             </xsl:attribute>
