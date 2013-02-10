@@ -30,7 +30,9 @@
           <p>We have a growing library of short surveys on <a href="{$root}/doctrine">Biblical doctrines</a>. These pieces highlight theological subjects for further study and help engage our hearts and minds with the truths of Scripture, which is given for our growth, instruction, and correction (2 Timothy 3:16).</p>
         </div>
       </div>
-      <hr class="soften"/>
+      <hr/>
+      <br/>
+      <br/>
       <div class="row grid second">
         <div class="span3">
           <a href="{$root}/blog" class="glyphicon-list-alt icon-large"></a>

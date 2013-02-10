@@ -131,7 +131,7 @@
               <xsl:for-each select="//data/inspiration-all/entry">
                 <div class="item">
                   <p class="vision"><xsl:value-of select="content" /></p>
-                  <br />
+                  <br/>
                   <cite>
                     <xsl:value-of select="cite" />
                   </cite>
@@ -181,7 +181,7 @@
           <div class="span4">
             <h5>The Gospel</h5>
             <p class="lead">The Gospel is the good news that God saves sinners from God's wrath to eternal life with Him through the death, burial, and resurrected life of Jesus Christ. God offers this to all freely and invites us into His life through repentance and faith.</p>
-            <a href="{root}/about" class="btn">Read More <strong>&#8594;</strong></a>
+            <a href="{root}/gospel" class="btn">Read More <strong>&#8594;</strong></a>
           </div>
         </div>
       </div>
@@ -264,24 +264,38 @@
             </li>
           </ul>
         </xsl:if>
+        <ul class="nav pull-right">
+          <li>
+            <xsl:choose>
+              <xsl:when test="$current-page = 'gospel'">
+                <xsl:attribute name="class">
+                  <xsl:text>gospel active</xsl:text>
+                </xsl:attribute>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:attribute name="class">
+                  <xsl:text>gospel</xsl:text>
+                </xsl:attribute>
+              </xsl:otherwise>
+            </xsl:choose>
+            <a href="{root}/gospel">The Gospel</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </xsl:template>
 
 <xsl:template match="navigation/page">
-  <xsl:if test="not(types/type = 'hidden' or types/type = 'XML')">
+  <xsl:if test="not(types/type = 'hidden' or types/type = 'XML' or @handle = 'gospel')">
     <li>
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="@handle = $current-page">
             <xsl:text>active</xsl:text>
-            <xsl:if test="@handle = 'home'">
-              <xsl:text> hidden-desktop</xsl:text>
-            </xsl:if>
           </xsl:when>
-          <xsl:when test="@handle = 'home'">
-            <xsl:text>hidden-desktop</xsl:text>
+          <xsl:when test="@handle = 'gospel'">
+            <xsl:text>gospel</xsl:text>
           </xsl:when>
           <xsl:otherwise></xsl:otherwise>
         </xsl:choose>

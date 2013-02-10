@@ -17,21 +17,16 @@
             <div class="span12">
               <xsl:if test="//data/page-data/entry/title != ''">
                 <div class="marketing">
-                  <span class="logo icon-large">b</span>
-                  <h2>Foundations Study</h2>
+                  <div class="span8 offset2">
+                    <img src="/workspace/img/spacer.gif">
+                      <xsl:attribute name="data-responsimage">
+                        <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
+                      </xsl:attribute>
+                    </img>
+                  </div>
                   <p class="marketing-byline">Foundations is a study we are doing at our <a href="http://atheycreek.com/">local church</a>. Our goal is to study Biblical doctrines with the goal of seeing in a group setting how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
                 </div>
-                <hr/>
-                <div class="span8 offset2">
-                  <img class="img-polaroid" src="/workspace/img/spacer.gif">
-                    <xsl:attribute name="data-responsimage">
-                      <xsl:value-of select="//data/page-data/entry/image/item/image/filename" />
-                    </xsl:attribute>
-                  </img>
-                  <br /><br />
-                </div>
               </xsl:if>
-              <br /><br />
               <table class="table table-striped">
                 <thead>
                   <tr>
