@@ -135,10 +135,10 @@
     <xsl:attribute name="class">
       <xsl:choose>
         <xsl:when test="$root-page = 'home' or $root-page = 'doctrine'">
-          <xsl:text>span4 doctrine</xsl:text>
+          <xsl:text>span4 doctrine-tile</xsl:text>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:text>doctrine</xsl:text>
+          <xsl:text>doctrine-tile</xsl:text>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
@@ -245,57 +245,6 @@
 <!-- STUDIES
      ======= -->
 
-<xsl:template match="/data/studies-all/entry">
-  <xsl:call-template name="studies-entry"/>
-</xsl:template>
-
-
-<xsl:template match="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id]">
-  <xsl:call-template name="studies-single-entry"/>
-</xsl:template>
-
-
-<xsl:template name="studies-entry">
-  <tr>
-    <td><xsl:value-of select="position()" /></td>
-    <td>
-      <a href="{$root}/{$root-page}/{title/@handle}">
-        <xsl:value-of select="title" />
-        <xsl:if test="upcoming = 'Yes'">
-          <xsl:text>&#160;&#160;</xsl:text>
-          <span class="badge badge-inverse">UPCOMING</span>
-        </xsl:if>
-      </a>
-    </td>
-    <td><xsl:value-of select="doctrine" /></td>
-    <td>
-      <xsl:call-template name="format-date">
-        <xsl:with-param name="date" select="date/date/start/@iso" />
-        <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-      </xsl:call-template>
-    </td>
-  </tr>
-</xsl:template>
-
-
-<xsl:template name="studies-single-entry">
-  <div>
-    <a href="{$root}/foundations/{title/@handle}">
-      <span class="badge">
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-        </xsl:call-template>
-      </span>
-      <h2>
-        <span class="logo">b</span>
-        <xsl:text>&#160;</xsl:text>
-        <xsl:value-of select="title" />
-        <xsl:text>&#8594;</xsl:text>
-      </h2>
-    </a>
-  </div>
-</xsl:template>
 
 
 <!-- VERSES

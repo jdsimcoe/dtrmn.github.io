@@ -58,7 +58,7 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.1.1.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.1.1.2.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
@@ -75,7 +75,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="{$root-page}">
     <xsl:apply-templates select="data/navigation"/>
     <div>
       <xsl:if test="$page-title != 'Home'">
@@ -120,23 +120,32 @@
           <xsl:text>jumbotron masthead</xsl:text>
         </xsl:attribute>
         <div class="container">
-          <div id="featureCarousel" class="carousel slide">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="active item">
-                <p class="vision">For I determined to know nothing among you except Jesus Christ, and Him crucified.</p>
-                <br/>
-                <cite>1 Corinthians 2:2</cite>
-              </div>
-              <xsl:for-each select="//data/inspiration-all/entry">
-                <div class="item">
-                  <p class="vision"><xsl:value-of select="content" /></p>
-                  <br/>
-                  <cite>
-                    <xsl:value-of select="cite" />
-                  </cite>
+          <div class="row">
+            <div class="span9">
+              <div id="featureCarousel" class="carousel slide">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="active item">
+                    <p class="vision">For I determined to know nothing among you except Jesus Christ, <br/>and Him crucified.</p>
+                    <br/>
+                    <cite>1 Corinthians 2:2</cite>
+                  </div>
+                  <xsl:for-each select="//data/inspiration-all/entry">
+                    <div class="item">
+                      <p class="vision"><xsl:value-of select="content" /></p>
+                      <br/>
+                      <cite>
+                        <xsl:value-of select="cite" />
+                      </cite>
+                    </div>
+                  </xsl:for-each>
                 </div>
-              </xsl:for-each>
+              </div>
+            </div>
+            <div class="span3">
+              <h5>Our Vision</h5>
+              <p class="small">The vision of Determine is to make the Gospel of Jesus Christ known, treasured and embraced in every facet of life.</p>
+              <p class="small links"><a href="{$root}/about">Read More</a>&#160;&#160;<a href="{$root}/gospel">The Gospel</a></p>
             </div>
           </div>
         </div>
@@ -212,7 +221,7 @@
       function downloadJSAtOnload() {
         var js = {
           "scripts":[
-            "/workspace/js/dtrmn.1.1.1.js"
+            "/workspace/js/dtrmn.1.1.2.js"
           ]
         };
         for (var key in js.scripts) {

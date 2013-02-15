@@ -100,6 +100,9 @@
 @color-accent: #a53a3a;
 @color-mast: @color-accent;
 
+@color-doctrine: #606d80;
+
+
 // Dimension Variables
 // ===================
 
@@ -277,6 +280,12 @@ hr.soften {
 // HTML Elements
 // =============
 
+h5 {
+  color: lighten(desaturate(@color-accent, 20%), 25%);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 a {
   -webkit-transition: color 150ms ease-in-out, background 150ms ease-in-out;
 
@@ -295,6 +304,11 @@ a {
   color: @color-body;
 }
 
+* {
+  text-shadow: none;
+  .box-shadow(none);
+}
+
 // Styles
 // ======
 
@@ -311,10 +325,8 @@ a {
     color: #5a5a5a;
     margin-bottom: 20px;
     font-family: @sans;
-    text-transform: uppercase;
-    font-size: 36px;
-    font-weight: normal;
-    letter-spacing: 0.03em;
+    font-size: 28px;
+    font-weight: 300;
   }
 
   &.first {
@@ -499,24 +511,23 @@ body > .navbar .brand {
       }
 
       .dropdown-menu {
-        background: darken(@color-accent, 10%);
         border: none;
+        cursor: pointer;
 
-        &::after,
-        &::before {
-          display: none;
-        }
 
         li {
+          margin-left: 0;
+
           a {
-            color: lighten(desaturate(@color-accent, 10%), 50%);
+            background: @color-white;
             border: none;
             .border-radius(0);
+            color: lighten(desaturate(@color-accent, 10%), 40%);
+            cursor: pointer;
             text-shadow: none;
 
             &:hover {
-              background: @color-accent;
-              color: @color-white;
+              color: lighten(desaturate(@color-accent, 10%), 20%);
             }
           }
         }
@@ -528,14 +539,23 @@ body > .navbar .brand {
 }
 
 .jumbotron {
+  background: lighten(desaturate(@color-accent, 20%), 45%);
   .border-radius(0);
   margin-top: 16px;
-  background: lighten(desaturate(@color-accent, 20%), 45%);
+
+  * {
+    text-shadow: none;
+  }
 
   &.masthead {
-    padding: 60px 0;
     .box-shadow(none);
     border-bottom: none;
+    padding: 60px 0 40px 0;
+
+    .span3 {
+      position: relative;
+      top: -20px;
+    }
 
     h2 {
       color: darken(@color-accent, 10%);
@@ -544,11 +564,40 @@ body > .navbar .brand {
 
     p {
       margin-bottom: 0;
-      padding: 0 30px;
+      padding: 0;
+
+      &.small {
+        font-size: 16px;
+        text-align: left;
+      }
+
+      &.links {
+        margin-top: 10px;
+        text-align: center;
+
+        a {
+          background: lighten(desaturate(@color-accent, 20%), 35%);
+          border: 1px solid lighten(desaturate(@color-accent, 20%), 35%);
+          .border-radius(@border-radius-base);
+          color: lighten(desaturate(@color-accent, 20%), 20%);
+          font-size: 10px;
+          font-weight: bold;
+          padding: 5px 10px;
+          text-shadow: none;
+          text-transform: uppercase;
+
+          &:hover {
+            background: lighten(desaturate(@color-accent, 20%), 25%);
+            border: 1px solid lighten(desaturate(@color-accent, 20%), 25%);
+            color: lighten(desaturate(@color-accent, 20%), 50%);
+          }
+        }
+      }
 
       &.vision {
-        font-size: 32px;
-        text-align: center;
+        padding: 0;
+        font-size: 28px;
+        text-align: left;
         text-shadow: none;
         color: lighten(desaturate(@color-accent, 20%), 25%);
 
@@ -563,12 +612,12 @@ body > .navbar .brand {
       padding: 0;
 
       .item {
+        text-align: left;
 
         cite {
           text-transform: uppercase;
-          text-align: left;
           font-weight: bold;
-          padding: 0 30px;
+          padding: 0;
           margin: 40px 0 0 0;
           font-size: 16px;
           color: #fff;
@@ -672,7 +721,7 @@ body > .navbar .brand {
       h2 {
         font-size: 38px;
         font-family: @sans;
-        font-weight: bold;
+        font-weight: 300;
         margin-top: 25px;
         margin-bottom: 15px;
       }
@@ -936,7 +985,7 @@ body > .navbar .brand {
 // DOCTRINE
 // ========
 
-.doctrine {
+.doctrine-tile {
   margin-bottom: 40px;
 
   a {
@@ -1207,6 +1256,17 @@ body > .navbar .brand {
 .wrapper-studies {
   margin-top: 30px;
 
+  .description {
+
+    p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 15px 0;
+    }
+
+  }
+
   .entry {
 
     h1 {
@@ -1407,9 +1467,7 @@ body > .navbar .brand {
 
   h5 {
     color: lighten(desaturate(@color-accent, 20%), 25%);
-    font-weight: bold;
     margin-top: 55px;
-    text-transform: uppercase;
   }
 
   .inspiration {
@@ -1642,15 +1700,6 @@ body > .navbar .brand {
     }
   }
 
-  .jumbotron {
-
-    &.masthead {
-
-      p {
-        padding: 0 80px;
-      }
-    }
-  }
 
 }
 

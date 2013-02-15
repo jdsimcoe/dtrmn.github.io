@@ -34,34 +34,11 @@
           </div>
           <hr/>
           <div class="row related">
-            <div>
-              <xsl:attribute name="class">
-                <xsl:choose>
-                  <xsl:when test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] = ''">
-                    <xsl:text>span12</xsl:text>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:text>span6</xsl:text>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:attribute>
-              <xsl:if test="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id] != ''">
-                <h4>Related Foundations Study</h4>
-                <hr/>
-                <xsl:apply-templates select="/data/studies-all/entry[doctrine/item/@id = //data/doctrines-single/entry/@id]"/>
-                <hr class="soften"/>
-                <h5>More About Foundations</h5>
-                <p class="summary">The goal of Foundations is to study Biblical doctrines in a group setting to learn how they apply to our everday lives. We believe that deep theology should be imminently practical and draw us into great worship and obedience to Christ. We want to make the materials we use for these studies available to anyone who is looking to study the Bible in greater depth.</p>
-                <p>
-                  <a href="{$root}/foundations" class="btn">
-                    <xsl:text>View All Studies&#8594;</xsl:text>
-                  </a>
-                </p>
-              </xsl:if>
+            <div class="span12">
+              <h4>Related Books</h4>
             </div>
             <xsl:if test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] != ''">
-              <h4>Related Books</h4>
-              <hr/>
+
               <xsl:apply-templates select="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]"/>
             </xsl:if>
           </div>
