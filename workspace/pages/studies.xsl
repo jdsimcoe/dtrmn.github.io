@@ -29,7 +29,7 @@
               <div class="span12 description">
                 <xsl:value-of select="description" disable-output-escaping="yes" />
               </div>
-              <table class="table table-striped">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                     <th>#</th>

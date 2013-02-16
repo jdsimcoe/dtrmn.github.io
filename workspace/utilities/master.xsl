@@ -62,6 +62,7 @@
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
+    <script type="text/javascript" src="//cdn.sublimevideo.net/js/f81ifmeu-beta.js"></script>
     <script type="text/javascript">
       <xsl:comment>
         var _gaq=[["_setAccount","UA-4548059-3"],["_trackPageview"]];
