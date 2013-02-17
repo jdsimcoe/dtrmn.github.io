@@ -90,6 +90,7 @@
 
 <xsl:template match="/data/studies-single/entry">
   <div class="entry">
+    <br />
     <xsl:choose>
       <xsl:when test="video != ''">
         <xsl:value-of select="video" disable-output-escaping="yes" />
@@ -105,7 +106,7 @@
 
     <br /><br />
     <xsl:call-template name="edit-entry">
-      <xsl:with-param name="component" select="'studies'"/>
+      <xsl:with-param name="component" select="'study'"/>
     </xsl:call-template>
     <h1>
       <xsl:value-of select="title" />
