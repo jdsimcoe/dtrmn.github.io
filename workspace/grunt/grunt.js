@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         src: [
         '../less/dtrmn.less'
         ],
-        dest: '../css/dtrmn.1.1.3.css',
+        dest: '../css/dtrmn.1.1.6.css',
         options: {
             compile: true,
             compress: true
@@ -45,14 +45,13 @@ module.exports = function (grunt) {
     min: {
       dist: {
         src : [
+          '../js/sublime.js',
           '../bootstrap/docs/assets/js/jquery.js',
           '../bootstrap/docs/assets/js/bootstrap.min.js',
           '../js/responsimage.js',
-          '../js/reftagger.js',
-          '../js/sublime.js',
           '<config:lint.all>'
         ],
-        dest: '../js/dtrmn.1.1.3.js',
+        dest: '../js/dtrmn.1.1.6.js',
         separator: ';'
       }
     },
