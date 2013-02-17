@@ -14,18 +14,18 @@
 
       <div class="row grid first">
         <div class="span6">
-          <a href="{$root}/about" class="logo icon-large huge">a</a>
+          <a href="{$root}/about" class="logo icon-large">a</a>
           <h2>
             <a href="{$root}/about">The Gospel</a>
           </h2>
-          <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives and lived out. The Gospel is what brings us into life with God and what produces fruit in our lives as Christ-followers.</p>
+          <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives and lived out.</p>
         </div>
         <div class="span6">
-          <a href="{$root}/doctrine" class="glyphicon-book icon-large huge"></a>
+          <a href="{$root}/doctrine" class="glyphicon-book icon-large"></a>
           <h2>
-            <a href="{$root}/doctrine">Biblical Doctrine</a>
+            <a href="{$root}/doctrine">Doctrine</a>
           </h2>
-          <p>We have a growing library of short surveys on <a href="{$root}/doctrine">Biblical doctrines</a>. These pieces highlight theological subjects for further study and help engage our hearts and minds with the truths of Scripture, which is given for our growth, instruction, and correction (2 Timothy 3:16).</p>
+          <p>We have a growing library of short surveys on <a href="{$root}/doctrine">Biblical doctrines</a>. These pieces highlight theological subjects for further study and help engage our hearts and minds with the truths of Scripture.</p>
         </div>
       </div>
       <hr/>
@@ -54,7 +54,7 @@
           <p>We have <a href="{$root}/books">reviews of relevant Christian books</a> that we have found helpful in pursuing Christ and growing in our love for Him.</p>
         </div>
         <div class="span3">
-          <a href="{$root}/foundations" class="glyphicon-fire icon-large"></a>
+          <a href="{$root}/studies" class="glyphicon-fire icon-large"></a>
           <h2>
             <a href="{$root}/studies">Studies</a>
           </h2>

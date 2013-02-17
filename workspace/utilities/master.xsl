@@ -147,7 +147,7 @@
             <div class="span3">
               <h5>Our Vision</h5>
               <p class="small">The vision of Determine is to make the Gospel of Jesus Christ known, treasured and embraced in every facet of life.</p>
-              <p class="small links"><a href="{$root}/about">Read More</a>&#160;&#160;<a href="{$root}/gospel">The Gospel</a></p>
+              <p class="small links"><a href="{$root}/about">Read More</a></p>
             </div>
           </div>
         </div>
