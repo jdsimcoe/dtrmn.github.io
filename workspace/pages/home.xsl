@@ -54,11 +54,11 @@
           <p>We have <a href="{$root}/books">reviews of relevant Christian books</a> that we have found helpful in pursuing Christ and growing in our love for Him.</p>
         </div>
         <div class="span3">
-          <a href="{$root}/foundations" class="logo icon-large">b</a>
+          <a href="{$root}/foundations" class="glyphicon-fire icon-large"></a>
           <h2>
-            <a href="{$root}/foundations">Studies</a>
+            <a href="{$root}/studies">Studies</a>
           </h2>
-          <p>Follow along with the <a href="{$root}/foundations">Foundations</a> groudy study we are doing at our <a href="http://atheycreek.com/">local church</a> as a way to more deeply interact with Scripture.</p>
+          <p>Follow along with our small group <a href="{$root}/studies">studies</a> we have been doing at our <a href="http://atheycreek.com/">local church</a> as a way to more deeply interact with Scripture.</p>
         </div>
       </div>
 
