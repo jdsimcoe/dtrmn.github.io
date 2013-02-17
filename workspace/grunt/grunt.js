@@ -45,7 +45,6 @@ module.exports = function (grunt) {
     min: {
       dist: {
         src : [
-          '../js/sublime.js',
           '../bootstrap/docs/assets/js/jquery.js',
           '../bootstrap/docs/assets/js/bootstrap.min.js',
           '../js/responsimage.js',
