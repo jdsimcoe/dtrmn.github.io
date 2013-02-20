@@ -97,10 +97,12 @@
 @color-primary: #555;
 @color-mast: @color-primary;
 
-@color-studies: #F2D03B;
+@color-blog: @color-accent;
+@color-books: #7E827A;
 @color-doctrine: #00a1d9;
 @color-quotes: #47D9BF;
-@color-books: #7E827A;
+@color-studies: #F2D03B;
+
 
 // Dimension Variables
 // ===================
@@ -227,6 +229,56 @@
     &:hover {
       background: @btn-background-danger-highlight;
       border: 1px solid @btn-background-danger-highlight;
+    }
+  }
+
+  &.blog {
+    background: @color-blog;
+    border-color: @color-blog;
+
+    &:hover {
+      background: darken(@color-blog, 10%);
+      border-color: darken(@color-blog, 10%);
+    }
+  }
+
+  &.books {
+    background: @color-books;
+    border-color: @color-books;
+
+    &:hover {
+      background: darken(@color-books, 10%);
+      border-color: darken(@color-books, 10%);
+    }
+  }
+
+  &.doctrine {
+    background: @color-doctrine;
+    border-color: @color-doctrine;
+
+    &:hover {
+      background: darken(@color-doctrine, 10%);
+      border-color: darken(@color-doctrine, 10%);
+    }
+  }
+
+  &.quotes {
+    background: @color-quotes;
+    border-color: @color-quotes;
+
+    &:hover {
+      background: darken(@color-quotes, 10%);
+      border-color: darken(@color-quotes, 10%);
+    }
+  }
+
+  &.studies {
+    background: @color-studies;
+    border-color: @color-studies;
+
+    &:hover {
+      background: darken(@color-studies, 10%);
+      border-color: darken(@color-studies, 10%);
     }
   }
 }

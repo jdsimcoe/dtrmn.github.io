@@ -27,13 +27,7 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:apply-templates select="/data/books-single/entry"/>
-          <hr/>
-          <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
-            <xsl:text>&#8592; Back to </xsl:text>
-            <strong>
-              <xsl:value-of select="$page-title" />
-            </strong>
-          </a>
+          <xsl:call-template name="back-link"/>
         </xsl:otherwise>
       </xsl:choose>
     </div>
@@ -61,6 +55,7 @@
       <h3>
         <xsl:text>by </xsl:text>
         <xsl:value-of select="author/item/name" />
+        <a href="{author/item/link}" class="btn {$root-page} pull-right" target="_blank">More about the Author &#8594;</a>
       </h3>
       <div class="ratings">
         <xsl:call-template name="ratings">
@@ -91,8 +86,6 @@
       </div>
 
       <hr />
-
-      <a href="{author/item/link}" class="btn" target="_blank">More about the Author &#8594;</a>
 
     </div>
   </div>

@@ -44,14 +44,7 @@
             </xsl:if>
           </div>
           <div class="row back-nav">
-            <br/><br/><br/><br/>
-            <hr/>
-            <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
-              <xsl:text>&#8592; Back to </xsl:text>
-              <strong>
-                <xsl:value-of select="$page-title" />
-              </strong>
-            </a>
+            <xsl:call-template name="back-link"/>
           </div>
         </xsl:otherwise>
       </xsl:choose>

@@ -33,13 +33,7 @@
               <xsl:apply-templates select="/data/quotes-single/entry"/>
             </div>
           </div>
-          <hr/>
-          <a href="{$root}/{$root-page}" class="btn btn-primary btn-large">
-            <xsl:text>&#8592; Back to </xsl:text>
-            <strong>
-              <xsl:value-of select="$page-title" />
-            </strong>
-          </a>
+          <xsl:call-template name="back-link"/>
         </xsl:otherwise>
       </xsl:choose>
     </div>
@@ -52,10 +46,12 @@
   <div class="entry">
     <div>
       <span class="badge accent">
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-        </xsl:call-template>
+        <span class="esv-ignore">
+          <xsl:call-template name="format-date">
+            <xsl:with-param name="date" select="date/date/start/@iso" />
+            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+          </xsl:call-template>
+        </span>
       </span>
     </div>
     <h3>

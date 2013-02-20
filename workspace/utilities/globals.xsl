@@ -156,5 +156,15 @@
   </div>
 </xsl:template>
 
+<xsl:template name="back-link">
+  <hr/>
+  <a href="{$root}/{$root-page}" class="btn btn-large {$root-page}">
+    <xsl:text>&#8592; Back to </xsl:text>
+    <strong>
+      <xsl:value-of select="$page-title" />
+    </strong>
+  </a>
+</xsl:template>
+
 
 </xsl:stylesheet>
