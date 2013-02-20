@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         src: [
         '../less/dtrmn.less'
         ],
-        dest: '../css/dtrmn.1.1.6.css',
+        dest: '../css/dtrmn.1.1.7.css',
         options: {
             compile: true,
             compress: true
@@ -48,9 +48,10 @@ module.exports = function (grunt) {
           '../bootstrap/docs/assets/js/jquery.js',
           '../bootstrap/docs/assets/js/bootstrap.min.js',
           '../js/responsimage.js',
+          '../js/crossref.js',
           '<config:lint.all>'
         ],
-        dest: '../js/dtrmn.1.1.6.js',
+        dest: '../js/dtrmn.1.1.7.js',
         separator: ';'
       }
     },

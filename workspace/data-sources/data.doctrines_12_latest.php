@@ -2,16 +2,15 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourcedoctrines_all extends SectionDatasource{
+	Class datasourcedoctrines_12_latest extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'doctrines-all';
+		public $dsParamROOTELEMENT = 'doctrines-12-latest';
 		public $dsParamORDER = 'desc';
-		public $dsParamPAGINATERESULTS = 'no';
-		public $dsParamLIMIT = '20';
+		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamLIMIT = '12';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
-		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
@@ -23,9 +22,7 @@
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
 				'date',
-				'summary: formatted',
-				'summary: unformatted',
-				'content: formatted'
+				'summary: formatted'
 		);
 		
 
@@ -36,13 +33,13 @@
 
 		public function about(){
 			return array(
-				'name' => 'Doctrines: All',
+				'name' => 'Doctrines: 12 Latest',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-02-20T17:02:01+00:00'
+				'release-date' => '2013-02-20T17:35:02+00:00'
 			);
 		}
 

@@ -9,20 +9,22 @@
 
 <xsl:template match="data">
 
-  <div class="wrapper-quotes">
+  <div class="wrapper quotes">
     <div class="container">
       <xsl:choose>
         <xsl:when test="$title = ''">
-          <div class="marketing">
-            <i class="glyphicon-comment icon-large"></i>
-            <h2>Sounding Off</h2>
-            <p class="marketing-byline">While the Scriptures are the primary way we hear from God, it is clear from the Scriptures themselves that nothing is of private interpretation (2 Peter 1:20). This quote board is a place to find encouragement from other Christian leaders and pastors that will help unpack the Scriptures for us.</p>
-          </div>
-          <hr/>
+
           <div class="row">
-            <div class="span12">
-              <xsl:apply-templates select="/data/quotes-all/entry"/>
-            </div>
+
+            <xsl:for-each select="/data/quotes-all/entry">
+
+              <xsl:call-template name="global-tile">
+                <xsl:with-param name="title" select="title" />
+                <xsl:with-param name="date" select="date" />
+                <xsl:with-param name="text" select="quote[@mode='unformatted']" />
+              </xsl:call-template>
+
+            </xsl:for-each>
           </div>
         </xsl:when>
         <xsl:otherwise>

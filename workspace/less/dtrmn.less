@@ -84,7 +84,7 @@
 
 // RefTagger
 // =========
-@import "reftagger.less";
+// @import "reftagger.less";
 
 // Logo
 @import "logo.less";
@@ -101,9 +101,10 @@
 @color-primary: #555;
 @color-mast: @color-primary;
 
-@color-studies: yellow;
-@color-doctrine: #606d80;
-
+@color-studies: #F2D03B;
+@color-doctrine: #00a1d9;
+@color-quotes: #47D9BF;
+@color-books: #7E827A;
 
 // Dimension Variables
 // ===================
@@ -424,8 +425,8 @@ body > .navbar .brand {
       &.active {
 
         a {
-          background: lighten(desaturate(@color-primary, 10%), 15%);
-          border: 1px solid lighten(desaturate(@color-primary, 10%), 15%);
+          background: lighten(@color-primary, 10%);
+          border: 1px solid lighten(@color-primary, 10%);
           color: darken(@color-primary, 2%);
           .box-shadow(none);
 
@@ -713,9 +714,29 @@ body > .navbar .brand {
   }
 }
 
+.quotes {
+  .page-headers {
+    h1 {
+      a {
+        border-bottom: 3px solid @color-quotes;
+      }
+    }
+  }
+}
+
+.books {
+  .page-headers {
+    h1 {
+      a {
+        border-bottom: 3px solid @color-books;
+      }
+    }
+  }
+}
+
+
 
 .marketing {
-  margin: 40px 0;
 
   .marketing-byline {
     font-family: @sans;
@@ -725,6 +746,7 @@ body > .navbar .brand {
   }
 
   &.main {
+    margin: 0 0 40px 0;
 
     a.icon-large {
       color: darken(@color-white, 10%);
@@ -784,37 +806,141 @@ body > .navbar .brand {
   }
 }
 
-@month-height: 16px;
-@day-height: 32px;
-@calendar-height: @month-height + @day-height;
-@calendar-width: @calendar-height;
-@calendar-padding: 15px;
+.main {
+  margin-top: 60px;
+}
 
-.date {
-  width: @calendar-width;
-  text-align: center;
-  position: relative;
-  height: @calendar-height;
-  float: right;
-  top: 10px;
-  right: 10px;
+.tile {
+  margin-bottom: 30px;
 
-  .month {
-    background: @color-primary;
-    color: #fff;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    line-height: @month-height;
-    height: @month-height;
+  .upper {
+    .border-radius(5px 5px 0 0);
+    background: darken(@color-white, 3%);
+    min-height: 161px;
+
+    h3 {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+      padding: 10px 10px 0 10px;
+
+      .pull-right {
+        font-weight: 300;
+      }
+    }
+
+    .content {
+      color: lighten(@color-primary, 20%);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-top: 0;
+      padding: 0 10px 10px 10px;
+    }
+
   }
 
-  .day {
-    background: #fff;
-    font-size: 26px;
-    color: #333;
-    line-height: @day-height;
-    height: @day-height;
+  &.image,
+  &.cover {
+
+    &:hover {
+
+      .upper {
+
+        h3 {
+          visibility: visible;
+        }
+
+        .content {
+          visibility: visible;
+        }
+      }
+    }
+
+    .upper {
+
+      h3 {
+        background: rgba(0,0,0,0.95);
+        .border-radius(5px 5px 0 0);
+        color: @color-white;
+        margin-bottom: 0;
+        padding-bottom: 5px;
+        visibility: hidden;
+
+        .pull-right {
+          color: @color-accent;
+        }
+      }
+
+      .content {
+        #gradient > .vertical(rgba(0,0,0,0.95), rgba(0,0,0,0.5));
+        color: @color-white;
+        visibility: hidden;
+      }
+
+    }
+  }
+
+  .lower {
+    .border-radius(0 0 5px 5px);
+    background: lighten(desaturate(@color-accent, 5%), 5%);
+
+    h4 {
+      color: darken(@color-accent, 30%);
+      font-size: 14px;
+      font-weight: normal;
+      padding: 7px 10px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  &.books {
+
+    .lower {
+      background: @color-books;
+
+      h4 {
+        color: darken(@color-books, 30%);
+      }
+    }
+
+  }
+
+  &.doctrine {
+
+    .lower {
+      background: @color-doctrine;
+
+      h4 {
+        color: darken(@color-doctrine, 30%);
+      }
+    }
+
+  }
+
+  &.quotes {
+
+    .lower {
+      background: @color-quotes;
+
+      h4 {
+        color: darken(@color-quotes, 30%);
+      }
+    }
+
+  }
+
+  &.studies {
+
+    .lower {
+      background: @color-studies;
+
+      h4 {
+        color: darken(@color-studies, 30%);
+      }
+    }
+
   }
 }
 
@@ -1068,12 +1194,8 @@ body > .navbar .brand {
   }
 }
 
-.wrapper-doctrine,
-.wrapper-blog,
-.wrapper-quotes,
-.wrapper-studies,
-.wrapper-books  {
-  padding: 0 0 100px 0;
+.wrapper {
+  margin: 60px 0;
 
   .entry {
 
@@ -1141,294 +1263,283 @@ body > .navbar .brand {
     }
 
   }
-}
 
-.wrapper-doctrine {
-  margin-top: 30px;
-}
+  &.doctrine {
 
-// BLOG
-// ====
+  }
 
-.wrapper-blog {
-  margin-top: 60px;
+  &.blog {
 
-  .entry {
 
-    h1  {
-      font-family: @sans;
-      font-size: 48px;
-      font-weight: 300;
-      margin-bottom: 0;
-      margin-top: 35px;
-      text-align: left;
-    }
+    .entry {
 
-    img {
-      margin: 20px 0;
-    }
-
-    &.list {
-      background: darken(@color-white, 2%);
-      border: 1px solid darken(@color-white, 5%);
-      .border-radius(@border-radius-base);
-      display: block;
-      margin-bottom: 40px;
-      position: relative;
-
-      .entry-header {
-
-        h2 {
-          font-family: @sans;
-          font-size: 28px;
-          font-weight: 300;
-          letter-spacing: 0.02em;
-          margin: 0;
-          padding: 15px 15px 5px 15px;
-
-          .badge {
-            position: relative;
-            top: -15px;
-            font-family: @sans;
-            font-weight: bold;
-            text-transform: none;
-          }
-        }
-
-        h4 {
-          font-size: 18px;
-          color: darken(@color-white, 15%);
-          font-weight: 300;
-          padding: 0 15px;
-          margin: -2px 0 10px 0;
-          padding-bottom: 5px;
-        }
-
-      }
-
-      p {
-        color: lighten(@color-black, 25%);
-        padding: 0 15px;
-        margin: 10px 0;
-      }
-
-      blockquote {
-        padding: 0 15px;
-        margin: 15px;
-      }
-
-      .content {
+      h1  {
+        font-family: @sans;
+        font-size: 48px;
         font-weight: 300;
-        padding: 10px 15px;
-        border-top: none;
-        min-height: 180px;
+        margin-bottom: 0;
+        margin-top: 35px;
+        text-align: left;
       }
 
       img {
-        margin: 0;
+        margin: 20px 0;
+      }
+
+      &.list {
+        background: darken(@color-white, 2%);
+        border: 1px solid darken(@color-white, 5%);
+        .border-radius(@border-radius-base);
+        display: block;
+        margin-bottom: 40px;
+        position: relative;
+
+        .entry-header {
+
+          h2 {
+            font-family: @sans;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            margin: 0;
+            padding: 15px 15px 5px 15px;
+
+            .badge {
+              position: relative;
+              top: -15px;
+              font-family: @sans;
+              font-weight: bold;
+              text-transform: none;
+            }
+          }
+
+          h4 {
+            font-size: 18px;
+            color: darken(@color-white, 15%);
+            font-weight: 300;
+            padding: 0 15px;
+            margin: -2px 0 10px 0;
+            padding-bottom: 5px;
+          }
+
+        }
+
+        p {
+          color: lighten(@color-black, 25%);
+          padding: 0 15px;
+          margin: 10px 0;
+        }
+
+        blockquote {
+          padding: 0 15px;
+          margin: 15px;
+        }
+
+        .content {
+          font-weight: 300;
+          padding: 10px 15px;
+          border-top: none;
+          min-height: 180px;
+        }
+
+        img {
+          margin: 0;
+        }
+      }
+
+    }
+  }
+
+  &.quotes {
+
+    .container {
+      position: relative;
+      .span6 {
+        margin-bottom: 20px;
       }
     }
 
-  }
-}
+    .entry {
 
-// QUOTES
-// ======
+      h3 {
+        margin-bottom: 0;
+      }
 
-.wrapper-quotes {
-  margin-top: 30px;
+    }
 
-  .container {
-    position: relative;
-    .span6 {
-      margin-bottom: 20px;
+    .quote {
+
+      blockquote {
+        background: #fff;
+        border: 1px solid #ededec;
+        border-left-width: 4px;
+
+        h4 {
+          margin: 0;
+        }
+        p {
+          margin: 0 0 10px 0;
+        }
+      }
+
     }
   }
 
-  .entry {
+  &.studies {
+
+    .description {
+
+      p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 15px 0;
+      }
+
+    }
+
+    .entry {
+
+      h1 {
+        margin-top: 40px;
+        font-size: 48px;
+      }
+
+    }
+  }
+
+  &.books {
 
     h3 {
-      margin-bottom: 0;
-    }
-
-  }
-}
-
-.quote {
-
-  blockquote {
-    background: #fff;
-    border: 1px solid #ededec;
-    border-left-width: 4px;
-
-    h4 {
-      margin: 0;
-    }
-    p {
-      margin: 0 0 10px 0;
-    }
-  }
-
-}
-
-// STUDIES
-// =======
-
-.wrapper-studies {
-  margin-top: 30px;
-
-  .description {
-
-    p {
       font-weight: 300;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0 0 15px 0;
     }
 
-  }
+    .entry {
+      margin-top: 30px;
 
-  .entry {
+      h2 {
+        margin-bottom: 0;
+      }
 
-    h1 {
-      margin-top: 40px;
-      font-size: 48px;
-    }
+      h3 {
+        font-weight: 300;
+        margin-top: 0;
+      }
 
-  }
+      .ratings {
+        font-size: 24px;
+        border-bottom: 1px solid darken(@color-white, 5%);
+        padding: 10px 0;
+      }
 
-}
+      .content {
 
-// BOOKS
-// =====
-
-.book {
-  position: relative;
-  margin: 15px 0;
-}
-
-.ratings {
-  font-size: 16px;
-  padding: 7px 0 3px 0;
-  margin: 0 0 0 0;
-  border-top: 1px solid darken(@color-white, 5%);
-  color: @color-primary;
-
-  .light {
-    color: lighten(@color-primary, 40%);
-  }
-}
-
-.book-entry {
-  text-align: center;
-
-  h4 {
-    margin-bottom: 5px;
-    color: lighten(@color-black, 15%);
-  }
-
-  p {
-    font-weight: 300;
-    color: lighten(@color-black, 15%);
-  }
-
-  &:hover {
-
-    .metadata {
-      h4,
-      p {
-        color: @color-primary;
+        h4 {
+          position: relative;
+          bottom: -15px;
+        }
       }
     }
-  }
 
-
-  .metadata {
-    background: -moz-linear-gradient(left, #ffffff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.85) 60%, #ffffff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(40%,rgba(255,255,255,0.85)), color-stop(60%,rgba(255,255,255,0.85)), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* IE10+ */
-    background: linear-gradient(to right, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-    border-top: 1px solid #fff;
-    position: absolute;
-    display: block;
-    margin: 0 15px;
-    top: 150px;
-    left: 0;
-    right: 0;
-
-    h4 {
-      margin-bottom: 0;
-    }
-
-    h4,
-    p {
-      color: #222;
-      text-shadow: 0 1px 0 #fff;
-    }
-
-    p {
-      margin-bottom: 5px;
-    }
-
-    .soften {
-      margin: 10px 0;
+    .book {
+      position: relative;
+      margin: 15px 0;
     }
 
     .ratings {
-      margin-top: none;
-      padding: 0 0 10px 0;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.75);
-      border: none;
+      font-size: 16px;
+      padding: 7px 0 3px 0;
+      margin: 0 0 0 0;
+      border-top: 1px solid darken(@color-white, 5%);
+      color: @color-books;
 
       .light {
-        color: #999;
+        color: lighten(@color-books, 40%);
       }
     }
 
-  }
-
-
-
-}
-
-.wrapper-books {
-  margin-top: 30px;
-
-  h3 {
-    font-weight: 300;
-  }
-
-  .entry {
-    margin-top: 30px;
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-weight: 300;
-      margin-top: 0;
-    }
-
-    .ratings {
-      font-size: 24px;
-      border-bottom: 1px solid darken(@color-white, 5%);
-      padding: 10px 0;
-    }
-
-    .content {
+    .book-entry {
+      text-align: center;
 
       h4 {
-        position: relative;
-        bottom: -15px;
+        margin-bottom: 5px;
+        color: lighten(@color-black, 15%);
       }
+
+      p {
+        font-weight: 300;
+        color: lighten(@color-black, 15%);
+      }
+
+      &:hover {
+
+        .metadata {
+          h4,
+          p {
+            color: @color-primary;
+          }
+        }
+      }
+
+
+      .metadata {
+        background: -moz-linear-gradient(left, #ffffff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.85) 60%, #ffffff 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(40%,rgba(255,255,255,0.85)), color-stop(60%,rgba(255,255,255,0.85)), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* IE10+ */
+        background: linear-gradient(to right, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+        border-top: 1px solid #fff;
+        position: absolute;
+        display: block;
+        margin: 0 15px;
+        top: 150px;
+        left: 0;
+        right: 0;
+
+        h4 {
+          margin-bottom: 0;
+        }
+
+        h4,
+        p {
+          color: #222;
+          text-shadow: 0 1px 0 #fff;
+        }
+
+        p {
+          margin-bottom: 5px;
+        }
+
+        .soften {
+          margin: 10px 0;
+        }
+
+        .ratings {
+          margin-top: none;
+          padding: 0 0 10px 0;
+          text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+          border: none;
+
+          .light {
+            color: lighten(@color-books, 40%);
+            text-shadow: 0 1px 0 @color-white, 0 -1px 0 darken(@color-white, 20%);
+          }
+        }
+
+      }
+
+
+
     }
+
   }
 
+
 }
+
+
 
 
 // ABOUT
@@ -1867,4 +1978,55 @@ body > .navbar .brand {
     margin: 1cm;
   }
 
+}
+
+// ESV CrossRef
+// ============
+
+a.esvBibleRef {
+  color: @color-accent;
+}
+
+.esvRefTooltip {
+  .box-shadow(e('none !important'));
+
+  .esvRefContent {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+
+    .esv {
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+
+      .esv-text {
+        padding-top: 10px;
+      }
+
+      h2 {
+        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+        font-weight: bold;
+        position: relative;
+        top: -5px;
+        text-transform: uppercase;
+      }
+
+      .verse-num {
+        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+        font-weight: bold;
+        position: relative;
+        top: -5px;
+      }
+
+      .woc {
+        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .esvRefFooter {
+
+    .more {
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+      text-transform: uppercase;
+    }
+  }
 }

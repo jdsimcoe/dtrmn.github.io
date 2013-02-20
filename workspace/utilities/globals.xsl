@@ -2,6 +2,74 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<!-- GLOBAL TILE
+     =========== -->
+
+<xsl:template name="global-tile">
+
+  <xsl:param name="image" />
+  <xsl:param name="title" />
+  <xsl:param name="date" />
+  <xsl:param name="text" />
+
+  <a href="{$root}/{$root-page}/{$title/@handle}">
+
+    <div>
+      <xsl:attribute name="class">
+        <xsl:choose>
+          <xsl:when test="string-length(image) &gt; 0">
+            <xsl:text>span4 tile image </xsl:text>
+            <xsl:value-of select="$root-page"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>span4 tile </xsl:text>
+            <xsl:value-of select="$root-page"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+
+
+
+        <div class="upper">
+          <xsl:if test="image != ''">
+            <xsl:attribute name="style">
+              <xsl:text>background: url(</xsl:text>
+              <xsl:text>/workspace/uploads/images/</xsl:text>
+              <xsl:value-of select="image"/>
+              <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
+          <h3>
+            <xsl:value-of select="$title"/>
+            <span class="pull-right">
+              <xsl:call-template name="format-date">
+                <xsl:with-param name="date" select="$date/date/start/@iso" />
+                <xsl:with-param name="format" select="'%m-; %d;'" />
+              </xsl:call-template>
+            </span>
+          </h3>
+          <div class="content">
+            <xsl:call-template name="truncate">
+              <xsl:with-param name="node" select="$text" />
+              <xsl:with-param name="length" select="170" />
+            </xsl:call-template>
+          </div>
+        </div>
+
+        <div class="lower">
+          <h4>
+            <xsl:value-of select="$root-page"/>
+            <span class="pull-right">→</span>
+          </h4>
+        </div>
+
+
+
+    </div>
+  </a>
+
+</xsl:template>
+
 
 <!-- ARTICLES
      ======== -->
@@ -117,59 +185,6 @@
 <!-- DOCTRINES
      ========= -->
 
-<xsl:template match="/data/doctrines-3-latest/entry">
-  <xsl:call-template name="doctrine-entry"/>
-</xsl:template>
-
-<xsl:template match="/data/doctrines-all/entry">
-  <xsl:call-template name="doctrine-entry"/>
-</xsl:template>
-
-<xsl:template match="/data/doctrines-all/entry[@id = //data/studies-single/entry/doctrine/item/@id]">
-  <xsl:call-template name="doctrine-entry"/>
-</xsl:template>
-
-
-<xsl:template name="doctrine-entry">
-  <div>
-    <xsl:attribute name="class">
-      <xsl:choose>
-        <xsl:when test="$root-page = 'home' or $root-page = 'doctrine'">
-          <xsl:text>span4 doctrine-tile</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>doctrine-tile</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
-    <a href="{$root}/doctrine/{title/@handle}">
-      <h3>
-        <xsl:value-of select="title" />
-        <span>
-          <xsl:attribute name="class">
-            <xsl:choose>
-              <xsl:when test="position() = 1">
-                <xsl:text>badge accent</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>badge</xsl:text>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:attribute>
-          <xsl:call-template name="format-date">
-            <xsl:with-param name="date" select="date/date/start/@iso" />
-            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-          </xsl:call-template>
-        </span>
-      </h3>
-      <div class="summary">
-        <xsl:value-of select="summary" disable-output-escaping="yes" />
-      </div>
-      <br />
-      <div class="right">Study <strong><xsl:value-of select="title" /> &#8594;</strong></div>
-    </a>
-  </div>
-</xsl:template>
 
 
 <!-- BOOKS
@@ -240,11 +255,6 @@
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
-
-
-<!-- STUDIES
-     ======= -->
-
 
 
 <!-- VERSES

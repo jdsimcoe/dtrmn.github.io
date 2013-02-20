@@ -9,21 +9,22 @@
 
 <xsl:template match="data">
 
-  <div class="wrapper-doctrine">
+  <div class="wrapper doctrine">
 
     <div class="container">
       <xsl:choose>
         <xsl:when test="$title = ''">
-          <div class="marketing">
-            <i class="glyphicon-book icon-large"></i>
-            <h2>Why Study Doctrines of the Bible?</h2>
-            <p class="marketing-byline">Studying Biblical doctrine is how we engage with the God of the Universe. Our depth in knowing God and in being like God is related to how rightly know Him. God has revelead himself in the Scriptures so we can know Him, worship Him and follow Him into mission.</p>
-            <hr/>
-            <br />
-          </div>
-
           <div class="row">
-            <xsl:apply-templates select="/data/doctrines-all/entry"/>
+
+            <xsl:for-each select="/data/doctrines-all/entry">
+
+              <xsl:call-template name="global-tile">
+                <xsl:with-param name="title" select="title" />
+                <xsl:with-param name="date" select="date" />
+                <xsl:with-param name="text" select="summary[@mode='unformatted']" />
+              </xsl:call-template>
+
+            </xsl:for-each>
           </div>
         </xsl:when>
         <xsl:otherwise>

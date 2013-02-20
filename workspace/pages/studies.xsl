@@ -9,7 +9,7 @@
 
 <xsl:template match="data">
 
-  <div class="wrapper-studies">
+  <div class="wrapper studies">
     <div class="container">
       <xsl:choose>
         <xsl:when test="$title = ''">

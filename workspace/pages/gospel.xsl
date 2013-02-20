@@ -11,7 +11,7 @@
 </xsl:variable>
 
 <xsl:template match="data">
-  <div class="wrapper-about">
+  <div class="wrapper">
     <div class="container">
       <div class="marketing">
         <i class="glyphicon-heart icon-large"></i>

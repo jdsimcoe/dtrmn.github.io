@@ -7,7 +7,7 @@
 		public $dsParamROOTELEMENT = 'articles-all';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '10';
+		public $dsParamLIMIT = '30';
 		public $dsParamSTARTPAGE = '{$title}';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
@@ -25,6 +25,7 @@
 				'title',
 				'date',
 				'content: formatted',
+				'content: unformatted',
 				'image: image',
 				'verses: passage',
 				'verses: content',
@@ -45,7 +46,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-01-29T22:32:53+00:00'
+				'release-date' => '2013-02-20T17:09:25+00:00'
 			);
 		}
 

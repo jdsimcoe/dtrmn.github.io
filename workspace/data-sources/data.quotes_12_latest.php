@@ -2,30 +2,28 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourcedoctrines_all extends SectionDatasource{
+	Class datasourcequotes_12_latest extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'doctrines-all';
+		public $dsParamROOTELEMENT = 'quotes-12-latest';
 		public $dsParamORDER = 'desc';
-		public $dsParamPAGINATERESULTS = 'no';
-		public $dsParamLIMIT = '20';
+		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamLIMIT = '12';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
-		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
 		public $dsParamFILTERS = array(
-				'24' => 'no',
+				'23' => 'no',
 		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
 				'date',
-				'summary: formatted',
-				'summary: unformatted',
-				'content: formatted'
+				'quote: formatted',
+				'commentary: formatted'
 		);
 		
 
@@ -36,18 +34,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Doctrines: All',
+				'name' => 'Quotes: 12 Latest',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-02-20T17:02:01+00:00'
+				'release-date' => '2013-02-20T17:35:12+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '4';
+			return '3';
 		}
 
 		public function allowEditorToParse(){

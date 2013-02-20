@@ -10,27 +10,34 @@
 
 <xsl:template match="data">
 
-  <div class="wrapper-blog">
+  <div class="wrapper blog">
     <div class="container">
 
       <xsl:choose>
         <xsl:when test="$title = '' or number($title)">
           <div class="row">
-            <div class="span8">
-              <xsl:apply-templates select="/data/articles-all/entry"/>
 
+            <xsl:for-each select="/data/articles-all/entry">
+
+              <xsl:call-template name="global-tile">
+                <xsl:with-param name="title" select="title" />
+                <xsl:with-param name="date" select="date" />
+                <xsl:with-param name="text" select="content[@mode='unformatted']" />
+              </xsl:call-template>
+
+            </xsl:for-each>
+
+          </div>
+
+          <div class="row">
+            <div class="span12">
               <xsl:call-template name="cd-pagination">
                 <xsl:with-param name="pagination" select="/data/articles-all/pagination" />
                 <xsl:with-param name="pagination-url" select="'/blog/$'" />
               </xsl:call-template>
-
-            </div>
-            <div class="span4">
-              <h4>Latest Quotes</h4>
-              <hr />
-              <xsl:apply-templates select="/data/quotes-4-latest/entry"/>
             </div>
           </div>
+
         </xsl:when>
         <xsl:otherwise>
           <div class="row">
