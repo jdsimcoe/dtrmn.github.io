@@ -172,7 +172,7 @@
 
   <div class="container">
 
-    <div class="row main">
+    <div class="row wrapper">
 
       <xsl:variable name="entries">
         <xsl:call-template name="merge-data-sources" />
@@ -201,7 +201,8 @@
               <xsl:if test="image != ''">
                 <xsl:attribute name="style">
                   <xsl:text>background: url(</xsl:text>
-                  <xsl:text>/workspace/uploads/images/</xsl:text>
+                  <xsl:value-of select="$root"/>
+                  <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
                   <xsl:value-of select="image"/>
                   <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
                 </xsl:attribute>
@@ -209,7 +210,8 @@
               <xsl:if test="cover != ''">
                 <xsl:attribute name="style">
                   <xsl:text>background: url(</xsl:text>
-                  <xsl:text>/workspace/uploads/images/</xsl:text>
+                  <xsl:value-of select="$root"/>
+                  <xsl:text>/image/2/800/322/1/0/uploads/images/</xsl:text>
                   <xsl:value-of select="cover"/>
                   <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
                 </xsl:attribute>

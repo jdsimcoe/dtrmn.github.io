@@ -29,13 +29,8 @@
         </xsl:when>
         <xsl:otherwise>
           <div class="row">
-            <div class="span8">
+            <div class="span12">
               <xsl:apply-templates select="/data/quotes-single/entry"/>
-            </div>
-            <div class="span4">
-              <h4>From the Blog</h4>
-              <hr />
-              <xsl:apply-templates select="/data/articles-4-latest/entry [ position() &lt; 3 ]"/>
             </div>
           </div>
           <hr/>
@@ -88,20 +83,18 @@
                   </a>
                 </p>
               </blockquote>
+              <hr />
+              <xsl:value-of select="commentary" disable-output-escaping="yes" />
             </div>
             <div class="span3">
               <a href="{$root}/books/{book/item/title/@handle}">
-                <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" style="width:100%; height:250px;">
+                <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" style="width:100%; height:400px;">
                   <xsl:attribute name="data-responsimage">
                     <xsl:value-of select="book/item/image/item/image/filename" />
                   </xsl:attribute>
                 </img>
               </a>
             </div>
-          </div>
-          <div class="row">
-            <hr />
-            <xsl:value-of select="commentary" disable-output-escaping="yes" />
           </div>
         </xsl:when>
         <xsl:otherwise>

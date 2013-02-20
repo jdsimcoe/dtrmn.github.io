@@ -1441,112 +1441,103 @@ body > .navbar .brand {
       }
     }
 
-    .book {
-      position: relative;
-      margin: 15px 0;
-    }
-
-    .ratings {
-      font-size: 16px;
-      padding: 7px 0 3px 0;
-      margin: 0 0 0 0;
-      border-top: 1px solid darken(@color-white, 5%);
-      color: @color-books;
-
-      .light {
-        color: lighten(@color-books, 40%);
-      }
-    }
-
-    .book-entry {
-      text-align: center;
-
-      h4 {
-        margin-bottom: 5px;
-        color: lighten(@color-black, 15%);
-      }
-
-      p {
-        font-weight: 300;
-        color: lighten(@color-black, 15%);
-      }
-
-      &:hover {
-
-        .metadata {
-          h4,
-          p {
-            color: @color-primary;
-          }
-        }
-      }
-
-
-      .metadata {
-        background: -moz-linear-gradient(left, #ffffff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.85) 60%, #ffffff 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(40%,rgba(255,255,255,0.85)), color-stop(60%,rgba(255,255,255,0.85)), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* IE10+ */
-        background: linear-gradient(to right, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-        border-top: 1px solid #fff;
-        position: absolute;
-        display: block;
-        margin: 0 15px;
-        top: 150px;
-        left: 0;
-        right: 0;
-
-        h4 {
-          margin-bottom: 0;
-        }
-
-        h4,
-        p {
-          color: #222;
-          text-shadow: 0 1px 0 #fff;
-        }
-
-        p {
-          margin-bottom: 5px;
-        }
-
-        .soften {
-          margin: 10px 0;
-        }
-
-        .ratings {
-          margin-top: none;
-          padding: 0 0 10px 0;
-          text-shadow: 0 1px 0 rgba(255,255,255,0.75);
-          border: none;
-
-          .light {
-            color: lighten(@color-books, 40%);
-            text-shadow: 0 1px 0 @color-white, 0 -1px 0 darken(@color-white, 20%);
-          }
-        }
-
-      }
-
-
-
-    }
-
   }
 
 
 }
 
+// BOOK ENTRIES
+// ============
+
+.book {
+    position: relative;
+    margin: 15px 0;
+  }
+
+  .ratings {
+    font-size: 16px;
+    padding: 7px 0 3px 0;
+    margin: 0 0 0 0;
+    border-top: 1px solid darken(@color-white, 5%);
+    color: @color-books;
+
+    .light {
+      color: lighten(@color-books, 40%);
+    }
+  }
+
+  .book-entry {
+    text-align: center;
+
+    h4 {
+      margin-bottom: 5px;
+      color: lighten(@color-black, 15%);
+    }
+
+    p {
+      font-weight: 300;
+      color: lighten(@color-black, 15%);
+    }
+
+    &:hover {
+
+      .metadata {
+        h4,
+        p {
+          color: @color-primary;
+        }
+      }
+    }
 
 
+    .metadata {
+      background: -moz-linear-gradient(left, #ffffff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.85) 60%, #ffffff 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(40%,rgba(255,255,255,0.85)), color-stop(60%,rgba(255,255,255,0.85)), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* IE10+ */
+      background: linear-gradient(to right, #ffffff 0%,rgba(255,255,255,0.85) 40%,rgba(255,255,255,0.85) 60%,#ffffff 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+      border-top: 1px solid #fff;
+      position: absolute;
+      display: block;
+      margin: 0 15px;
+      top: 150px;
+      left: 0;
+      right: 0;
 
-// ABOUT
-// =====
+      h4 {
+        margin-bottom: 0;
+      }
 
-.wrapper-about {
-  margin-top: 30px;
+      h4,
+      p {
+        color: #222;
+        text-shadow: 0 1px 0 #fff;
+      }
+
+      p {
+        margin-bottom: 5px;
+      }
+
+      .soften {
+        margin: 10px 0;
+      }
+
+      .ratings {
+        margin-top: none;
+        padding: 0 0 10px 0;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+        border: none;
+
+        .light {
+          color: lighten(@color-books, 40%);
+          text-shadow: 0 1px 0 @color-white, 0 -1px 0 darken(@color-white, 20%);
+        }
+      }
+
+    }
+
 }
 
 
@@ -1594,6 +1585,16 @@ body > .navbar .brand {
 
     a {
       text-shadow: none;
+    }
+  }
+
+  .btn {
+    background: lighten(@color-primary, 40%);
+    border-color: lighten(@color-primary, 40%);
+
+    &:hover {
+      background: lighten(@color-primary, 30%);
+      border-color: lighten(@color-primary, 30%);
     }
   }
 

@@ -182,10 +182,6 @@
 </xsl:template>
 
 
-<!-- DOCTRINES
-     ========= -->
-
-
 
 <!-- BOOKS
      ===== -->
@@ -266,7 +262,7 @@
     <blockquote>
       <xsl:value-of select="content" />
       <br />
-      <cite>
+      <cite class="esv-ignore">
         <xsl:value-of select="passage" />
         <xsl:text> (</xsl:text>
         <xsl:value-of select="version/item/abbreviation" />

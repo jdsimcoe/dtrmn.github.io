@@ -53,47 +53,6 @@
 </xsl:template>
 
 
-<xsl:template match="/data/articles-all/entry">
-  <div class="article entry list">
-    <div class="entry-header">
-      <h2>
-        <a href="{$root}/{$root-page}/{title/@handle}">
-          <xsl:value-of select="title" />
-        </a>
-        <xsl:call-template name="edit-entry">
-          <xsl:with-param name="component" select="'articles'"/>
-        </xsl:call-template>
-      </h2>
-      <h4 class="blog-date">
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-        </xsl:call-template>
-      </h4>
-    </div>
-    <xsl:if test="image != ''">
-      <img src="/workspace/img/spacer.gif">
-        <xsl:attribute name="data-responsimage">
-          <xsl:value-of select="image/item/image/filename" />
-        </xsl:attribute>
-      </img>
-    </xsl:if>
-    <div class="content">
-      <xsl:for-each select="verses/item">
-        <xsl:call-template name="verse-entry" />
-      </xsl:for-each>
-      <xsl:call-template name="truncate">
-        <xsl:with-param name="node" select="content" />
-        <xsl:with-param name="length" select="730" />
-      </xsl:call-template>
-      <p class="right">
-        <a href="{$root}/{$root-page}/{title/@handle}">Read <strong>Full Article </strong> <strong>&#8594;</strong></a>
-      </p>
-    </div>
-  </div>
-</xsl:template>
-
-
 <xsl:template match="/data/articles-single/entry">
   <div class="article entry">
     <h4>
