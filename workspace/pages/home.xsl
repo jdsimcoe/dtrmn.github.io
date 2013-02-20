@@ -170,75 +170,78 @@
 
 <xsl:template match="data">
 
-  <div class="container">
+  <div class="wrapper">
 
-    <div class="row wrapper">
+    <div class="container">
 
-      <xsl:variable name="entries">
-        <xsl:call-template name="merge-data-sources" />
-      </xsl:variable>
+      <div class="row">
 
-      <xsl:for-each select="exsl:node-set($entries)/entry">
-        <div>
-          <xsl:attribute name="class">
-            <xsl:choose>
-              <xsl:when test="string-length(image) &gt; 0">
-                <xsl:text>span4 tile image </xsl:text>
-                <xsl:value-of select="class"/>
-              </xsl:when>
-              <xsl:when test="string-length(cover) &gt; 0">
-                <xsl:text>span4 tile cover </xsl:text>
-                <xsl:value-of select="class"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>span4 tile </xsl:text>
-                <xsl:value-of select="class"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:attribute>
-          <a href="{uri}">
-            <div class="upper">
-              <xsl:if test="image != ''">
-                <xsl:attribute name="style">
-                  <xsl:text>background: url(</xsl:text>
-                  <xsl:value-of select="$root"/>
-                  <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
-                  <xsl:value-of select="image"/>
-                  <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
-                </xsl:attribute>
-              </xsl:if>
-              <xsl:if test="cover != ''">
-                <xsl:attribute name="style">
-                  <xsl:text>background: url(</xsl:text>
-                  <xsl:value-of select="$root"/>
-                  <xsl:text>/image/2/800/322/1/0/uploads/images/</xsl:text>
-                  <xsl:value-of select="cover"/>
-                  <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
-                </xsl:attribute>
-              </xsl:if>
-              <h3>
-                <xsl:value-of select="title"/>
-                <span class="pull-right"><xsl:value-of select="date" /></span>
-              </h3>
-              <div class="content">
-                <xsl:call-template name="truncate">
-                  <xsl:with-param name="node" select="text" />
-                  <xsl:with-param name="length" select="170" />
-                </xsl:call-template>
+        <xsl:variable name="entries">
+          <xsl:call-template name="merge-data-sources" />
+        </xsl:variable>
+
+        <xsl:for-each select="exsl:node-set($entries)/entry">
+          <div>
+            <xsl:attribute name="class">
+              <xsl:choose>
+                <xsl:when test="string-length(image) &gt; 0">
+                  <xsl:text>span4 tile image </xsl:text>
+                  <xsl:value-of select="class"/>
+                </xsl:when>
+                <xsl:when test="string-length(cover) &gt; 0">
+                  <xsl:text>span4 tile cover </xsl:text>
+                  <xsl:value-of select="class"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:text>span4 tile </xsl:text>
+                  <xsl:value-of select="class"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:attribute>
+            <a href="{uri}">
+              <div class="upper">
+                <xsl:if test="image != ''">
+                  <xsl:attribute name="style">
+                    <xsl:text>background: url(</xsl:text>
+                    <xsl:value-of select="$root"/>
+                    <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
+                    <xsl:value-of select="image"/>
+                    <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
+                  </xsl:attribute>
+                </xsl:if>
+                <xsl:if test="cover != ''">
+                  <xsl:attribute name="style">
+                    <xsl:text>background: url(</xsl:text>
+                    <xsl:value-of select="$root"/>
+                    <xsl:text>/image/2/800/322/1/0/uploads/images/</xsl:text>
+                    <xsl:value-of select="cover"/>
+                    <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
+                  </xsl:attribute>
+                </xsl:if>
+                <h3>
+                  <xsl:value-of select="title"/>
+                  <span class="pull-right"><xsl:value-of select="date" /></span>
+                </h3>
+                <div class="content">
+                  <xsl:call-template name="truncate">
+                    <xsl:with-param name="node" select="text" />
+                    <xsl:with-param name="length" select="170" />
+                  </xsl:call-template>
+                </div>
               </div>
-            </div>
 
-            <div class="lower">
-              <h4>
-                <xsl:value-of select="class"/>
-              </h4>
-            </div>
-          </a>
-        </div>
-      </xsl:for-each>
+              <div class="lower">
+                <h4>
+                  <xsl:value-of select="class"/>
+                </h4>
+              </div>
+            </a>
+          </div>
+        </xsl:for-each>
+
+      </div>
 
     </div>
-
   </div>
 
 </xsl:template>

@@ -805,12 +805,27 @@ body > .navbar .brand {
 .tile {
   margin-bottom: 30px;
 
+  &:hover {
+
+    .upper {
+
+      h3 {
+        color: lighten(desaturate(@color-accent, 5%), 5%);
+      }
+    }
+
+    .lower {
+      background: lighten(desaturate(@color-accent, 5%), 10%);
+    }
+  }
+
   .upper {
     .border-radius(5px 5px 0 0);
     background: darken(@color-white, 3%);
     min-height: 161px;
 
     h3 {
+      color: @color-primary;
       font-size: 19px;
       font-weight: bold;
       margin: 0 0 5px 0;
@@ -897,6 +912,20 @@ body > .navbar .brand {
       }
     }
 
+    &:hover {
+
+      .upper {
+
+        h3 {
+          color: @color-books;
+        }
+      }
+
+      .lower {
+        background: lighten(@color-books, 5%);
+      }
+    }
+
   }
 
   &.doctrine {
@@ -906,6 +935,20 @@ body > .navbar .brand {
 
       h4 {
         color: darken(@color-doctrine, 30%);
+      }
+    }
+
+    &:hover {
+
+      .upper {
+
+        h3 {
+          color: @color-doctrine;
+        }
+      }
+
+      .lower {
+        background: lighten(@color-doctrine, 5%);
       }
     }
 
@@ -921,6 +964,20 @@ body > .navbar .brand {
       }
     }
 
+    &:hover {
+
+      .upper {
+
+        h3 {
+          color: @color-quotes;
+        }
+      }
+
+      .lower {
+        background: lighten(@color-quotes, 5%);
+      }
+    }
+
   }
 
   &.studies {
@@ -930,6 +987,20 @@ body > .navbar .brand {
 
       h4 {
         color: darken(@color-studies, 30%);
+      }
+    }
+
+    &:hover {
+
+      .upper {
+
+        h3 {
+          color: @color-studies;
+        }
+      }
+
+      .lower {
+        background: lighten(@color-studies, 5%);
       }
     }
 
