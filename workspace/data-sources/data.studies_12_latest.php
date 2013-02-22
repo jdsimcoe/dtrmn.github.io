@@ -16,6 +16,7 @@
 
 		public $dsParamFILTERS = array(
 				'25' => 'no',
+				'35' => 'no',
 		);
 		
 
@@ -41,7 +42,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-02-20T17:34:31+00:00'
+				'release-date' => '2013-02-22T20:39:33+00:00'
 			);
 		}
 

@@ -97,15 +97,7 @@
                     </xsl:otherwise>
                   </xsl:choose>
                 </xsl:attribute>
-              <xsl:choose>
-                <xsl:when test="$root-page = 'foundations'">
-                  <span class="logo visible-desktop">b&#160;&#160;</span>
-                  <xsl:value-of select="//data/page-data/entry/title" />
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:value-of select="//data/page-data/entry/title" />
-                </xsl:otherwise>
-              </xsl:choose>
+                <xsl:value-of select="//data/page-data/entry/title" />
               </a>
             </h1>
             <p class="lead">
@@ -123,7 +115,7 @@
                 <div class="carousel-inner">
                   <div class="active item page-headers">
                     <div class="container">
-                      <h1><a href="{root}">Determine</a></h1>
+                      <h1><a href="{$root}"><xsl:value-of select="$website-name" /></a></h1>
                       <p class="lead">Knowing Christ and Him crucified (<span class="esv-ignore">1 Corinthians 2:2</span>)</p>
                     </div>
                   </div>
