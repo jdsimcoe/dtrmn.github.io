@@ -79,11 +79,8 @@
 
   <body class="{$root-page}">
     <xsl:apply-templates select="data/navigation"/>
-    <div>
+    <div class="jumbotron subhead">
       <xsl:if test="$page-title != 'Home'">
-        <xsl:attribute name="class">
-          <xsl:text>jumbotron subhead</xsl:text>
-        </xsl:attribute>
         <div class="page-headers">
           <div class="container">
             <h1>
@@ -118,19 +115,17 @@
         </div>
       </xsl:if>
       <xsl:if test="$page-title = 'Home'">
-        <xsl:attribute name="class">
-          <xsl:text>jumbotron masthead</xsl:text>
-        </xsl:attribute>
         <div class="container">
           <div class="row">
             <div class="span9">
               <div id="featureCarousel" class="carousel slide">
                 <!-- Carousel items -->
                 <div class="carousel-inner">
-                  <div class="active item">
-                    <p class="vision">For I determined to know nothing among you except Jesus Christ, <br/>and Him crucified.</p>
-                    <br/>
-                    <cite class="esv-ignore">1 Corinthians 2:2</cite>
+                  <div class="active item page-headers">
+                    <div class="container">
+                      <h1><a href="{root}">Determine</a></h1>
+                      <p class="lead">Knowing Christ and Him crucified (<span class="esv-ignore">1 Corinthians 2:2</span>)</p>
+                    </div>
                   </div>
                   <xsl:for-each select="//data/inspiration-all/entry">
                     <div class="item">
@@ -145,9 +140,7 @@
               </div>
             </div>
             <div class="span3">
-              <h5>Our Vision</h5>
-              <p class="small">The vision of Determine is to make the Gospel of Jesus Christ known, treasured and embraced in every facet of life.</p>
-              <p class="small links"><a href="{$root}/about">Read More</a></p>
+
             </div>
           </div>
         </div>

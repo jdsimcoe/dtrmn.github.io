@@ -598,92 +598,85 @@ body > .navbar .brand {
     text-shadow: none;
   }
 
-  &.masthead {
-    .box-shadow(none);
-    border-bottom: none;
-    padding: 60px 0 40px 0;
+  .span3 {
+    position: relative;
+    top: -20px;
+  }
 
-    .span3 {
-      position: relative;
-      top: -20px;
+  h2 {
+    color: darken(@color-primary, 10%);
+    font-size: 48px;
+  }
+
+  p {
+    margin-bottom: 0;
+    padding: 0;
+
+    &.small {
+      font-size: 16px;
+      text-align: left;
     }
 
-    h2 {
-      color: darken(@color-primary, 10%);
-      font-size: 48px;
-    }
+    &.links {
+      margin-top: 10px;
+      text-align: center;
 
-    p {
-      margin-bottom: 0;
-      padding: 0;
-
-      &.small {
-        font-size: 16px;
-        text-align: left;
-      }
-
-      &.links {
-        margin-top: 10px;
-        text-align: center;
-
-        a {
-          background: darken(@color-primary, 8%);
-          border: 1px solid darken(@color-primary, 8%);
-          .border-radius(@border-radius-base);
-          color: lighten(@color-primary, 5%);
-          font-size: 12px;
-          font-weight: bold;
-          padding: 8px 12px;
-          text-shadow: none;
-          text-transform: uppercase;
-
-          &:hover {
-            background: lighten(@color-primary, 5%);
-            border: 1px solid lighten(@color-primary, 5%);
-            color: lighten(@color-primary, 50%);
-          }
-        }
-      }
-
-      &.vision {
-        padding: 0;
-        font-size: 28px;
-        text-align: left;
+      a {
+        background: darken(@color-primary, 8%);
+        border: 1px solid darken(@color-primary, 8%);
+        .border-radius(@border-radius-base);
+        color: lighten(@color-primary, 5%);
+        font-size: 12px;
+        font-weight: bold;
+        padding: 8px 12px;
         text-shadow: none;
-        color: lighten(desaturate(@color-primary, 20%), 25%);
+        text-transform: uppercase;
 
-        a {
-          color: #fff;
+        &:hover {
+          background: lighten(@color-primary, 5%);
+          border: 1px solid lighten(@color-primary, 5%);
+          color: lighten(@color-primary, 50%);
         }
       }
-
     }
 
-    .carousel {
+    &.vision {
       padding: 0;
+      font-size: 28px;
+      text-align: left;
+      text-shadow: none;
+      color: lighten(desaturate(@color-primary, 20%), 25%);
 
-      .item {
-        text-align: left;
-
-        cite {
-          text-transform: uppercase;
-          font-weight: bold;
-          padding: 0;
-          margin: 40px 0 0 0;
-          font-size: 16px;
-          color: #fff;
-          text-shadow: none;
-        }
-
+      a {
+        color: #fff;
       }
     }
 
   }
 
+  .carousel {
+    padding: 0;
+
+    .item {
+      text-align: left;
+
+      cite {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 0;
+        margin: 40px 0 0 0;
+        font-size: 16px;
+        color: #fff;
+        text-shadow: none;
+      }
+
+    }
+  }
+
   &.subhead {
-    .box-shadow(none);
-    padding: 68px 0 78px 0;
     border-bottom: none;
+    .box-shadow(none);
+    padding: 68px 0 81px 0;
 
   }
 }
@@ -880,8 +873,8 @@ body > .navbar .brand {
       color: @color-primary;
       font-size: 19px;
       font-weight: bold;
-      margin: 0 0 5px 0;
-      padding: 10px 10px 0 10px;
+      margin: 0;
+      padding: 10px 15px 0 15px;
 
       .pull-right {
         font-weight: 300;
@@ -894,7 +887,7 @@ body > .navbar .brand {
       font-weight: 300;
       line-height: 1.6;
       margin-top: 0;
-      padding: 0 10px 10px 10px;
+      padding: 0 15px 10px 15px;
     }
 
   }
@@ -940,6 +933,18 @@ body > .navbar .brand {
     }
   }
 
+  &.cover {
+
+    .upper {
+
+      h3 {
+        .pull-right {
+          color: @color-books;
+        }
+      }
+    }
+  }
+
   .lower {
     .border-radius(0 0 5px 5px);
     background: lighten(desaturate(@color-accent, 5%), 5%);
@@ -948,7 +953,7 @@ body > .navbar .brand {
       color: darken(@color-accent, 30%);
       font-size: 14px;
       font-weight: normal;
-      padding: 7px 10px;
+      padding: 8px 10px;
       margin: 0;
       text-transform: uppercase;
     }
@@ -965,13 +970,6 @@ body > .navbar .brand {
     }
 
     &:hover {
-
-      .upper {
-
-        h3 {
-          color: @color-books;
-        }
-      }
 
       .lower {
         background: lighten(@color-books, 5%);
