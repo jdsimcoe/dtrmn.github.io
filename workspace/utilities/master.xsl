@@ -131,9 +131,6 @@
                 </div>
               </div>
             </div>
-            <div class="span3">
-
-            </div>
           </div>
         </div>
       </xsl:if>
