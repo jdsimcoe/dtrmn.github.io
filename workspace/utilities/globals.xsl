@@ -39,12 +39,6 @@
         </xsl:if>
         <h3>
           <xsl:value-of select="$title"/>
-          <span class="pull-right">
-            <xsl:call-template name="format-date">
-              <xsl:with-param name="date" select="$date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%m-; %d;'" />
-            </xsl:call-template>
-          </span>
         </h3>
         <div class="content">
           <xsl:call-template name="truncate">
@@ -57,7 +51,12 @@
       <div class="lower">
         <h4>
           <xsl:value-of select="$root-page"/>
-          <span class="pull-right">→</span>
+          <span class="pull-right date">
+            <xsl:call-template name="format-date">
+              <xsl:with-param name="date" select="$date/date/start/@iso" />
+              <xsl:with-param name="format" select="'%d; %m-; %y+;'" />
+            </xsl:call-template>
+          </span>
         </h4>
       </div>
 
