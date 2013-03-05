@@ -716,7 +716,7 @@ body > .navbar .brand {
       font-family: @sans;
       letter-spacing: 0.04em;
       padding-bottom: 5px;
-      border-bottom: 3px solid @color-accent;
+      border-bottom: 3px solid darken(@color-primary, 10%);
 
 
       &:hover {
@@ -738,11 +738,21 @@ body > .navbar .brand {
 
 }
 
-.studies {
+.blog {
   .page-headers {
     h1 {
       a {
-        border-bottom: 3px solid @color-studies;
+        border-bottom: 3px solid @color-blog;
+      }
+    }
+  }
+}
+
+.books {
+  .page-headers {
+    h1 {
+      a {
+        border-bottom: 3px solid @color-books;
       }
     }
   }
@@ -768,15 +778,16 @@ body > .navbar .brand {
   }
 }
 
-.books {
+.studies {
   .page-headers {
     h1 {
       a {
-        border-bottom: 3px solid @color-books;
+        border-bottom: 3px solid @color-studies;
       }
     }
   }
 }
+
 
 
 
