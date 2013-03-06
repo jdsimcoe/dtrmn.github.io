@@ -53,10 +53,12 @@
                       </td>
                       <td><xsl:value-of select="doctrine/item/title" /></td>
                       <td>
-                        <xsl:call-template name="format-date">
-                          <xsl:with-param name="date" select="date/date/start/@iso" />
-                          <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-                        </xsl:call-template>
+                        <span class="esv-ignore">
+                          <xsl:call-template name="format-date">
+                            <xsl:with-param name="date" select="date/date/start/@iso" />
+                            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
+                          </xsl:call-template>
+                        </span>
                       </td>
                     </tr>
                   </xsl:for-each>
