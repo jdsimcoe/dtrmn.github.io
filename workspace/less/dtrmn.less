@@ -447,25 +447,26 @@ table,
 // ===============
 
 body > .navbar .brand {
+  color: darken(@color-primary, 15%);
   float: left;
-  position: relative;
-  top: -2px;
+  font-size: 38px;
   left: 0;
   margin-left: 0;
   margin-right: 15px;
-  font-size: 38px;
-  color: @color-accent;
+  position: relative;
   text-shadow: none;
+  top: 3px;
 
   .logo {
+    font-size: 50px;
+    left: 0;
+    line-height: 10px;
     position: relative;
     top: 0;
-    left: 0;
-    font-size: 38px;
   }
 
   &:hover {
-    color: darken(@color-primary, 15%);
+    color: @color-accent;
     text-shadow: none;
   }
 }
@@ -821,11 +822,9 @@ body > .navbar .brand {
 
     a.icon-large {
       color: darken(@color-white, 10%);
-      text-shadow: 0 -1px 0 darken(@color-white, 20%);
 
       &:hover {
         color: lighten(desaturate(@color-primary, 10%), 10%);
-        text-shadow: none;
       }
 
     }

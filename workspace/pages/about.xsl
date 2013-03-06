@@ -18,7 +18,7 @@
         <p class="marketing-byline">Determine was started with the intent and purpose to share the Gospel of Jesus Christ with a dying world and to encourage Christians to live every day in light of what Christ did for us. While we recognize there are many things that we could choose to focus on or talk about, we recognize that the unadjusted Gospel of Jesus Christ is central to the health of the Church and we aim to make everything we do about exposing the Gospel to the dying world and to those sleeping on religion within the Church. Join us as we seek to marinate in the Gospel:</p>
         <div class="row grid second">
           <div class="span6">
-            <a href="{$root}/about" class="logo icon-large">a</a>
+            <a href="{$root}/about" class="logo icon-large">D</a>
             <h2>
               <a href="{$root}/about">The Gospel</a>
             </h2>
