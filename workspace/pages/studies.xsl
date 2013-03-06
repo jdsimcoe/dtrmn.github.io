@@ -26,7 +26,7 @@
                   </img>
                 </div>
               </div>
-              <div class="span12 description">
+              <div class="span8 offset2 description">
                 <xsl:value-of select="description" disable-output-escaping="yes" />
               </div>
               <table class="table table-hover">

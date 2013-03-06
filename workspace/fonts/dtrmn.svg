@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg>
 <metadata>
-Created by FontForge 20120731 at Sat Nov 17 09:48:58 2012
+Created by FontForge 20120731 at Wed Mar  6 08:01:20 2013
  By Jonathan Simcoe
 _null_name_substitute_
 </metadata>
@@ -16,7 +16,7 @@ _null_name_substitute_
     panose-1="0 0 5 0 0 0 0 0 0 0"
     ascent="1638"
     descent="-410"
-    bbox="0 -138 2000 2048"
+    bbox="0 -65 2000 2048"
     underline-thickness="50"
     underline-position="-100"
     unicode-range="U+000D-E000"
@@ -25,12 +25,9 @@ _null_name_substitute_
 d="M68 0h544v1365h-544v-1365zM136 68v1229h408v-1229h-408z" />
     <glyph glyph-name=".notdef" horiz-adv-x="748" 
 d="M68 0h544v1365h-544v-1365zM136 68v1229h408v-1229h-408z" />
-    <glyph glyph-name="a" unicode="a" 
-d="M286 1607h720c108 0 208 -17 301 -52c93 -34 173 -85 241 -154s121 -155 160 -258c38 -103 57 -224 57 -363c0 -121 -16 -234 -47 -337s-78 -192 -142 -267c-63 -75 -142 -136 -236 -179c-81 -37 -175 -60 -280 -66v755h72v125c0 11 -14 20 -25 20h-379
-c-12 0 -16 -9 -16 -20v-125h72v-756h-498v1677zM873 -74h-42v756h42v-756z" />
-    <glyph glyph-name="b" unicode="b" 
-d="M347 1584h1361c100 0 180 -81 180 -181v-1361c0 -100 -80 -180 -180 -180h-1361c-100 0 -181 80 -181 180v1178h1473v180h-1473v3c0 100 81 181 181 181zM988 1099h-530v-181h530v181zM506 617h879v181h-879v-181zM563 316h398v180h-398v-180zM494 14h398v181h-398v-181z
-" />
+    <glyph glyph-name="D" unicode="D" 
+d="M304 1608h717c107 0 207 -17 299 -51c93 -35 173 -86 240 -154c68 -69 121 -154 159 -257c38 -102 57 -223 57 -361c0 -121 -16 -233 -47 -335c-31 -103 -78 -192 -141 -266c-63 -75 -141 -136 -235 -179c-81 -36 -163 -59 -269 -65v752h73v134c0 11 -15 20 -26 20h-398
+c-11 0 -16 -9 -16 -20v-134h72v-753h-485v1669zM922 -65h-52v752h52v-752z" />
     <glyph glyph-name="uni2001" unicode="&#x2001;" 
  />
     <glyph glyph-name="uni2003" unicode="&#x2003;" 

@@ -147,7 +147,7 @@
         <div class="row">
           <div class="span2">
             <a href="{root}" class="logo">
-              <span class="icon-large">a</span>
+              <span class="icon-large">D</span>
             </a>
             <ul class="nav nav-list">
               <xsl:apply-templates select="data/navigation/page"/>
@@ -211,7 +211,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="/"><span class="logo">a</span></a>
+      <a class="brand" href="/"><span class="logo">D</span></a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <xsl:apply-templates select="page"/>

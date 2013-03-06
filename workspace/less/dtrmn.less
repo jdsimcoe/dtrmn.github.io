@@ -129,7 +129,7 @@
 
 .logo {
   font-family: Determine;
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-weight: normal;
   position: relative;
   top: 0;
@@ -360,6 +360,21 @@ a {
   .box-shadow(none);
 }
 
+table,
+.table {
+  font-size: 18px;
+
+  th {
+    text-transform: uppercase;
+    padding: 15px 10px;
+  }
+
+  td {
+    padding: 15px 10px;
+  }
+
+}
+
 // Styles
 // ======
 
@@ -473,15 +488,15 @@ body > .navbar .brand {
       &.active {
 
         a {
-          background: lighten(@color-primary, 10%);
-          border: 1px solid lighten(@color-primary, 10%);
-          color: darken(@color-primary, 2%);
+          background: lighten(@color-primary, 2%);
+          border: 1px solid lighten(@color-primary, 2%);
+          color: darken(@color-primary, 8%);
           .box-shadow(none);
 
           &:hover {
-            background: lighten(desaturate(@color-primary, 10%), 15%);
-            border: 1px solid lighten(desaturate(@color-primary, 10%), 15%);
-            color: darken(@color-primary, 2%);
+            background: lighten(@color-primary, 2%);
+            border: 1px solid lighten(@color-primary, 2%);
+            color: darken(@color-primary, 12%);
             .box-shadow(none);
           }
         }
@@ -497,6 +512,7 @@ body > .navbar .brand {
         padding-bottom: 10px;
         padding-top: 10px;
         text-shadow: none;
+        -webkit-transition: color 150ms ease-in-out;
 
 
         .badge {
@@ -1461,8 +1477,8 @@ body > .navbar .brand {
       p {
         font-weight: 300;
         font-size: 16px;
-        line-height: 1.6;
-        margin: 0 0 15px 0;
+        line-height: 1.8;
+        margin: 0 0 20px 0;
       }
 
     }
