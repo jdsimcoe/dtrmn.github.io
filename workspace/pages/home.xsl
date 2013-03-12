@@ -35,9 +35,19 @@
           <text>
             <xsl:value-of select="content" disable-output-escaping="yes" />
           </text>
-          <image>
-            <xsl:value-of select="image/item/image/filename" />
-          </image>
+          <xsl:choose>
+            <xsl:when test="image != ''">
+              <image>
+                <xsl:value-of select="image/item/image/filename" />
+              </image>
+            </xsl:when>
+            <xsl:otherwise>
+              <image>
+                <xsl:text>determine_bg.jpg</xsl:text>
+              </image>
+            </xsl:otherwise>
+          </xsl:choose>
+
         </entry>
       </xsl:for-each>
 
