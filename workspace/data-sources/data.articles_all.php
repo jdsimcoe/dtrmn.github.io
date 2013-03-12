@@ -23,6 +23,8 @@
 		public $dsParamINCLUDEDELEMENTS = array(
 				'system:pagination',
 				'title',
+				'author: name',
+				'author: image: image',
 				'date',
 				'content: formatted',
 				'content: unformatted',
@@ -46,7 +48,7 @@
 					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-02-20T17:09:25+00:00'
+				'release-date' => '2013-03-12T18:31:21+00:00'
 			);
 		}
 
