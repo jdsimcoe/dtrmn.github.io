@@ -18,13 +18,11 @@
           <div class="row">
 
             <xsl:for-each select="/data/articles-all/entry">
-
               <xsl:call-template name="global-tile">
                 <xsl:with-param name="title" select="title" />
                 <xsl:with-param name="date" select="date" />
                 <xsl:with-param name="text" select="content[@mode='unformatted']" />
               </xsl:call-template>
-
             </xsl:for-each>
 
           </div>

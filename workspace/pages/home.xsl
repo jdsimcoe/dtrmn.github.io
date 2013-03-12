@@ -91,6 +91,9 @@
           <text>
             <xsl:value-of select="summary"/>
           </text>
+          <cover>
+            <xsl:text>bibles.jpg</xsl:text>
+          </cover>
         </entry>
       </xsl:for-each>
 
@@ -118,6 +121,18 @@
             <xsl:text>&#160;</xsl:text>
             <xsl:value-of select="commentary"/>
           </text>
+          <xsl:choose>
+            <xsl:when test="book/item != ''">
+              <cover>
+                <xsl:value-of select="book/item/image/item/image/filename" />
+              </cover>
+            </xsl:when>
+            <xsl:otherwise>
+              <cover>
+                <xsl:text>books.jpg</xsl:text>
+              </cover>
+            </xsl:otherwise>
+          </xsl:choose>
         </entry>
       </xsl:for-each>
 
@@ -155,6 +170,11 @@
             <xsl:value-of select="quote[@mode='formatted']"/>
             <xsl:value-of select="commentary"/>
           </text>
+          <xsl:if test="image != ''">
+            <image>
+              <xsl:value-of select="image/item/image/filename" />
+            </image>
+          </xsl:if>
         </entry>
       </xsl:for-each>
 
@@ -213,7 +233,7 @@
                   <xsl:attribute name="style">
                     <xsl:text>background: url(</xsl:text>
                     <xsl:value-of select="$root"/>
-                    <xsl:text>/image/2/800/322/1/0/uploads/images/</xsl:text>
+                    <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
                     <xsl:value-of select="cover"/>
                     <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
                   </xsl:attribute>

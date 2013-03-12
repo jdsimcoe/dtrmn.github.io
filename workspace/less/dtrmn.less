@@ -915,6 +915,7 @@ body > .navbar .brand {
       font-weight: 300;
       line-height: 1.6;
       margin-top: 0;
+      min-height: 96px;
       padding: 0 15px 10px 15px;
     }
 
@@ -940,12 +941,10 @@ body > .navbar .brand {
     .upper {
 
       h3 {
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         .border-radius(5px 5px 0 0);
         color: @color-blog;
-        margin: 0;
         padding: 10px 15px 0 15px;
-        padding-bottom: 5px;
         visibility: hidden;
 
         .pull-right {
@@ -956,7 +955,7 @@ body > .navbar .brand {
       .content {
         #gradient > .vertical(rgba(0,0,0,0.9), rgba(0,0,0,0.5));
         color: @color-white;
-        margin-top: -5px;
+        margin-top: 0px;
         padding: 0 15px 15px 15px;
         visibility: hidden;
       }
@@ -1623,7 +1622,7 @@ body > .navbar .brand {
 
 .baseline {
   background: lighten(desaturate(@color-primary, 20%), 35%);
-  padding: 20px 0;
+  padding: 22px 0 23px 0;
 
   p {
     color: lighten(desaturate(@color-primary, 20%), 20%);
