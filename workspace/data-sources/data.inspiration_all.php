@@ -5,14 +5,13 @@
 	Class datasourceinspiration_all extends SectionDatasource{
 
 		public $dsParamROOTELEMENT = 'inspiration-all';
-		public $dsParamORDER = 'asc';
+		public $dsParamORDER = 'random';
 		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
-		public $dsParamCACHE = '0';
 		
 
 		public $dsParamFILTERS = array(
@@ -36,10 +35,10 @@
 				'name' => 'Inspiration: All',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2012-12-08T22:31:54+00:00'
+				'release-date' => '2013-03-12T16:29:27+00:00'
 			);
 		}
 
