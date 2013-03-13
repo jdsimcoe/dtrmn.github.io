@@ -20,7 +20,7 @@
   <html lang="en">
   <head>
     <xsl:choose>
-      <xsl:when test="$page-title = 'Home'">
+      <xsl:when test="$page-title = 'Home' or $page-title = 'Error'">
         <title>Determine</title>
       </xsl:when>
       <xsl:otherwise>
