@@ -18,6 +18,8 @@
     <div class="container">
       <div class="marketing main">
         <h2>Browse Our Gospel-Centered Content:</h2>
+        <br/>
+        <br/>
         <div class="row grid second">
           <div class="span6">
             <a href="{$root}/about" class="logo icon-large">D</a>
