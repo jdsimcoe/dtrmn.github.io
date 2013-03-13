@@ -13,155 +13,64 @@
 
 
 <xsl:template match="data">
-	<div class="container">
-    <div class="marketing">
-      <i class="glyphicon-th-list icon-large"></i>
-      <h2>Browse Our Catalog</h2>
-      <p class="marketing-byline">We have a growing catalog of Gospel-centered materials. Below is an introduction to what we offer.</p>
-    </div>
-  </div>
-  <div class="stripe first">
+
+  <div class="wrapper">
     <div class="container">
-      <h3>Recent Bible Doctrines</h3>
-      <br />
-      <div class="row">
-        <xsl:apply-templates select="/data/doctrines-3-latest/entry"/>
-        <div class="span4 doctrine">
-          <a href="">
-            <h3>Coming Soon...</h3>
-            <div class="summary"> </div>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="stripe second">
-    <div class="container">
-      <h3>From the Blog</h3>
-      <div class="row">
-        <xsl:apply-templates select="/data/articles-4-latest/entry"/>
-      </div>
-    </div>
-  </div>
-
-  <div class="stripe third">
-    <div class="container">
-      <h3>Latest Quotes</h3>
-      <div class="row">
-        <xsl:apply-templates select="/data/quotes-4-latest/entry"/>
-      </div>
-    </div>
-  </div>
-</xsl:template>
-
-
-<xsl:template match="/data/articles-4-latest/entry">
-  <div class="span3">
-    <a href="{$root}/blog/{title/@handle}" class="blog-entry">
-      <div>
-        <xsl:attribute name="class">
-          <xsl:choose>
-            <xsl:when test="position() = 1">
-              <xsl:text>label accent</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:text>label</xsl:text>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:attribute>
-        <xsl:call-template name="format-date">
-            <xsl:with-param name="date" select="date/date/start/@iso" />
-            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-          </xsl:call-template>
-      </div>
-      <h4>
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="title" />
-          <xsl:with-param name="length" select="25" />
-        </xsl:call-template>
-      </h4>
-      <p>
-        <xsl:call-template name="truncate">
-            <xsl:with-param name="node" select="content" />
-            <xsl:with-param name="length" select="290" />
-        </xsl:call-template>
-      </p>
-    </a>
-  </div>
-</xsl:template>
-
-
-<xsl:template match="/data/quotes-4-latest/entry">
-  <div class="span3">
-    <a href="{$root}/quotes/{title/@handle}" class="blog-entry">
-      <blockquote>
-        <div class="block">
-          <div>
-            <xsl:attribute name="class">
-              <xsl:choose>
-                <xsl:when test="position() = 1">
-                  <xsl:text>label accent</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>label</xsl:text>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
-
-            <xsl:call-template name="format-date">
-              <xsl:with-param name="date" select="date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-            </xsl:call-template>
+      <div class="marketing main">
+        <h2>Browse Our Gospel-Centered Content:</h2>
+        <div class="row grid second">
+          <div class="span6">
+            <a href="{$root}/about" class="logo icon-large">D</a>
+            <h2>
+              <a href="{$root}/about">The Gospel</a>
+            </h2>
+            <p>Determine is primarily about <a href="{$root}/about">the Gospel</a> and seeing the deep realities of what God accomplished for us being moved into our everyday lives and lived out.</p>
+          </div>
+          <div class="span6">
+            <a href="{$root}/doctrine" class="glyphicon-book icon-large"></a>
+            <h2>
+              <a href="{$root}/doctrine">Doctrine</a>
+            </h2>
+            <p>We have a growing library of short surveys on <a href="{$root}/doctrine">Biblical doctrines</a>. These pieces highlight theological subjects for further study and help engage our hearts and minds with the truths of Scripture.</p>
           </div>
         </div>
-        <h4>
-          <xsl:value-of select="title" />
-        </h4>
-        <p>
-          <xsl:text>by </xsl:text>
-          <xsl:value-of select="cite" />
-        </p>
-        <xsl:call-template name="truncate">
-          <xsl:with-param name="node" select="quote" />
-          <xsl:with-param name="length" select="100" />
-        </xsl:call-template>
-      </blockquote>
-    </a>
-  </div>
-</xsl:template>
-
-
-<xsl:template match="/data/doctrines-3-latest/entry">
-  <div class="span4 doctrine">
-    <a href="{$root}/doctrine/{title/@handle}">
-      <h3>
-        <xsl:value-of select="title" />
-        <span>
-          <xsl:attribute name="class">
-            <xsl:choose>
-              <xsl:when test="position() = 1">
-                <xsl:text>label accent</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>label</xsl:text>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:attribute>
-          <xsl:call-template name="format-date">
-            <xsl:with-param name="date" select="date/date/start/@iso" />
-            <xsl:with-param name="format" select="'%m-; %d;, %y+;'" />
-          </xsl:call-template>
-        </span>
-      </h3>
-      <div class="summary">
-        <xsl:value-of select="summary" />
+        <hr/>
+        <br/>
+        <div class="row grid second">
+          <div class="span3">
+            <a href="{$root}/blog" class="glyphicon-list-alt icon-large"></a>
+            <h2>
+              <a href="{$root}/blog">Blog</a>
+            </h2>
+            <p>Our <a href="{$root}/blog">blog articles</a> are longer pieces centered on the Gospel to help you deepen your relationship with Christ and your love of the Scriptures.</p>
+          </div>
+          <div class="span3">
+            <a href="{$root}/quotes" class="glyphicon-comment icon-large"></a>
+            <h2>
+              <a href="{$root}/quotes">Quotes</a>
+            </h2>
+            <p><a href="{$root}/quotes">Quotes</a> are usually short sound-bites from Gospel-centered preachers and scholars with short bits of commentary and reflection.</p>
+          </div>
+          <div class="span3">
+            <a href="{$root}/books" class="glyphicon-bookmark icon-large"></a>
+            <h2>
+              <a href="{$root}/books">Books</a>
+            </h2>
+            <p>We have <a href="{$root}/books">reviews of relevant Christian books</a> that we have found helpful in pursuing Christ and growing in our love for Him.</p>
+          </div>
+          <div class="span3">
+            <a href="{$root}/studies" class="glyphicon-fire icon-large"></a>
+            <h2>
+              <a href="{$root}/studies">Studies</a>
+            </h2>
+            <p>Follow along with our small group <a href="{$root}/studies">studies</a> we have been doing at our <a href="http://atheycreek.com/">local church</a> as a way to more deeply interact with Scripture.</p>
+          </div>
+        </div>
       </div>
-      <br />
-      <div class="right">Study <strong><xsl:value-of select="title" /> &#8594;</strong></div>
-    </a>
+
+    </div>
   </div>
+
 </xsl:template>
 
 

@@ -156,14 +156,58 @@
 .navbar {
 
   .btn-navbar {
-    background: darken(@color-primary, 10%);
-    border-color: darken(@color-primary, 15%);
-    .border-radius(0);
+    background: darken(@color-primary, 13%);
+    border-color: darken(@color-primary, 8%);
+    .border-radius(2px);
+    .box-shadow(none);
     position: relative;
-    top: -3px;
+    top: 0;
+    right: 10px;
+
+    .icon-bar {
+      .box-shadow(none);
+      color: darken(@color-white, 15%);
+    }
 
     &:hover {
-      background: darken(@color-primary, 15%);
+      background: darken(@color-primary, 17%);
+      border-color: darken(@color-primary, 8%);
+    }
+  }
+
+  .nav-collapse {
+
+    &.in {
+      padding-top: 10px;
+    }
+
+    .nav,
+    .nav.maint {
+
+      li {
+
+        &.active a,
+        &.gospel a {
+          border: 1px solid darken(@color-primary, 8%);
+        }
+
+        a {
+          border: 1px solid darken(@color-primary, 8%);
+        }
+
+        .dropdown-menu {
+          li {
+            a {
+              background: darken(@color-primary, 8%);
+              .border-radius(@border-radius-base);
+
+              &:hover {
+                background: darken(@color-primary, 15%);
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -628,33 +672,6 @@ body > .navbar .brand {
     margin-bottom: 0;
     padding: 0;
 
-    &.small {
-      font-size: 16px;
-      text-align: left;
-    }
-
-    &.links {
-      margin-top: 10px;
-      text-align: center;
-
-      a {
-        background: darken(@color-primary, 8%);
-        border: 1px solid darken(@color-primary, 8%);
-        .border-radius(@border-radius-base);
-        color: lighten(@color-primary, 5%);
-        font-size: 12px;
-        font-weight: bold;
-        padding: 8px 12px;
-        text-shadow: none;
-        text-transform: uppercase;
-
-        &:hover {
-          background: lighten(@color-primary, 5%);
-          border: 1px solid lighten(@color-primary, 5%);
-          color: lighten(@color-primary, 50%);
-        }
-      }
-    }
 
     &.vision {
       padding: 0;
@@ -994,6 +1011,14 @@ body > .navbar .brand {
 
   &.books {
 
+    .upper {
+
+      h3 {
+        color: @color-books;
+      }
+
+    }
+
     .lower {
       background: @color-books;
 
@@ -1012,6 +1037,14 @@ body > .navbar .brand {
   }
 
   &.doctrine {
+
+    .upper {
+
+      h3 {
+        color: @color-doctrine;
+      }
+
+    }
 
     .lower {
       background: @color-doctrine;
@@ -1039,6 +1072,14 @@ body > .navbar .brand {
 
   &.quotes {
 
+    .upper {
+
+      h3 {
+        color: @color-quotes;
+      }
+
+    }
+
     .lower {
       background: @color-quotes;
 
@@ -1064,6 +1105,14 @@ body > .navbar .brand {
   }
 
   &.studies {
+
+    .upper {
+
+      h3 {
+        color: @color-studies;
+      }
+
+    }
 
     .lower {
       background: @color-studies;
@@ -1737,6 +1786,18 @@ body > .navbar .brand {
     }
   }
 
+  .tile {
+
+    .upper {
+
+      .content {
+        font-size: 12px;
+      }
+
+    }
+
+  }
+
 }
 
 // Wide Desktop
@@ -1767,7 +1828,7 @@ body > .navbar .brand {
 
   body > .navbar .brand {
     position: relative;
-    top: 0px;
+    top: 2px;
   }
 
   .navbar {
@@ -1800,23 +1861,102 @@ body > .navbar .brand {
   .jumbotron {
     margin-top: 0;
 
-    &.masthead {
+    * {
+      text-align: center;
+    }
 
-      p {
-        padding: 0 80px;
+    .container {
 
-        &.vision {
-          font-size: 24px;
-        }
+      .row {
+        margin: 0;
       }
+
+    }
+
+    .span9 {
+      display: block;
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    p {
+
+      &.vision {
+        padding: 0 80px;
+        text-align: center;
+      }
+    }
+
+    .carousel {
+
+      .item {
+        text-align: center;
+      }
+
     }
 
   }
 
-  .baseline {
-    margin: 0 -20px;
-    padding: 20px;
+  #content {
+
+    .container {
+
+      .row {
+        margin: 0;
+      }
+
+    }
+
   }
+
+  .tile {
+
+    &.image,
+    &.cover {
+
+      .upper {
+
+        h3 {
+          background: rgba(0,0,0,0.75);
+          visibility: visible;
+        }
+
+        .content {
+          #gradient > .vertical(rgba(0,0,0,0.7), rgba(0,0,0,0.25));
+          visibility: visible;
+        }
+      }
+
+    }
+
+    .upper {
+
+      .content {
+        font-size: 12px;
+      }
+
+    }
+
+  }
+
+  .footer,
+  .baseline {
+
+    .container {
+
+      .row {
+        margin: 0;
+
+        .span12 {
+          padding: 0;
+        }
+      }
+
+    }
+
+  }
+
 
 }
 
@@ -1824,15 +1964,17 @@ body > .navbar .brand {
 
 @media (max-width: 767px) {
 
-  .stripe {
+  .tile {
 
-    &.first,
-    &.second,
-    &.third,
-    &.fourth {
-      background: @color-white;
+    .upper {
+      background-size: 700px !important;
     }
   }
+
+  .baseline {
+    margin: 0 -20px;
+  }
+
 }
 
 // iPHONE 5
@@ -1841,25 +1983,42 @@ body > .navbar .brand {
 
   .jumbotron {
 
-    &.masthead {
+    &.subhead {
+
+      .container {
+        max-height: none;
+      }
 
       p {
         padding: 0 30px;
 
         &.vision {
-          font-size: 18px;
+          font-size: 20px;
         }
       }
     }
   }
 
-  .marketing {
+  .page-headers {
 
-    .marketing-byline {
-      font-size: 16px;
-      padding: 0;
+    h1 {
+
+      a {
+        font-size: 36px;
+      }
+
     }
 
+    .lead {
+      position: relative;
+    }
+  }
+
+  .tile {
+
+    .upper {
+      background-size: 528px !important;
+    }
   }
 
 }
