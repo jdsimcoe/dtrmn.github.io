@@ -18,7 +18,7 @@
           <date timestamp="{date}">
             <xsl:call-template name="format-date">
               <xsl:with-param name="date" select="date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
+              <xsl:with-param name="format" select="'%d-;, %d; %m-; %y+; #0h;:#0m;:#0s; GMT'" />
             </xsl:call-template>
           </date>
           <creator>
