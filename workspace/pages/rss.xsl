@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:exsl="http://exslt.org/common"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
   extension-element-prefixes="exsl">
 
 <xsl:include href="../utilities/date-time-advanced.xsl" />
@@ -20,6 +21,21 @@
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
             </xsl:call-template>
           </date>
+          <creator>
+            <xsl:choose>
+              <xsl:when test="author[@items > 1]">
+                <xsl:for-each select="author/item">
+                  <xsl:value-of select="author/item/name"/>
+                  <xsl:if test="position != last">
+                    <xsl:text> &amp; </xsl:text>
+                  </xsl:if>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="author/item/name"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </creator>
           <title>
             <xsl:value-of select="title"/>
           </title>
@@ -29,35 +45,18 @@
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
-            <xsl:variable name="blog-images">
-              <xsl:for-each select="image/item">
-                <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
-                  <xsl:attribute name="data-responsimage">
-                    <xsl:value-of select="image/filename" />
-                  </xsl:attribute>
-                </img>
-              </xsl:for-each>
-            </xsl:variable>
-            <xsl:variable name="blog-verses">
-              <xsl:for-each select="verses/item">
-                <div class="verse center">
-                  <blockquote>
-                    <xsl:value-of select="content" />
-                    <br />
-                    <cite>
-                      <xsl:value-of select="passage" />
-                      <xsl:text> (</xsl:text>
-                      <xsl:value-of select="version/item/abbreviation" />
-                      <xsl:text>)</xsl:text>
-                    </cite>
-                  </blockquote>
-                </div>
-              </xsl:for-each>
-            </xsl:variable>
-            <xsl:value-of select="$blog-images" disable-output-escaping="no" />
-            <xsl:value-of select="$blog-verses" disable-output-escaping="no" />
             <xsl:value-of select="content" disable-output-escaping="yes" />
           </text>
+          <xsl:if test="image != ''">
+            <image>
+              <xsl:value-of select="image/item/image/filename" />
+            </image>
+          </xsl:if>
+          <xsl:for-each select="verses/item">
+            <verse>
+              <xsl:call-template name="verse-entry" />
+            </verse>
+          </xsl:for-each>
         </entry>
       </xsl:for-each>
 
@@ -69,6 +68,21 @@
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
             </xsl:call-template>
           </date>
+          <creator>
+            <xsl:choose>
+              <xsl:when test="author[@items > 1]">
+                <xsl:for-each select="author/item">
+                  <xsl:value-of select="author/item/name"/>
+                  <xsl:if test="position != last">
+                    <xsl:text> &amp; </xsl:text>
+                  </xsl:if>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="author/item/name"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </creator>
           <title>
             <xsl:value-of select="title"/>
           </title>
@@ -93,6 +107,9 @@
               <xsl:with-param name="format" select="'%d-;, %d; %m+; %y+; #0h;:#0m;:#0s; -0700'" />
             </xsl:call-template>
           </date>
+          <creator>
+            <xsl:text>Jonathan Simcoe</xsl:text>
+          </creator>
           <title>
             <xsl:value-of select="title"/>
           </title>
@@ -102,9 +119,40 @@
             <xsl:value-of select="title/@handle" />
           </uri>
           <text>
-            <xsl:value-of select="quote[@mode='formatted']"/>
-            <xsl:value-of select="commentary"/>
+            <xsl:value-of select="commentary" disable-output-escaping="yes" />
           </text>
+          <quote>
+            <xsl:value-of select="quote" disable-output-escaping="yes" />
+          </quote>
+          <xsl:choose>
+            <xsl:when test="book != ''">
+              <image>
+                <xsl:value-of select="book/item/image/item/image/filename" />
+              </image>
+              <author>
+                <xsl:value-of select="book/item/author/item/name"/>
+              </author>
+              <source>
+                <xsl:value-of select="$root"/>
+                <xsl:text>/books/</xsl:text>
+                <xsl:value-of select="book/item/title/@handle"/>
+              </source>
+              <source-title>
+                <xsl:value-of select="book/item/title"/>
+              </source-title>
+            </xsl:when>
+            <xsl:otherwise>
+              <author>
+                <xsl:value-of select="author/item/name"/>
+              </author>
+              <source>
+                <xsl:value-of select="link"/>
+              </source>
+              <source-title>
+                <xsl:value-of select="source"/>
+              </source-title>
+            </xsl:otherwise>
+          </xsl:choose>
         </entry>
       </xsl:for-each>
 
@@ -136,8 +184,41 @@
           <title><xsl:value-of select="title"/></title>
           <link><xsl:value-of select="uri" /></link>
           <pubDate><xsl:value-of select="date" /></pubDate>
+          <dc:creator><xsl:value-of select="creator"/></dc:creator>
           <guid><xsl:value-of select="uri" /></guid>
-          <description><xsl:value-of select="text" /></description>
+          <description>
+            <xsl:if test="image != ''">
+              <img>
+                <xsl:attribute name="src">
+                  <xsl:value-of select="$root"/>
+                  <xsl:text>/workspace/uploads/images/</xsl:text>
+                  <xsl:value-of select="image" />
+                </xsl:attribute>
+              </img>
+            </xsl:if>
+            <xsl:if test="verse != ''">
+              <blockquote>
+                <xsl:value-of select="verse"/>
+              </blockquote>
+            </xsl:if>
+            <xsl:if test="quote != ''">
+              <blockquote>
+                <xsl:value-of select="quote"/>
+              </blockquote>
+              <cite>
+                <xsl:text>—</xsl:text>
+                <xsl:value-of select="author"/>
+                <xsl:text>,</xsl:text>
+                <a>
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="source"/>
+                  </xsl:attribute>
+                  <xsl:value-of select="source-title"/>
+                </a>
+              </cite>
+            </xsl:if>
+            <xsl:value-of select="text" />
+          </description>
         </item>
       </xsl:for-each>
 
