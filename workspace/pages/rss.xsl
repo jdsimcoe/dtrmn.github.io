@@ -122,7 +122,7 @@
             <xsl:value-of select="commentary" disable-output-escaping="yes" />
           </text>
           <quote>
-            <xsl:value-of select="quote" disable-output-escaping="no" />
+            <xsl:value-of select="quote" disable-output-escaping="yes" />
           </quote>
           <xsl:choose>
             <xsl:when test="book != ''">
