@@ -41,10 +41,10 @@
           <div class="row">
             <div class="span8 offset2">
               <xsl:apply-templates select="/data/articles-single/entry"/>
+              <xsl:call-template name="back-link"/>
+              <xsl:call-template name="disqus"/>
             </div>
           </div>
-          <xsl:call-template name="back-link"/>
-          <xsl:call-template name="disqus"/>
         </xsl:otherwise>
       </xsl:choose>
 
