@@ -69,7 +69,7 @@
     </h1>
     <hr/>
     <xsl:if test="image != ''">
-      <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}">
+      <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" class="img-round">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
@@ -83,6 +83,20 @@
     </div>
   </div>
   <xsl:call-template name="back-link"/>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dtrmn'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+
 </xsl:template>
 
 
