@@ -71,7 +71,7 @@
     </h1>
     <hr/>
     <xsl:if test="image != ''">
-      <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" class="img-round" style="width:100%; height:100%">
+      <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" class="img-round" width="100%;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>

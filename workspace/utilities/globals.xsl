@@ -32,7 +32,7 @@
         <xsl:if test="image != ''">
           <xsl:attribute name="style">
             <xsl:text>background: url(</xsl:text>
-            <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
+            <xsl:text>/image/2/800/400/5/0/uploads/images/</xsl:text>
             <xsl:value-of select="image"/>
             <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
           </xsl:attribute>
