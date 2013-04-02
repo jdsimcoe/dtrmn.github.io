@@ -86,7 +86,7 @@
             </div>
             <div class="span3">
               <a href="{$root}/books/{book/item/title/@handle}">
-                <img src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" style="width:100%; height:100%;">
+                <img src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" width="100%">
                   <xsl:attribute name="data-responsimage">
                     <xsl:value-of select="book/item/image/item/image/filename" />
                   </xsl:attribute>

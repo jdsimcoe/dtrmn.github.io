@@ -19,7 +19,7 @@
                 <div class="span8 offset2">
                   <h2><xsl:value-of select="title"/></h2>
                   <br/>
-                  <img src="/workspace/img/spacer.gif">
+                  <img src="/workspace/img/spacer.gif" class="img-round" width="100%">
                     <xsl:attribute name="data-responsimage">
                       <xsl:value-of select="image/item/image/filename" />
                     </xsl:attribute>
