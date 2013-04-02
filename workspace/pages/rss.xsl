@@ -208,7 +208,7 @@
               <cite>
                 <xsl:text>—</xsl:text>
                 <xsl:value-of select="author"/>
-                <xsl:text>,</xsl:text>
+                <xsl:text>, </xsl:text>
                 <a>
                   <xsl:attribute name="href">
                     <xsl:value-of select="source"/>
