@@ -17,11 +17,12 @@
           <div class="row">
 
             <xsl:for-each select="/data/quotes-all/entry">
-
               <xsl:call-template name="global-tile">
+                <xsl:with-param name="class" select="$root-page" />
+                <xsl:with-param name="image" select="book/item/image/item/image/filename" />
                 <xsl:with-param name="title" select="title" />
                 <xsl:with-param name="date" select="date" />
-                <xsl:with-param name="text" select="quote[@mode='unformatted']" />
+                <xsl:with-param name="text" select="quote" />
               </xsl:call-template>
 
             </xsl:for-each>

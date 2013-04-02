@@ -73,9 +73,9 @@
           <text>
             <xsl:value-of select="synopsis"/>
           </text>
-          <cover>
+          <image>
             <xsl:value-of select="image/item/image/filename" />
-          </cover>
+          </image>
         </entry>
       </xsl:for-each>
 
@@ -101,9 +101,9 @@
           <text>
             <xsl:value-of select="summary"/>
           </text>
-          <cover>
+          <image>
             <xsl:text>bibles.jpg</xsl:text>
-          </cover>
+          </image>
         </entry>
       </xsl:for-each>
 
@@ -133,14 +133,14 @@
           </text>
           <xsl:choose>
             <xsl:when test="book/item != ''">
-              <cover>
+              <image>
                 <xsl:value-of select="book/item/image/item/image/filename" />
-              </cover>
+              </image>
             </xsl:when>
             <xsl:otherwise>
-              <cover>
+              <image>
                 <xsl:text>books.jpg</xsl:text>
-              </cover>
+              </image>
             </xsl:otherwise>
           </xsl:choose>
         </entry>
@@ -211,64 +211,16 @@
         </xsl:variable>
 
         <xsl:for-each select="exsl:node-set($entries)/entry">
-          <div>
-            <xsl:attribute name="class">
-              <xsl:choose>
-                <xsl:when test="string-length(image) &gt; 0">
-                  <xsl:text>span4 tile image </xsl:text>
-                  <xsl:value-of select="class"/>
-                </xsl:when>
-                <xsl:when test="string-length(cover) &gt; 0">
-                  <xsl:text>span4 tile cover </xsl:text>
-                  <xsl:value-of select="class"/>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>span4 tile </xsl:text>
-                  <xsl:value-of select="class"/>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:attribute>
-            <a href="{uri}">
-              <div class="upper">
-                <xsl:if test="image != ''">
-                  <xsl:attribute name="style">
-                    <xsl:text>background: url(</xsl:text>
-                    <xsl:value-of select="$root"/>
-                    <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
-                    <xsl:value-of select="image"/>
-                    <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
-                  </xsl:attribute>
-                </xsl:if>
-                <xsl:if test="cover != ''">
-                  <xsl:attribute name="style">
-                    <xsl:text>background: url(</xsl:text>
-                    <xsl:value-of select="$root"/>
-                    <xsl:text>/image/2/800/322/5/0/uploads/images/</xsl:text>
-                    <xsl:value-of select="cover"/>
-                    <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
-                  </xsl:attribute>
-                </xsl:if>
-                <h3>
-                  <xsl:value-of select="title"/>
-                </h3>
-                <div class="content">
-                  <xsl:call-template name="truncate">
-                    <xsl:with-param name="node" select="text" />
-                    <xsl:with-param name="length" select="170" />
-                  </xsl:call-template>
-                </div>
-              </div>
 
-              <div class="lower">
-                <h4>
-                  <xsl:value-of select="class"/>
-                  <span class="pull-right date">
-                    <xsl:value-of select="date" />
-                  </span>
-                </h4>
-              </div>
-            </a>
-          </div>
+          <xsl:call-template name="global-tile">
+            <xsl:with-param name="class" select="class" />
+            <xsl:with-param name="asset-link" select="uri" />
+            <xsl:with-param name="image" select="image" />
+            <xsl:with-param name="title" select="title" />
+            <xsl:with-param name="date-formatted" select="date" />
+            <xsl:with-param name="text" select="text" />
+          </xsl:call-template>
+
         </xsl:for-each>
 
       </div>

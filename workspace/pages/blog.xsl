@@ -19,6 +19,8 @@
 
             <xsl:for-each select="/data/articles-all/entry">
               <xsl:call-template name="global-tile">
+                <xsl:with-param name="class" select="$root-page" />
+                <xsl:with-param name="image" select="image" />
                 <xsl:with-param name="title" select="title" />
                 <xsl:with-param name="date" select="date" />
                 <xsl:with-param name="text" select="content[@mode='unformatted']" />

@@ -7,34 +7,53 @@
 
 <xsl:template name="global-tile">
 
+  <xsl:param name="class" />
+  <xsl:param name="asset-link" />
   <xsl:param name="image" />
   <xsl:param name="title" />
+  <xsl:param name="date-formatted" />
   <xsl:param name="date" />
   <xsl:param name="text" />
 
-  <a href="{$root}/{$root-page}/{$title/@handle}">
+  <a>
+    <xsl:choose>
+      <xsl:when test="string-length($asset-link) &gt; 0">
+        <xsl:attribute name="href">
+          <xsl:value-of select="$asset-link"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:attribute name="href">
+          <xsl:value-of select="$root"/>
+          <xsl:text>/</xsl:text>
+          <xsl:value-of select="$root-page"/>
+          <xsl:text>/</xsl:text>
+          <xsl:value-of select="$title/@handle"/>
+        </xsl:attribute>
+      </xsl:otherwise>
+    </xsl:choose>
 
     <div>
       <xsl:attribute name="class">
         <xsl:choose>
-          <xsl:when test="string-length(image) &gt; 0">
+          <xsl:when test="string-length($image) &gt; 0">
             <xsl:text>span4 tile image </xsl:text>
-            <xsl:value-of select="$root-page"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:text>span4 tile </xsl:text>
-            <xsl:value-of select="$root-page"/>
           </xsl:otherwise>
         </xsl:choose>
+        <xsl:value-of select="$class"/>
       </xsl:attribute>
 
       <div class="upper">
-        <xsl:if test="image != ''">
+        <xsl:if test="string-length($image) &gt; 0">
           <xsl:attribute name="style">
             <xsl:text>background: url(</xsl:text>
+            <xsl:value-of select="$root"/>
             <xsl:text>/image/2/800/400/5/0/uploads/images/</xsl:text>
-            <xsl:value-of select="image"/>
-            <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
+            <xsl:value-of select="$image"/>
+            <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
           </xsl:attribute>
         </xsl:if>
         <h3>
@@ -50,18 +69,25 @@
 
       <div class="lower">
         <h4>
-          <xsl:value-of select="$root-page"/>
+          <xsl:value-of select="$class"/>
           <span class="pull-right date">
-            <xsl:call-template name="format-date">
-              <xsl:with-param name="date" select="$date/date/start/@iso" />
-              <xsl:with-param name="format" select="'%d; %m-; %y+;'" />
-            </xsl:call-template>
+            <xsl:choose>
+              <xsl:when test="string-length($date-formatted) &gt; 0">
+                <xsl:value-of select="$date-formatted"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name="format-date">
+                  <xsl:with-param name="date" select="$date/date/start/@iso" />
+                  <xsl:with-param name="format" select="'%d; %m-; %y+;'" />
+                </xsl:call-template>
+              </xsl:otherwise>
+            </xsl:choose>
           </span>
         </h4>
       </div>
-
     </div>
   </a>
+
 
 </xsl:template>
 
@@ -176,14 +202,11 @@
 <xsl:template name="disqus">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'dtrmn'; // required: replace example with your forum shortname
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
+      var disqus_shortname = 'dtrmn';
       (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
   </script>
 </xsl:template>
