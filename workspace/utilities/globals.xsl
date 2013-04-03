@@ -53,22 +53,21 @@
             <xsl:value-of select="$root"/>
             <xsl:text>/image/2/800/400/5/0/uploads/images/</xsl:text>
             <xsl:value-of select="$image"/>
-            <xsl:text>) 50% 25% no-repeat; background-size: 400px;</xsl:text>
+            <xsl:text>) 50% 0 no-repeat; background-size: 400px;</xsl:text>
           </xsl:attribute>
         </xsl:if>
-        <h3>
-          <xsl:value-of select="$title"/>
-        </h3>
-        <div class="content">
-          <xsl:call-template name="truncate">
-            <xsl:with-param name="node" select="$text" />
-            <xsl:with-param name="length" select="170" />
-          </xsl:call-template>
+        <div class="overlay">
+          <h3>
+            <xsl:value-of select="$title"/>
+          </h3>
+          <div class="content">
+            <xsl:call-template name="truncate">
+              <xsl:with-param name="node" select="$text" />
+              <xsl:with-param name="length" select="170" />
+            </xsl:call-template>
+          </div>
         </div>
-      </div>
-
-      <div class="lower">
-        <h4>
+        <div class="category">
           <xsl:value-of select="$class"/>
           <span class="pull-right date">
             <xsl:choose>
@@ -83,7 +82,7 @@
               </xsl:otherwise>
             </xsl:choose>
           </span>
-        </h4>
+        </div>
       </div>
     </div>
   </a>

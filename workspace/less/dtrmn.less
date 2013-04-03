@@ -915,9 +915,10 @@ body > .navbar .brand {
   }
 
   .upper {
-    .border-radius(5px 5px 0 0);
+    .border-radius(5px);
     background: darken(@color-white, 3%);
-    min-height: 161px;
+    min-height: 201px;
+    position: relative;
 
     h3 {
       color: lighten(@color-primary, 15%);
@@ -941,6 +942,26 @@ body > .navbar .brand {
       padding: 0 15px 10px 15px;
     }
 
+    .category {
+      background: fadeout(@color-accent, 20%);
+      .border-radius(0 0 5px 5px);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      color: darken(@color-accent, 30%);
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px;
+      margin: 0;
+      text-transform: uppercase;
+
+      .date {
+        text-transform: capitalize;
+        font-weight: 300;
+      }
+    }
+
   }
 
   &.image,
@@ -950,11 +971,7 @@ body > .navbar .brand {
 
       .upper {
 
-        h3 {
-          visibility: visible;
-        }
-
-        .content {
+        .overlay {
           visibility: visible;
         }
       }
@@ -962,12 +979,16 @@ body > .navbar .brand {
 
     .upper {
 
-      h3 {
-        background: rgba(0,0,0,0.95);
+      .overlay {
         .border-radius(5px 5px 0 0);
+        #gradient > .vertical(rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+        visibility: hidden;
+      }
+
+
+      h3 {
         color: @color-blog;
         padding: 10px 15px 0 15px;
-        visibility: hidden;
 
         .pull-right {
           color: @color-accent;
@@ -975,12 +996,12 @@ body > .navbar .brand {
       }
 
       .content {
-        #gradient > .vertical(rgba(0,0,0,0.9), rgba(0,0,0,0.5));
         color: @color-white;
         margin-top: 0px;
         padding: 0 15px 15px 15px;
-        visibility: hidden;
       }
+
+
 
     }
   }
@@ -996,21 +1017,9 @@ body > .navbar .brand {
   }
 
   .lower {
-    .border-radius(0 0 5px 5px);
-    background: lighten(desaturate(@color-accent, 5%), 5%);
 
     h4 {
-      color: darken(@color-accent, 30%);
-      font-size: 16px;
-      font-weight: bold;
-      padding: 10px;
-      margin: 0;
-      text-transform: uppercase;
 
-      .date {
-        text-transform: capitalize;
-        font-weight: 300;
-      }
     }
   }
 
@@ -1034,19 +1043,9 @@ body > .navbar .brand {
 
     }
 
-    .lower {
-      background: @color-books;
-
-      h4 {
-        color: darken(@color-books, 30%);
-      }
-    }
-
-    &:hover {
-
-      .lower {
-        background: lighten(@color-books, 5%);
-      }
+    .category {
+      background: fadeout(@color-books, 20%);
+      color: darken(@color-books, 30%);
     }
 
   }
@@ -1061,12 +1060,9 @@ body > .navbar .brand {
 
     }
 
-    .lower {
-      background: @color-doctrine;
-
-      h4 {
-        color: darken(@color-doctrine, 30%);
-      }
+    .category {
+      background: fadeout(@color-doctrine, 20%);
+      color: darken(@color-doctrine, 30%);
     }
 
     &:hover {
@@ -1078,9 +1074,6 @@ body > .navbar .brand {
         }
       }
 
-      .lower {
-        background: lighten(@color-doctrine, 5%);
-      }
     }
 
   }
@@ -1095,13 +1088,11 @@ body > .navbar .brand {
 
     }
 
-    .lower {
-      background: @color-quotes;
-
-      h4 {
-        color: darken(@color-quotes, 30%);
-      }
+    .category {
+      background: fadeout(@color-quotes, 20%);
+      color: darken(@color-quotes, 30%);
     }
+
 
     &:hover {
 
@@ -1112,9 +1103,6 @@ body > .navbar .brand {
         }
       }
 
-      .lower {
-        background: lighten(@color-quotes, 5%);
-      }
     }
 
   }
@@ -1129,12 +1117,9 @@ body > .navbar .brand {
 
     }
 
-    .lower {
-      background: @color-studies;
-
-      h4 {
-        color: darken(@color-studies, 30%);
-      }
+    .category {
+      background: fadeout(@color-studies, 20%);
+      color: darken(@color-studies, 30%);
     }
 
     &:hover {
@@ -1146,9 +1131,6 @@ body > .navbar .brand {
         }
       }
 
-      .lower {
-        background: lighten(@color-studies, 5%);
-      }
     }
 
   }
@@ -1873,15 +1855,12 @@ body > .navbar .brand {
 
       .upper {
 
-        h3 {
-          background: rgba(0,0,0,0.75);
+        .overlay {
+          .border-radius(5px 5px 0 0);
+          #gradient > .vertical(rgba(0,0,0,0.5), rgba(0,0,0,0.15));
           visibility: visible;
         }
 
-        .content {
-          #gradient > .vertical(rgba(0,0,0,0.7), rgba(0,0,0,0.25));
-          visibility: visible;
-        }
       }
 
     }
