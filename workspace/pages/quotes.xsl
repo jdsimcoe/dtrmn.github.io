@@ -17,13 +17,27 @@
           <div class="row">
 
             <xsl:for-each select="/data/quotes-all/entry">
-              <xsl:call-template name="global-tile">
-                <xsl:with-param name="class" select="$root-page" />
-                <xsl:with-param name="image" select="book/item/image/item/image/filename" />
-                <xsl:with-param name="title" select="title" />
-                <xsl:with-param name="date" select="date" />
-                <xsl:with-param name="text" select="quote" />
-              </xsl:call-template>
+              <xsl:choose>
+                  <xsl:when test="image != ''">
+                    <xsl:call-template name="global-tile">
+                      <xsl:with-param name="class" select="$root-page" />
+                      <xsl:with-param name="image" select="image/item/image/filename" />
+                      <xsl:with-param name="title" select="title" />
+                      <xsl:with-param name="date" select="date" />
+                      <xsl:with-param name="text" select="quote" />
+                    </xsl:call-template>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:call-template name="global-tile">
+                      <xsl:with-param name="class" select="$root-page" />
+                      <xsl:with-param name="image" select="book/item/image/item/image/filename" />
+                      <xsl:with-param name="title" select="title" />
+                      <xsl:with-param name="date" select="date" />
+                      <xsl:with-param name="text" select="quote" />
+                    </xsl:call-template>
+                  </xsl:otherwise>
+                </xsl:choose>
+
 
             </xsl:for-each>
           </div>
@@ -89,6 +103,38 @@
                 <img src="/workspace/img/spacer.gif" alt="{book/item/image/item/image/caption}" width="100%">
                   <xsl:attribute name="data-responsimage">
                     <xsl:value-of select="book/item/image/item/image/filename" />
+                  </xsl:attribute>
+                </img>
+              </a>
+            </div>
+          </div>
+        </xsl:when>
+        <xsl:when test="image != ''">
+          <div class="row">
+            <div class="span9">
+              <blockquote>
+                <xsl:value-of select="quote" disable-output-escaping="yes" />
+                <p>
+                  <xsl:text>—</xsl:text>
+                  <xsl:value-of select="author" disable-output-escaping="yes" />
+                  <xsl:if test="source != ''">
+                    <xsl:text>, </xsl:text>
+                    <a href="{link}" target="_blank">
+                      <em>
+                        <xsl:value-of select="source" disable-output-escaping="yes" />
+                      </em>
+                    </a>
+                  </xsl:if>
+                </p>
+              </blockquote>
+              <hr />
+              <xsl:value-of select="commentary" disable-output-escaping="yes" />
+            </div>
+            <div class="span3">
+              <a href="{link}" target="_blank">
+                <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" class="img-round" width="100%">
+                  <xsl:attribute name="data-responsimage">
+                    <xsl:value-of select="image/item/image/filename" />
                   </xsl:attribute>
                 </img>
               </a>
