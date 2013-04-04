@@ -17,6 +17,8 @@
 
 <xsl:template match="/">
 
+  <xsl:variable name="version">1.2.7</xsl:variable>
+
   <html lang="en">
   <head>
     <xsl:choose>
@@ -58,11 +60,11 @@
     <meta name="author" content="Jonathan and Colsey Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/dtrmn.1.2.7.css" rel="stylesheet" />
+    <link href="{$workspace}/css/dtrmn.{$version}.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
-    <script type="text/javascript" src="{$workspace}/js/dtrmn.1.2.7.js"></script>
+    <script type="text/javascript" src="{$workspace}/js/{$version}.js"></script>
 
     <script type="text/javascript">
       <xsl:comment>
