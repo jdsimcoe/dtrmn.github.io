@@ -137,6 +137,11 @@
                 <xsl:value-of select="book/item/image/item/image/filename" />
               </image>
             </xsl:when>
+            <xsl:when test="string-length(image) &gt; 0">
+              <image>
+                <xsl:value-of select="image/item/image/filename" />
+              </image>
+            </xsl:when>
             <xsl:otherwise>
               <image>
                 <xsl:text>books.jpg</xsl:text>
