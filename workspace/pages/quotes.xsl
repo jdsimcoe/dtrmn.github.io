@@ -18,7 +18,7 @@
 
             <xsl:for-each select="/data/quotes-all/entry">
               <xsl:choose>
-                  <xsl:when test="image != ''">
+                  <xsl:when test="string-length(image) &gt; 0">
                     <xsl:call-template name="global-tile">
                       <xsl:with-param name="class" select="$root-page" />
                       <xsl:with-param name="image" select="image/item/image/filename" />
