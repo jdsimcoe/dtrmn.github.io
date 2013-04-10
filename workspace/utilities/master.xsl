@@ -64,7 +64,7 @@
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
-    <script type="text/javascript" src="{$workspace}/js/{$version}.js"></script>
+    <script type="text/javascript" src="{$workspace}/js/dtrmn.{$version}.js"></script>
 
     <script type="text/javascript">
       <xsl:comment>
