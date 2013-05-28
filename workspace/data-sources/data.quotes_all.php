@@ -24,6 +24,8 @@
 				'title',
 				'date',
 				'quote: unformatted',
+				'book: title',
+				'book: author: name',
 				'book: image: image',
 				'image: image',
 				'image: caption'
@@ -40,10 +42,10 @@
 				'name' => 'Quotes: All',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://dtr.mn',
+					'website' => 'http://dtrmn',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-04-04T00:18:53+00:00'
+				'release-date' => '2013-05-28T04:55:28+00:00'
 			);
 		}
 
