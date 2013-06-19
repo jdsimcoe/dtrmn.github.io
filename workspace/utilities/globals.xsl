@@ -109,7 +109,7 @@
 </xsl:template>
 
 <xsl:template match="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]">
-  <xsl:call-template name="book-entry"/>
+  <xsl:call-template name="book-large-entry"/>
 </xsl:template>
 
 
@@ -160,6 +160,52 @@
   </xsl:choose>
 </xsl:template>
 
+<xsl:template name="book-large-entry">
+  <xsl:choose>
+    <xsl:when test="reading = 'Yes'">
+      <div class="span5 offset1 book">
+        <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
+          <xsl:attribute name="data-responsimage">
+            <xsl:value-of select="image/item/image/filename" />
+          </xsl:attribute>
+        </img>
+      </div>
+    </xsl:when>
+    <xsl:otherwise>
+      <div class="span5 offset1 book">
+        <a href="{$root}/books/{title/@handle}" class="book-entry home">
+          <div class="metadata">
+            <h4>
+              <xsl:value-of select="title" />
+            </h4>
+            <p>
+              <xsl:text>by </xsl:text>
+              <xsl:value-of select="author" />
+              <xsl:if test="review != ''">
+                <xsl:text>&#160;</xsl:text>
+                <span class="badge">Review</span>
+              </xsl:if>
+            </p>
+            <div class="ratings">
+              <xsl:call-template name="ratings">
+                <xsl:with-param name="i" select="1" />
+                <xsl:with-param name="count" select="10" />
+                <xsl:with-param name="rating-num" select="rating" />
+              </xsl:call-template>
+            </div>
+          </div>
+          <img src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:400px;">
+            <xsl:attribute name="data-responsimage">
+              <xsl:value-of select="image/item/image/filename" />
+            </xsl:attribute>
+          </img>
+
+
+        </a>
+      </div>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
 
 <!-- VERSES
      ====== -->

@@ -34,19 +34,6 @@
               <xsl:apply-templates select="doctrines-single/entry"/>
             </div>
           </div>
-          <hr/>
-          <div class="row related">
-            <div class="span12">
-              <h4>Related Books</h4>
-            </div>
-            <xsl:if test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] != ''">
-
-              <xsl:apply-templates select="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]"/>
-            </xsl:if>
-          </div>
-          <div class="row back-nav">
-            <xsl:call-template name="back-link"/>
-          </div>
         </xsl:otherwise>
       </xsl:choose>
 
@@ -73,6 +60,20 @@
     <hr/>
     <div class="content">
       <xsl:value-of select="content" disable-output-escaping="yes" />
+    </div>
+    <xsl:if test="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id] != ''">
+			<hr/>
+			<div class="row">
+				<div class="span12">
+					<h4>Related Books</h4>
+				</div>
+			</div>
+			<div class="row">
+				<xsl:apply-templates select="/data/books-all/entry[@id = //data/doctrines-single/entry/books/item/@id]"/>
+			</div>
+    </xsl:if>
+    <div class="back-nav">
+      <xsl:call-template name="back-link"/>
     </div>
   </div>
 </xsl:template>
