@@ -71,10 +71,10 @@
           <div class="row">
             <div class="span8 offset2">
               <xsl:apply-templates select="/data/studies-single/entry"/>
+              <xsl:call-template name="back-link"/>
             </div>
 
           </div>
-          <xsl:call-template name="back-link"/>
         </xsl:otherwise>
       </xsl:choose>
     </div>
