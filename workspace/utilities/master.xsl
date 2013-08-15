@@ -253,7 +253,7 @@
 </xsl:template>
 
 <xsl:template match="navigation/page">
-  <xsl:if test="not(types/type = 'hidden' or types/type = 'XML' or @handle = 'gospel')">
+<!--   <xsl:if test="not(types/type = 'hidden' or types/type = 'XML' or @handle = 'gospel')"> -->
     <li>
       <xsl:attribute name="class">
         <xsl:choose>
@@ -294,7 +294,7 @@
         </xsl:choose>
       </a>
     </li>
-  </xsl:if>
+<!--   </xsl:if> -->
 </xsl:template>
 
 </xsl:stylesheet>

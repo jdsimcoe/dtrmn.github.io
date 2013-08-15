@@ -49,7 +49,6 @@
             </div>
           </div>
           <xsl:call-template name="back-link"/>
-          <xsl:call-template name="disqus"/>
         </xsl:otherwise>
       </xsl:choose>
     </div>
