@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="image_preview" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Image Preview</name>
+	<description>image, preview, upload field</description>
+	<repo type="github">https://github.com/Solutions-Nitriques/image_preview</repo>
+	<url type="discuss">http://getsymphony.com/discuss/thread/71485/</url>
+	<url type="issues">https://github.com/Solutions-Nitriques/image_preview/issues</url>
+	<types>
+		<type>Interface</type>
+		<type>Field</type>
+		<type>Preview</type>
+	</types>
+	<authors>
+		<author>
+			<name github="DeuxHuitHuit" symphony="nitriques" twitter="DeuxHuitHuit">Deux Huit Huit</name>
+			<website>http://www.deuxhuithuit.com/</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="2.0" date="2012-11-27" min="2.3">
+			- Added a Image Preview Settings field :    
+			It is now possible to customize how images are previewed.
+			You can change those settings by adding one or more `Image Preview Settings` field to you section.
+			- Minor UI updates
+		</release>
+		<release version="1.1" date="2012-07-17" min="2.3">
+			- Compatibility with Symphony 2.3
+		</release>
+		<release version="1.0" date="2011-06-13" min="2.2" max="2.2.5">
+			- Initial release
+		</release>
+	</releases>
+</extension>
