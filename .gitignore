@@ -7,3 +7,4 @@ install/logs/
 *.sublime-*
 workspace/bootstrap
 workspace/uploads/images
+.DS_Store
