@@ -1,0 +1,46 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Server
+port:             4002
+
+# Setup
+title:            Determine
+tagline:          '...to know Jesus crucified (1 Cor. 2:2)'
+description:      'to know Jesus crucified<br>(1 Cor. 2:2)'
+url:              http://dtr.mn
+baseurl:          /
+
+author:
+  name:           'Jonathan Simcoe'
+  url:            https://github.com/jdsimcoe
+
+paginate:         5
+
+# Collections
+# collections:
+#   projects:
+#     output: true
+#     permalink: /projects/:path/
+#     title: projects
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Custom vars
+version:          2.0.0
+
+github:
+  repo:           https://github.com/dtrmn/dtrmn.github.io
+
+typekit:
+  id:             jxd8kbk
+
+ua:
+  id:             UA-4548059-3    
