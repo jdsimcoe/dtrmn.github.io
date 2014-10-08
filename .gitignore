@@ -8,3 +8,4 @@ install/logs/
 workspace/bootstrap
 workspace/uploads/images
 .DS_Store
+.sass-cache/
